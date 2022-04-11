@@ -1,8 +1,8 @@
-package angema.base.logsAop.core.aspects;
+package angema.base.loginAop.core.aspects;
 
 import java.util.Arrays;
 
-import angema.base.logsAop.core.logs.LogService;
+import angema.base.loginAop.core.logs.LogService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -36,7 +36,8 @@ class LoggingAspect {
     /**
      * Pointcut that matches all Spring beans in the application's main packages.
      */
-    @Pointcut("within(angema.base.logsAop.app..*)")
+    @Pointcut("within(angema.base.logsAop.app.registros..*)" +
+            " || within(angema.base.logsAop.app.ventas..*)" )
     public void applicationPackagePointcut() {
         // Method is empty as this is just a Pointcut, the implementations are in the advices.
     }

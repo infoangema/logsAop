@@ -1,4 +1,4 @@
-package angema.base.logsAop.core.exceptions;
+package angema.base.loginAop.core.exceptions;
 
 import java.util.Date;
 

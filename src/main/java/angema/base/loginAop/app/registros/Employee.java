@@ -1,4 +1,4 @@
-package angema.base.logsAop.app.registros;
+package angema.base.loginAop.app.registros;
 
 import com.google.gson.Gson;
 

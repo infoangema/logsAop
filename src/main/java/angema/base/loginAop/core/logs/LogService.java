@@ -1,4 +1,4 @@
-package angema.base.logsAop.core.logs;
+package angema.base.loginAop.core.logs;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

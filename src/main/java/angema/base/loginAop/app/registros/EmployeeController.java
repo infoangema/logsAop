@@ -1,9 +1,9 @@
-package angema.base.logsAop.app.registros;
+package angema.base.loginAop.app.registros;
 
 import java.util.List;
 import java.util.Map;
 
-import angema.base.logsAop.core.exceptions.ResourceNotFoundException;
+import angema.base.loginAop.core.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
