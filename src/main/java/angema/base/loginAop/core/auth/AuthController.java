@@ -15,7 +15,7 @@ public class AuthController {
     @Autowired
     private AuthValidator authValidator;
 
-    @PostMapping(path = "", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = org.springframework.http.HttpStatus.OK)
     @ResponseBody
     public AuthResponse login(@RequestBody MultiValueMap<String, String> formParams, @RequestParam("grant_type") String grantType) throws AuthException {
@@ -23,7 +23,7 @@ public class AuthController {
         return authService.login(formParams.getFirst("client_id"), user);
     }
 
-    @PostMapping(path = "")
+    @PostMapping(path = "/login")
     @ResponseStatus(value = org.springframework.http.HttpStatus.OK)
     @ResponseBody
     public AuthResponse login(@RequestBody AuthRequest authRequest, @RequestParam("grant_type") String grantType) throws AuthException {
