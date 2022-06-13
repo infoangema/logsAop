@@ -14,19 +14,37 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(AuthException.class)
     public ResponseEntity<?> authException(AuthException ex, WebRequest request) {
-        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
-        return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
+        GlobalResponse response = new GlobalResponse();
+        response.status = HttpStatus.UNAUTHORIZED;
+        response.path = request.getDescription(false);
+        response.timestamp = new Date();
+        response.body = null;
+        ErrorDetails errorDetails = new ErrorDetails(ex.getMessage(), request.getDescription(false));
+        response.error = errorDetails;
+        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
-        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+        GlobalResponse response = new GlobalResponse();
+        response.status = HttpStatus.NOT_FOUND;
+        response.path = request.getDescription(false);
+        response.timestamp = new Date();
+        response.body = null;
+        ErrorDetails errorDetails = new ErrorDetails(ex.getMessage(), request.getDescription(false));
+        response.error = errorDetails;
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> globleExcpetionHandler(Exception ex, WebRequest request) {
-        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+        GlobalResponse response = new GlobalResponse();
+        response.status = HttpStatus.INTERNAL_SERVER_ERROR;
+        response.path = request.getDescription(false);
+        response.timestamp = new Date();
+        response.body = null;
+        ErrorDetails errorDetails = new ErrorDetails(ex.getMessage(), request.getDescription(false));
+        response.error = errorDetails;
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
