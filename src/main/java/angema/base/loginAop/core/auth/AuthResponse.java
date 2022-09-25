@@ -9,15 +9,18 @@ import lombok.Data;
 public class AuthResponse {
 
     @JsonProperty("access_token")
-    private String accessToken;
+    public String accessToken;
     @JsonProperty("token_type")
-    private String tokenType;
+    public String tokenType;
     @JsonProperty("expires_in")
-    private Integer expiresIn;
+    public Integer expiresIn;
     @JsonProperty("refresh_token")
-    private String refreshToken;
+    public String refreshToken;
     @JsonProperty("issued_at")
-    private String issuedAt;
+    public String issuedAt;
     @JsonProperty("client_id")
-    private String clientId;
+    public String clientId;
+    @JsonProperty("client_data")
+    public AuthUserLoggedIn clientData;
+
 }
