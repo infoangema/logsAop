@@ -16,7 +16,7 @@ public class AuthProperties {
 
     @Data
     public static class Security {
-        public boolean enabled;
+        public boolean IS_SECURITY_ENABLED;
     }
 
     @Data

@@ -1,6 +1,7 @@
 package angema.base.loginAop.core.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,9 @@ import java.io.IOException;
 
 public class AuthFilter extends OncePerRequestFilter {
 
+    @Value("${configs.auth.security.IS_SECURITY_ENABLED}")
+    private boolean IS_SECURITY_ENABLED;
+
     @Autowired
     AuthJwt authJwt;
 
@@ -25,7 +29,7 @@ public class AuthFilter extends OncePerRequestFilter {
         try {
             logger.info("ENTRO EN  doFilterInternal");
             String token = getToken(req);
-            if (token != null && authJwt.validateToken(token)) {
+            if (IS_SECURITY_ENABLED && token != null && authJwt.validateToken(token)) {
                 String nombreUsuario = authJwt.getPayLoadObject(token).getUserName();
                 UserDetails userDetails = authUserDetailsService.loadUserByUsername(nombreUsuario);
 

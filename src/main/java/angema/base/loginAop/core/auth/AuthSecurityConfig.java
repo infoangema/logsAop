@@ -1,9 +1,7 @@
-package angema.base.loginAop.core.configs;
+package angema.base.loginAop.core.auth;
 
-import angema.base.loginAop.core.auth.AuthEntryPoint;
-import angema.base.loginAop.core.auth.AuthFilter;
-import angema.base.loginAop.core.auth.AuthUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,7 +18,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Value("${configs.auth.security.IS_SECURITY_ENABLED}")
+    private boolean IS_SECURITY_ENABLED;
 
     @Autowired
     AuthUserDetailsService authUserDetailsService;
@@ -56,14 +57,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/auth/login", "/version/**", "/usuarios/guardar").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .exceptionHandling().authenticationEntryPoint(authEntryPoint)
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+        http.cors().and().csrf().disable();
+
+        if (IS_SECURITY_ENABLED) {
+            http.authorizeRequests()
+                    .antMatchers("/auth/login", "/version/**", "/usuarios/guardar").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
+                    .exceptionHandling().authenticationEntryPoint(authEntryPoint)
+                    .and()
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+            http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+        }
     }
 }

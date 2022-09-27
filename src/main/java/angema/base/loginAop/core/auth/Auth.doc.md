@@ -14,7 +14,7 @@
 ## Configuraciones necesarias: application.properties
 ```
 ## habilita el uso del login auth.
-configs.auth.security.enabled=true
+configs.auth.security.IS_SECURITY_ENABLED=true
 ## timezone
 configs.auth.timezone=America/Argentina/Buenos_Aires
 ## registra dato dentro del token. Deberia ir nombre de la empresa.
