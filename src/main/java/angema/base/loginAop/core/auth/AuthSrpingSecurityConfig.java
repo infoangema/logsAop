@@ -18,20 +18,20 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
+public class AuthSrpingSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Value("${configs.auth.security.IS_SECURITY_ENABLED}")
     private boolean IS_SECURITY_ENABLED;
 
     @Autowired
-    AuthUserDetailsService authUserDetailsService;
+    AuthSpringUserDetailsService authSpringUserDetailsService;
 
     @Autowired
-    AuthEntryPoint authEntryPoint;
+    AuthSpringEntryPoint authSpringEntryPoint;
 
     @Bean
-    public AuthFilter jwtTokenFilter() {
-        return new AuthFilter();
+    public AuthSpringFilter jwtTokenFilter() {
+        return new AuthSpringFilter();
     }
 
     @Bean
@@ -41,7 +41,7 @@ public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(authUserDetailsService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(authSpringUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Bean
@@ -64,7 +64,7 @@ public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/auth/login", "/version/**", "/usuarios/guardar").permitAll()
                     .anyRequest().authenticated()
                     .and()
-                    .exceptionHandling().authenticationEntryPoint(authEntryPoint)
+                    .exceptionHandling().authenticationEntryPoint(authSpringEntryPoint)
                     .and()
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
             http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

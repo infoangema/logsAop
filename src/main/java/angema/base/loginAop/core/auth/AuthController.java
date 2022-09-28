@@ -18,7 +18,7 @@ public class AuthController {
     private AuthService authService;
 
     @Autowired
-    private AuthValidator authValidator;
+    private AuthServiceValidator authServiceValidator;
 
     @Autowired
     private GlobalResponseService globalResponseService;
@@ -27,8 +27,8 @@ public class AuthController {
     @ResponseStatus(value = org.springframework.http.HttpStatus.OK)
     @ResponseBody
     public GlobalResponse login(@RequestBody MultiValueMap<String, String> formParams, @RequestParam("grant_type") String grantType) throws AuthException {
-        AuthUserLoggedIn user = authValidator.validate(formParams, grantType);
-        AuthResponse token = authService.login(user);
+        AuthDtoUserLoggedIn user = authServiceValidator.validate(formParams, grantType);
+        AuthDtoResponse token = authService.login(user);
         return globalResponseService.response(token, "/auth/login");
     }
 
@@ -36,17 +36,17 @@ public class AuthController {
     @ResponseStatus(value = org.springframework.http.HttpStatus.OK)
     @ResponseBody
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public GlobalResponse login(@RequestBody AuthRequest authRequest, @RequestParam("grant_type") String grantType) throws AuthException {
-        AuthUserLoggedIn user = authValidator.validate(authRequest, grantType);
-        AuthResponse authResponse = authService.login(user);
-        return globalResponseService.response(authResponse, "/auth/login");
+    public GlobalResponse login(@RequestBody AuthDtoRequest authDtoRequest, @RequestParam("grant_type") String grantType) throws AuthException {
+        AuthDtoUserLoggedIn user = authServiceValidator.validate(authDtoRequest, grantType);
+        AuthDtoResponse authDtoResponse = authService.login(user);
+        return globalResponseService.response(authDtoResponse, "/auth/login");
     }
 
     @GetMapping(path = "/users")
     @ResponseStatus(value = org.springframework.http.HttpStatus.OK)
     @ResponseBody
     public GlobalResponse getUserRoles() {
-        List<Auth> users = authService.getUsers();
+        List<AuthEntity> users = authService.getUsers();
         return globalResponseService.response(users, "/user/users");
     }
 }

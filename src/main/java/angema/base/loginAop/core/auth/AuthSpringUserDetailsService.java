@@ -9,14 +9,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class AuthUserDetailsService implements UserDetailsService {
+public class AuthSpringUserDetailsService implements UserDetailsService {
 
     @Autowired
     AuthRepository authRepository;
 
     @Override
     public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
-        Auth user = authRepository.findByUserName(nombreUsuario).get();
-        return AuthUserDetail.build(user);
+        AuthEntity user = authRepository.findByUserName(nombreUsuario).get();
+        return AuthSpringUserDetail.build(user);
     }
 }

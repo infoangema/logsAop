@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Auth {
+public class AuthEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,8 +19,8 @@ public class Auth {
     public String email;
     public String password;
 
-    @OneToMany(mappedBy = "auth", orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "authEntity", orphanRemoval = true, fetch = FetchType.EAGER)
     @OrderBy("name ASC")
     @JsonManagedReference
-    public List<AuthRoles> roles = new ArrayList<>();
+    public List<AuthEntityRoles> roles = new ArrayList<>();
 }

@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "auth_roles")
-public class AuthRoles {
+public class AuthEntityRoles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -18,6 +18,6 @@ public class AuthRoles {
     @ManyToOne
     @JoinColumn(name = "auth_id")
     @JsonBackReference
-    public Auth auth;
+    public AuthEntity authEntity;
 
 }

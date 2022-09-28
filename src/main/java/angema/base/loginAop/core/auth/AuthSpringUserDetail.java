@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthUserDetail implements UserDetails {
+public class AuthSpringUserDetail implements UserDetails {
 
     private String nombre;
     private String nombreUsuario;
@@ -24,10 +24,10 @@ public class AuthUserDetail implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public static AuthUserDetail build(Auth usuario) {
+    public static AuthSpringUserDetail build(AuthEntity usuario) {
         List<GrantedAuthority> authorities =
                 usuario.roles.stream().map(rol -> new SimpleGrantedAuthority(rol.description)).collect(Collectors.toList());
-        return new AuthUserDetail(usuario.name, usuario.userName, usuario.email, usuario.password, authorities);
+        return new AuthSpringUserDetail(usuario.name, usuario.userName, usuario.email, usuario.password, authorities);
     }
 
     @Override

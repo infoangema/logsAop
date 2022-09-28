@@ -11,7 +11,7 @@ import java.util.List;
 public class AuthService {
 
     @Autowired
-    private AuthJwt authJwt;
+    private AuthServiceJwt authServiceJwt;
 
     @Autowired
     private DateUtil dateUtil;
@@ -22,11 +22,11 @@ public class AuthService {
     @Autowired
     private AuthRepository authRepository;
 
-    public AuthResponse login(AuthUserLoggedIn user) {
+    public AuthDtoResponse login(AuthDtoUserLoggedIn user) {
 
-        AuthResponse response = AuthResponse.builder()
+        AuthDtoResponse response = AuthDtoResponse.builder()
                 .tokenType("Bearer")
-                .accessToken(authJwt.generateToken(user))
+                .accessToken(authServiceJwt.generateToken(user))
                 .refreshToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
                 .issuedAt(dateUtil.getDateMillis() + "")
                 .clientId(user.userName)
@@ -36,11 +36,11 @@ public class AuthService {
         return response;
     }
 
-    public AuthUserLoggedIn getPayloadObject(String token) {
-        return authJwt.getPayLoadObject(token);
+    public AuthDtoUserLoggedIn getPayloadObject(String token) {
+        return authServiceJwt.getPayLoadObject(token);
     }
 
-    public List<Auth> getUsers() {
+    public List<AuthEntity> getUsers() {
         return authRepository.findAll();
     }
 }

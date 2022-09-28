@@ -2,7 +2,7 @@ package angema.base.loginAop.core.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-@Component
-public class AuthValidator {
+@Service
+public class AuthServiceValidator {
 
     @Autowired
     private AuthRepository authRepository;
@@ -28,7 +28,7 @@ public class AuthValidator {
     }
 
 
-    public AuthUserLoggedIn validate(MultiValueMap<String, String> formParams, String grantType) throws AuthException {
+    public AuthDtoUserLoggedIn validate(MultiValueMap<String, String> formParams, String grantType) throws AuthException {
 
         if (grantType.isEmpty() || !grantType.equals(CLIENT_CREDENTIALS)) {
             message("Invalid grant_type");
@@ -38,7 +38,7 @@ public class AuthValidator {
             message("Invalid client_id or client_secret");
         }
 
-        return AuthUserLoggedIn.builder()
+        return AuthDtoUserLoggedIn.builder()
                 .userName(formParams.getFirst("client_id"))
                 .name("Gerard")
                 .lastName("Palet")
@@ -46,22 +46,22 @@ public class AuthValidator {
                 .build();
     }
 
-    public AuthUserLoggedIn validate(AuthRequest authRequest, String grantType) throws AuthException {
+    public AuthDtoUserLoggedIn validate(AuthDtoRequest authDtoRequest, String grantType) throws AuthException {
 
         if (grantType.isEmpty() || !grantType.equals(CLIENT_CREDENTIALS)) {
             message("Invalid grant_type");
         }
 
-        if (isNull(authRequest)) {
+        if (isNull(authDtoRequest)) {
             message("Invalid user or password");
         }
 
-        Optional<Auth> userOpt = authRepository.findByEmailAndPassword(authRequest.email, authRequest.password);
+        Optional<AuthEntity> userOpt = authRepository.findByEmailAndPassword(authDtoRequest.email, authDtoRequest.password);
         if (!userOpt.isPresent()) {
             message("Invalid user or password");
         }
 
-        Auth user = userOpt.get();
+        AuthEntity user = userOpt.get();
 
         // get day of Date now
 //        Date date = new Date(); // your date
@@ -81,7 +81,7 @@ public class AuthValidator {
         user.roles.forEach( r -> {
             roles.add(r.name);
         });
-        return AuthUserLoggedIn.builder()
+        return AuthDtoUserLoggedIn.builder()
                 .userName(user.userName)
                 .name(user.name)
                 .lastName(user.lastName)
@@ -90,12 +90,12 @@ public class AuthValidator {
                 .build();
     }
 
-    private boolean isNull(AuthRequest authRequest) {
-        return Objects.isNull(authRequest)
-                || authRequest.email == null
-                || authRequest.email.equals("")
-                || authRequest.password == null
-                || authRequest.password.equals("");
+    private boolean isNull(AuthDtoRequest authDtoRequest) {
+        return Objects.isNull(authDtoRequest)
+                || authDtoRequest.email == null
+                || authDtoRequest.email.equals("")
+                || authDtoRequest.password == null
+                || authDtoRequest.password.equals("");
     }
 
     public void message(String message) throws AuthException {

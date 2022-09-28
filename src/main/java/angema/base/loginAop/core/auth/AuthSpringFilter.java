@@ -13,25 +13,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AuthFilter extends OncePerRequestFilter {
+public class AuthSpringFilter extends OncePerRequestFilter {
 
     @Value("${configs.auth.security.IS_SECURITY_ENABLED}")
     private boolean IS_SECURITY_ENABLED;
 
     @Autowired
-    AuthJwt authJwt;
+    AuthServiceJwt authServiceJwt;
 
     @Autowired
-    AuthUserDetailsService authUserDetailsService;
+    AuthSpringUserDetailsService authSpringUserDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain filterChain) throws ServletException, IOException {
         try {
             logger.info("ENTRO EN  doFilterInternal");
             String token = getToken(req);
-            if (IS_SECURITY_ENABLED && token != null && authJwt.validateToken(token)) {
-                String nombreUsuario = authJwt.getPayLoadObject(token).getUserName();
-                UserDetails userDetails = authUserDetailsService.loadUserByUsername(nombreUsuario);
+            if (IS_SECURITY_ENABLED && token != null && authServiceJwt.validateToken(token)) {
+                String nombreUsuario = authServiceJwt.getPayLoadObject(token).getUserName();
+                UserDetails userDetails = authSpringUserDetailsService.loadUserByUsername(nombreUsuario);
 
                 UsernamePasswordAuthenticationToken auth =
                         new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());

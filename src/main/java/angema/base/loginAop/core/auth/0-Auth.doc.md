@@ -5,9 +5,23 @@
 ```
 <!-- auth -->
 <dependency>
-	<groupId>io.fusionauth</groupId>
-	<artifactId>fusionauth-jwt</artifactId>
-	<version>5.0.0</version>
+    <groupId>io.fusionauth</groupId>
+    <artifactId>fusionauth-jwt</artifactId>
+    <version>5.0.0</version>
+</dependency>
+<dependency>
+	<groupId>io.jsonwebtoken</groupId>
+	<artifactId>jjwt</artifactId>
+	<version>0.9.1</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-core</artifactId>
+	<version>5.6.7</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-security</artifactId>
 </dependency>
 ```
 
@@ -63,5 +77,17 @@ configs.auth.exclude.paths=/auth/login,/health,/info,/error
 }
 ```
 
+## Funcionalidades de clases:
 
+* **AuthSecurityConfig**: _Clase que extiende de **WebSecurityConfigurerAdapter**. Se activa si el atributo **IS_SECURITY_ENABLED** es **true**._
+* **AuthFilter**: _Si **IS_SECURITY_ENABLED** esta activado hace las siguientes funciones._
+ - Valida el token con **authJwt.validateToken(token)**
+- Obtiene el nombre del usuario del token con **authJwt.getPayLoadObject(token).getUserName()**
+- Busca los detalles del usuario del repositorio con **authUserDetailsService.loadUserByUsername(nombreUsuario)**
+- Obtiene los roles del mismo y se los pasa a la clase de spring **UsernamePasswordAuthenticationToken**
+- **No toma en cuenta los paths excluidos**
+
+* **AuthInterceptor**: _Hace lo siguiente._
+ - Valida paths excluidas en las properties.
+ - Verifica que el Bearer sea correcto.
 

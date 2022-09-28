@@ -13,7 +13,7 @@ import java.time.ZonedDateTime;
 import java.util.TimeZone;
 
 @Service
-public class AuthJwt {
+public class AuthServiceJwt {
 
     @Value("${configs.auth.token.secret:secretPassDefault}")
     private String SECRET;
@@ -54,9 +54,9 @@ public class AuthJwt {
     }
 
 
-    public AuthUserLoggedIn getPayLoadObject(String token) {
+    public AuthDtoUserLoggedIn getPayLoadObject(String token) {
         String payload = getPayLoad(token);
-        return GsonUtil.toObject(payload, AuthUserLoggedIn.class);
+        return GsonUtil.toObject(payload, AuthDtoUserLoggedIn.class);
     }
 
     private JWT jwt(String token) {
