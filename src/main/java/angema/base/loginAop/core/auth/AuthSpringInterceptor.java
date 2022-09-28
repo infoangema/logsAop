@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Component
-public class AuthInterceptor implements HandlerInterceptor {
+public class AuthSpringInterceptor implements HandlerInterceptor {
 
     @Value("${configs.auth.token.auth.path}")
     private String AUTH_PATH;
@@ -18,10 +18,10 @@ public class AuthInterceptor implements HandlerInterceptor {
     private List<String> EXCLUDED_PATHS;
 
     @Autowired
-    private AuthJwt authJwt;
+    private AuthServiceJwt authServiceJwt;
 
     @Override
-    public boolean preHandle(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(javax.servlet.http.HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         boolean validate = false;
         String uri = request.getRequestURI();
         String authToken = request.getHeader("Authorization");
@@ -39,8 +39,10 @@ public class AuthInterceptor implements HandlerInterceptor {
         }
 
         String token = authToken.replace("Bearer ", "");
-        validate = authJwt.validateToken(token);
-
+        validate = authServiceJwt.validateToken(token);
+        if (!validate) {
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+        }
         return validate;
 
 

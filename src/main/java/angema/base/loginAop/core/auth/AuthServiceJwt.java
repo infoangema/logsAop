@@ -13,7 +13,7 @@ import java.time.ZonedDateTime;
 import java.util.TimeZone;
 
 @Service
-public class AuthJwt {
+public class AuthServiceJwt {
 
     @Value("${configs.auth.token.secret:secretPassDefault}")
     private String SECRET;
@@ -42,7 +42,10 @@ public class AuthJwt {
 
     public boolean validateToken(String token) {
         JWT jwt = jwt(token);
-        return jwt.isExpired();
+        if(jwt == null ) {
+            return false;
+        }
+        return !jwt.isExpired();
     }
 
     public String getPayLoad(String token) {
@@ -50,8 +53,18 @@ public class AuthJwt {
         return jwt.subject;
     }
 
+
+    public AuthDtoUserLoggedIn getPayLoadObject(String token) {
+        String payload = getPayLoad(token);
+        return GsonUtil.toObject(payload, AuthDtoUserLoggedIn.class);
+    }
+
     private JWT jwt(String token) {
-        Verifier verifier = HMACVerifier.newVerifier(SECRET);
-        return JWT.getDecoder().decode(token, verifier);
+        try {
+            Verifier verifier = HMACVerifier.newVerifier(SECRET);
+            return JWT.getDecoder().decode(token, verifier);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
