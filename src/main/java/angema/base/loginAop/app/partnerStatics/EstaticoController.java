@@ -1,4 +1,4 @@
-package angema.base.loginAop.app.estatico;
+package angema.base.loginAop.app.partnerStatics;
 
 import org.springframework.stereotype.Controller;
 
