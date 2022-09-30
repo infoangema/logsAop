@@ -1,7 +1,7 @@
 package angema.base.loginAop.app.partnerStatics;
 
+import org.apache.commons.io.IOUtils;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.MediaType;
 import org.springframework.security.task.DelegatingSecurityContextAsyncTaskExecutor;
 import org.springframework.stereotype.Controller;
