@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/partners")
+@RequestMapping("/themes")
 public class PartnerThemeController {
     public static final String cuitCarre = "30687310434";
     public static final String cuitMusimundo = "30697265895";
