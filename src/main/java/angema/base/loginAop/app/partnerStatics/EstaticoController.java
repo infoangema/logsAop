@@ -1,6 +1,9 @@
 package angema.base.loginAop.app.partnerStatics;
 
+
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.http.MediaType;
+import org.springframework.security.task.DelegatingSecurityContextAsyncTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,25 +13,19 @@ import java.io.InputStream;
 
 @RequestMapping("/socio")
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 public class EstaticoController {
-
+    public static final String cuitCarre = "30687310434";
     // todo getLogoByCuitSocio
 
- //   @GetMapping("/logo")
-//    public static String getLogo() {
-//       String logoUrl="/src/main/resources/static/images/layout_set_logo.png";
-//        return logoUrl;
-//
-//
-//    }
-    @GetMapping(value = "/logo")
-    public @ResponseBody byte[] getLogo() throws IOException {
-        InputStream in = getClass()
-                .getResourceAsStream("/src/main/resources/static/images/layout_set_logo.png");
-        return org.apache.commons.io.IOUtils.toByteArray(in);
-    }
 
+
+    @GetMapping(value="/logo/{cuit_socio}",produces = MediaType.IMAGE_PNG_VALUE)
+    @ResponseBody
+    public  byte[] getLogo(@PathVariable String cuit_socio) throws IOException {
+        InputStream in = EstaticoController.class.getResourceAsStream("/static/images/logo-"+cuit_socio+".png");
+
+        return IOUtils.toByteArray(in);
+    }
 
 
     // todo getCorrouselByCiutSocio
