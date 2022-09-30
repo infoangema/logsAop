@@ -14,21 +14,21 @@ public class PartnerThemeController {
     @Autowired
     private PartnerThemeService partnerThemeService;
 
-    @GetMapping("/themes/{cuit}")
-    public String getTematica(@PathVariable String cuit) {
+    @GetMapping("/themes/{cuit_socio}")
+    public String getTematica(@PathVariable String cuit_socio) {
         JsonObject json = new JsonObject();
         // put some value pairs into the JSON object .
-        if(cuit.equals(cuitCarre)){
+        if(cuit_socio.equals(cuitCarre)){
             json.addProperty("color_primary", "#0093d3");
             json.addProperty("color_secondary", "#e30512");
-            json.addProperty("font_primary", "http://localhost:8080/socio/30717119238/theme/font/eemplo.tiff");
-            json.addProperty("logo_url", "https://www.servicioscarrefour1.com.ar/image/layout_set_logo?img_id=23766&t=1661563261880");
+            json.addProperty("font_primary_url", "Helvetica Neue,Helvetica,Arial,sans-serif");
+            json.addProperty("logo_url", "http://localhost:8080/api/v.0/socio/logo/"+cuit_socio);
         }
         else{
             json.addProperty("color_primary", "#e30613");
             json.addProperty("color_secondary", "#e30613");
-            json.addProperty("font_primary", "http://localhost:8080/socio/30717119238/theme/font/eemplo.tiff");
-            json.addProperty("logo_url", "https://mimundoprotegido.com.ar/assets/images/logo.png");
+            json.addProperty("font_primary_url", "Custom,Roboto,Helvetica Neue,sans-serif");
+            json.addProperty("logo_url", "http://localhost:8080/api/v.0/socio/logo/"+cuit_socio);
         }
         String resultado=json.toString();
         return resultado;
