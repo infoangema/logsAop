@@ -21,13 +21,13 @@ public class PartnerThemeController {
         if(cuit_socio.equals(cuitCarre)){
             json.addProperty("color_primary", "#0093d3");
             json.addProperty("color_secondary", "#e30512");
-            json.addProperty("font_primary_url", "Helvetica Neue,Helvetica,Arial,sans-serif");
+            json.addProperty("font_primary_url", "http://localhost:8080/api/v.0/socio/font/"+cuit_socio);
             json.addProperty("logo_url", "http://localhost:8080/api/v.0/socio/logo/"+cuit_socio);
         }
         else{
             json.addProperty("color_primary", "#e30613");
             json.addProperty("color_secondary", "#e30613");
-            json.addProperty("font_primary_url", "Custom,Roboto,Helvetica Neue,sans-serif");
+            json.addProperty("font_primary_url", "http://localhost:8080/api/v.0/socio/font/"+cuit_socio);
             json.addProperty("logo_url", "http://localhost:8080/api/v.0/socio/logo/"+cuit_socio);
         }
         String resultado=json.toString();
