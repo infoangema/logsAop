@@ -1,0 +1,25 @@
+{
+  "status": {
+  },
+  "body": {
+    "partner_themes": {
+      "color_primary": "",
+      "color_secondary": "",
+      "color_tertiary": "",
+      // analizar
+      "font_primary": "name",
+      "font_primary_url": "url",
+      "logo_url": "http://localhost:8080/api/v.0/partners/statics/logo/30687310434",
+      "bg_image_url": "url",
+      "carousel_image_1": "http://localhost:8080/api/v.0/partners/statics/carousel/1/30687310434",
+      "carousel_image_2": "http://localhost:8080/api/v.0/partners/statics/carousel/2/30687310434",
+      "carousel_image_3": "http://localhost:8080/api/v.0/partners/statics/carousel/3/30687310434",
+      "carousel_image_4": "http://localhost:8080/api/v.0/partners/statics/carousel/4/30687310434",
+      "pop_up_show": true,
+      "pop_up_title": "",
+      "pop_up_body": "",
+      "pop_up_footer": "",
+      "pop_up_image_url": ""
+    }
+  }
+}
