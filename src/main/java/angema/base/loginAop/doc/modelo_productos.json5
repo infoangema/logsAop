@@ -1,0 +1,612 @@
+[
+  {
+    "id_producto": 938,
+    "codigo_producto": "CAR082",
+    "ramo": 0,
+    "destino_alta": "G",
+    "id_negocio": 1,
+    "producto_descripcion": "Tecnología Protegida",
+    "planes": [
+      {
+        "codigo_plan": "D",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-99",
+            "precio": "891",
+            "riesgos": [
+              {
+                "codigo_riesgo": "4",
+                "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "58100"
+              },
+              {
+                "codigo_riesgo": "5",
+                "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "58100"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "codigo_plan": "B",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-99",
+            "precio": "629",
+            "riesgos": [
+              {
+                "codigo_riesgo": "5",
+                "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "41700"
+              },
+              {
+                "codigo_riesgo": "4",
+                "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "41700"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "codigo_plan": "C",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-99",
+            "precio": "766",
+            "riesgos": [
+              {
+                "codigo_riesgo": "4",
+                "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "50300"
+              },
+              {
+                "codigo_riesgo": "5",
+                "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "50300"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "codigo_plan": "E",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-99",
+            "precio": "1069",
+            "riesgos": [
+              {
+                "codigo_riesgo": "4",
+                "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "69700"
+              },
+              {
+                "codigo_riesgo": "5",
+                "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                "suma_asegurada_riesgo": "69700"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "valida_titular": 1,
+    "valida_beneficiario": 0,
+    "valida_adicional": 0,
+    "medios_pago": [
+      {
+        "id_medio_pago": 120,
+        "descripcion_medio_pago": "PRISMA MASTERCARD"
+      },
+      {
+        "id_medio_pago": 6,
+        "descripcion_medio_pago": "VISA"
+      },
+      {
+        "id_medio_pago": 3,
+        "descripcion_medio_pago": "DINERS"
+      },
+      {
+        "id_medio_pago": 5,
+        "descripcion_medio_pago": "MASTERCARD"
+      },
+      {
+        "id_medio_pago": 75,
+        "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+      },
+      {
+        "id_medio_pago": 1,
+        "descripcion_medio_pago": "AMERICAN EXPRESS"
+      }
+    ]
+  },
+  {
+    "id_producto": 1107,
+    "codigo_producto": "CAR048",
+    "ramo": 0,
+    "destino_alta": "G",
+    "id_negocio": 1,
+    "producto_descripcion": "Salud",
+    "planes": [
+      {
+        "codigo_plan": "A",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-44",
+            "precio": "668.64",
+            "riesgos": [
+              {
+                "codigo_riesgo": "305",
+                "descipcion_riesgo": "Renta Diaria Hosp (Alt A)",
+                "suma_asegurada_riesgo": "619920"
+              },
+              {
+                "codigo_riesgo": "301",
+                "descipcion_riesgo": "Cancer",
+                "suma_asegurada_riesgo": "326760"
+              }
+            ]
+          },
+          {
+            "codigo_etario": "4",
+            "descripcion_rango_etario": "55-64",
+            "precio": "1644.72",
+            "riesgos": [
+              {
+                "codigo_riesgo": "305",
+                "descipcion_riesgo": "Renta Diaria Hosp (Alt A)",
+                "suma_asegurada_riesgo": "619920"
+              },
+              {
+                "codigo_riesgo": "301",
+                "descipcion_riesgo": "Cancer",
+                "suma_asegurada_riesgo": "326760"
+              }
+            ]
+          },
+          {
+            "codigo_etario": "3",
+            "descripcion_rango_etario": "45-54",
+            "precio": "1159.2",
+            "riesgos": [
+              {
+                "codigo_riesgo": "305",
+                "descipcion_riesgo": "Renta Diaria Hosp (Alt A)",
+                "suma_asegurada_riesgo": "619920"
+              },
+              {
+                "codigo_riesgo": "301",
+                "descipcion_riesgo": "Cancer",
+                "suma_asegurada_riesgo": "326760"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "valida_titular": 1,
+    "valida_beneficiario": 0,
+    "valida_adicional": 0,
+    "medios_pago": [
+      {
+        "id_medio_pago": 6,
+        "descripcion_medio_pago": "VISA"
+      },
+      {
+        "id_medio_pago": 120,
+        "descripcion_medio_pago": "PRISMA MASTERCARD"
+      },
+      {
+        "id_medio_pago": 5,
+        "descripcion_medio_pago": "MASTERCARD"
+      },
+      {
+        "id_medio_pago": 118,
+        "descripcion_medio_pago": "VISA ELECTRON"
+      },
+      {
+        "id_medio_pago": 1,
+        "descripcion_medio_pago": "AMERICAN EXPRESS"
+      }
+    ]
+  },
+  {
+    "id_producto": 937,
+    "codigo_producto": "CAR081",
+    "ramo": 0,
+    "destino_alta": "G",
+    "id_negocio": 1,
+    "producto_descripcion": "Bolso Protegido",
+    "planes": [
+      {
+        "codigo_plan": "F",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-79",
+            "precio": "941",
+            "riesgos": [
+              {
+                "codigo_riesgo": "907",
+                "descipcion_riesgo": "Robo de llaves y cerradura",
+                "suma_asegurada_riesgo": "15960"
+              },
+              {
+                "codigo_riesgo": "227",
+                "descipcion_riesgo": "Muerte por Accidente Ind",
+                "suma_asegurada_riesgo": "246960"
+              },
+              {
+                "codigo_riesgo": "904",
+                "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                "suma_asegurada_riesgo": "99960"
+              },
+              {
+                "codigo_riesgo": "905",
+                "descipcion_riesgo": "Robo de los documentos",
+                "suma_asegurada_riesgo": "15960"
+              },
+              {
+                "codigo_riesgo": "980",
+                "descipcion_riesgo": "Cargo Fraudulento",
+                "suma_asegurada_riesgo": "39480"
+              },
+              {
+                "codigo_riesgo": "981",
+                "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                "suma_asegurada_riesgo": "39480"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "codigo_plan": "E",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-79",
+            "precio": "755",
+            "riesgos": [
+              {
+                "codigo_riesgo": "907",
+                "descipcion_riesgo": "Robo de llaves y cerradura",
+                "suma_asegurada_riesgo": "12840"
+              },
+              {
+                "codigo_riesgo": "981",
+                "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                "suma_asegurada_riesgo": "31680"
+              },
+              {
+                "codigo_riesgo": "227",
+                "descipcion_riesgo": "Muerte por Accidente Ind",
+                "suma_asegurada_riesgo": "196896"
+              },
+              {
+                "codigo_riesgo": "905",
+                "descipcion_riesgo": "Robo de los documentos",
+                "suma_asegurada_riesgo": "12840"
+              },
+              {
+                "codigo_riesgo": "980",
+                "descipcion_riesgo": "Cargo Fraudulento",
+                "suma_asegurada_riesgo": "31680"
+              },
+              {
+                "codigo_riesgo": "904",
+                "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                "suma_asegurada_riesgo": "80040"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "valida_titular": 1,
+    "valida_beneficiario": 1,
+    "valida_adicional": 0,
+    "medios_pago": [
+      {
+        "id_medio_pago": 6,
+        "descripcion_medio_pago": "VISA"
+      },
+      {
+        "id_medio_pago": 3,
+        "descripcion_medio_pago": "DINERS"
+      },
+      {
+        "id_medio_pago": 120,
+        "descripcion_medio_pago": "PRISMA MASTERCARD"
+      },
+      {
+        "id_medio_pago": 21,
+        "descripcion_medio_pago": "CREDENCIAL"
+      },
+      {
+        "id_medio_pago": 75,
+        "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+      },
+      {
+        "id_medio_pago": 5,
+        "descripcion_medio_pago": "MASTERCARD"
+      },
+      {
+        "id_medio_pago": 1,
+        "descripcion_medio_pago": "AMERICAN EXPRESS"
+      }
+    ]
+  },
+  {
+    "id_producto": 937,
+    "codigo_producto": "CAR081",
+    "ramo": 0,
+    "destino_alta": "G",
+    "id_negocio": 1,
+    "producto_descripcion": "Bolso Protegido",
+    "planes": [
+      {
+        "codigo_plan": "F",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-79",
+            "precio": "941",
+            "riesgos": [
+              {
+                "codigo_riesgo": "907",
+                "descipcion_riesgo": "Robo de llaves y cerradura",
+                "suma_asegurada_riesgo": "15960"
+              },
+              {
+                "codigo_riesgo": "227",
+                "descipcion_riesgo": "Muerte por Accidente Ind",
+                "suma_asegurada_riesgo": "246960"
+              },
+              {
+                "codigo_riesgo": "904",
+                "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                "suma_asegurada_riesgo": "99960"
+              },
+              {
+                "codigo_riesgo": "905",
+                "descipcion_riesgo": "Robo de los documentos",
+                "suma_asegurada_riesgo": "15960"
+              },
+              {
+                "codigo_riesgo": "980",
+                "descipcion_riesgo": "Cargo Fraudulento",
+                "suma_asegurada_riesgo": "39480"
+              },
+              {
+                "codigo_riesgo": "981",
+                "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                "suma_asegurada_riesgo": "39480"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "codigo_plan": "E",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-79",
+            "precio": "755",
+            "riesgos": [
+              {
+                "codigo_riesgo": "907",
+                "descipcion_riesgo": "Robo de llaves y cerradura",
+                "suma_asegurada_riesgo": "12840"
+              },
+              {
+                "codigo_riesgo": "981",
+                "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                "suma_asegurada_riesgo": "31680"
+              },
+              {
+                "codigo_riesgo": "227",
+                "descipcion_riesgo": "Muerte por Accidente Ind",
+                "suma_asegurada_riesgo": "196896"
+              },
+              {
+                "codigo_riesgo": "905",
+                "descipcion_riesgo": "Robo de los documentos",
+                "suma_asegurada_riesgo": "12840"
+              },
+              {
+                "codigo_riesgo": "980",
+                "descipcion_riesgo": "Cargo Fraudulento",
+                "suma_asegurada_riesgo": "31680"
+              },
+              {
+                "codigo_riesgo": "904",
+                "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                "suma_asegurada_riesgo": "80040"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "valida_titular": 1,
+    "valida_beneficiario": 1,
+    "valida_adicional": 0,
+    "medios_pago": [
+      {
+        "id_medio_pago": 6,
+        "descripcion_medio_pago": "VISA"
+      },
+      {
+        "id_medio_pago": 3,
+        "descripcion_medio_pago": "DINERS"
+      },
+      {
+        "id_medio_pago": 120,
+        "descripcion_medio_pago": "PRISMA MASTERCARD"
+      },
+      {
+        "id_medio_pago": 21,
+        "descripcion_medio_pago": "CREDENCIAL"
+      },
+      {
+        "id_medio_pago": 75,
+        "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+      },
+      {
+        "id_medio_pago": 5,
+        "descripcion_medio_pago": "MASTERCARD"
+      },
+      {
+        "id_medio_pago": 1,
+        "descripcion_medio_pago": "AMERICAN EXPRESS"
+      }
+    ]
+  },
+  {
+    "id_producto": 937,
+    "codigo_producto": "CAR081",
+    "ramo": 0,
+    "destino_alta": "G",
+    "id_negocio": 1,
+    "producto_descripcion": "Bolso Protegido",
+    "planes": [
+      {
+        "codigo_plan": "F",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-79",
+            "precio": "941",
+            "riesgos": [
+              {
+                "codigo_riesgo": "907",
+                "descipcion_riesgo": "Robo de llaves y cerradura",
+                "suma_asegurada_riesgo": "15960"
+              },
+              {
+                "codigo_riesgo": "227",
+                "descipcion_riesgo": "Muerte por Accidente Ind",
+                "suma_asegurada_riesgo": "246960"
+              },
+              {
+                "codigo_riesgo": "904",
+                "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                "suma_asegurada_riesgo": "99960"
+              },
+              {
+                "codigo_riesgo": "905",
+                "descipcion_riesgo": "Robo de los documentos",
+                "suma_asegurada_riesgo": "15960"
+              },
+              {
+                "codigo_riesgo": "980",
+                "descipcion_riesgo": "Cargo Fraudulento",
+                "suma_asegurada_riesgo": "39480"
+              },
+              {
+                "codigo_riesgo": "981",
+                "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                "suma_asegurada_riesgo": "39480"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "codigo_plan": "E",
+        "id_plan": "0",
+        "rangos": [
+          {
+            "codigo_etario": "2",
+            "descripcion_rango_etario": "18-79",
+            "precio": "755",
+            "riesgos": [
+              {
+                "codigo_riesgo": "907",
+                "descipcion_riesgo": "Robo de llaves y cerradura",
+                "suma_asegurada_riesgo": "12840"
+              },
+              {
+                "codigo_riesgo": "981",
+                "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                "suma_asegurada_riesgo": "31680"
+              },
+              {
+                "codigo_riesgo": "227",
+                "descipcion_riesgo": "Muerte por Accidente Ind",
+                "suma_asegurada_riesgo": "196896"
+              },
+              {
+                "codigo_riesgo": "905",
+                "descipcion_riesgo": "Robo de los documentos",
+                "suma_asegurada_riesgo": "12840"
+              },
+              {
+                "codigo_riesgo": "980",
+                "descipcion_riesgo": "Cargo Fraudulento",
+                "suma_asegurada_riesgo": "31680"
+              },
+              {
+                "codigo_riesgo": "904",
+                "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                "suma_asegurada_riesgo": "80040"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "valida_titular": 1,
+    "valida_beneficiario": 1,
+    "valida_adicional": 0,
+    "medios_pago": [
+      {
+        "id_medio_pago": 6,
+        "descripcion_medio_pago": "VISA"
+      },
+      {
+        "id_medio_pago": 3,
+        "descripcion_medio_pago": "DINERS"
+      },
+      {
+        "id_medio_pago": 120,
+        "descripcion_medio_pago": "PRISMA MASTERCARD"
+      },
+      {
+        "id_medio_pago": 21,
+        "descripcion_medio_pago": "CREDENCIAL"
+      },
+      {
+        "id_medio_pago": 75,
+        "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+      },
+      {
+        "id_medio_pago": 5,
+        "descripcion_medio_pago": "MASTERCARD"
+      },
+      {
+        "id_medio_pago": 1,
+        "descripcion_medio_pago": "AMERICAN EXPRESS"
+      }
+    ]
+  }
+]
