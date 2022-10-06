@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-@RequestMapping("/socio")
+@RequestMapping("/statics")
 @RestController
 public class PartnerStaticController {
     public static final String cuitCarre = "30687310434";
@@ -22,15 +22,15 @@ public class PartnerStaticController {
     @GetMapping(value="/logo/{cuit_socio}",produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public  byte[] getLogo(@PathVariable String cuit_socio) throws IOException {
-        InputStream in = PartnerStaticController.class.getResourceAsStream("/static/images/logo-"+cuit_socio+".png");
+        InputStream in = PartnerStaticController.class.getResourceAsStream("/static/"+cuit_socio+"/images/logo-"+cuit_socio+".png");
         return IOUtils.toByteArray(in);
     }
 
 
     @GetMapping(value="/carousel/{numero}/{cuit_socio}",produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
-    public  byte[] getCarouselImage(@PathVariable String cuit_socio) throws IOException {
-        InputStream in = PartnerStaticController.class.getResourceAsStream("/static/images/carousel-1-30687310434.jpg");
+    public  byte[] getCarouselImage(@PathVariable String cuit_socio,@PathVariable String numero) throws IOException {
+        InputStream in = PartnerStaticController.class.getResourceAsStream("/static/"+cuit_socio+"/images/carousel_image_"+numero+".jpg");
         return IOUtils.toByteArray(in);
     }
 
