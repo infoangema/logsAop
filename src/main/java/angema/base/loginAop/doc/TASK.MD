@@ -23,7 +23,9 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 
 ```
 
-3- FEAT: Conectar base con PartnerThemeController.
+3- FEAT: Partner configs.
+    1. Conectar base con PartnerThemeController.
+    2. Modelado de datos. 
 4- FEAT: getCarouselImage y getBackGroundImage.
 5- FEAT: Catalogo de productos.
 6- FEAT: Recurso nuevo para imagenes de productos. (Analisis)

@@ -20,6 +20,26 @@
       "pop_up_body": "",
       "pop_up_footer": "",
       "pop_up_image_url": ""
+    },
+    "partner_themes2": {
+      "color_primary": "",
+      "color_secondary": "",
+      "color_tertiary": "",
+      // analizar
+      "font_primary": "name",
+      "font_primary_url": "url",
+      "logo_url":true,
+      "bg_image_url": "url",
+      "carousel_image": [
+    ],
+      "carousel_image2": {
+
+      },
+      "pop_up_show": true,
+      "pop_up_title": "",
+      "pop_up_body": "",
+      "pop_up_footer": "",
+      "pop_up_image_url": ""
     }
   }
 }
