@@ -1,7 +1,6 @@
 package angema.base.loginAop.app.partnerStatics;
 
 import angema.base.loginAop.core.utils.FileSystemUtil;
-import com.google.gson.JsonElement;
 import org.apache.commons.io.IOUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,7 +77,7 @@ public class PartnerStaticController {
     @GetMapping(value="/catalogos/productos/{cuit_socio}")
     @ResponseBody
     public String getProductos(@PathVariable String cuit_socio) throws IOException {
-        String res = fileSystemUtil.getFile("/static/json/productos-30687310434.json");
+        String res = fileSystemUtil.getFile("/static/"+cuit_socio+"/productos/productos.json");
         return res;
     }
     // todo getCorrouselByCiutSocio
