@@ -29,4 +29,8 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 4- FEAT: getCarouselImage y getBackGroundImage.
 5- FEAT: Catalogo de productos.
 6- FEAT: Recurso nuevo para imagenes de productos. (Analisis)
+7- FEAT: Conexion a Heroku.
+    1. Crear properties.
+    2. Encriptar pass.
+    3. Crear tablas.
 
