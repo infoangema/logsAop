@@ -33,4 +33,7 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
     1. Crear properties.
     2. Encriptar pass.
     3. Crear tablas.
+8- FEAT: Deploy Heroku.
+    1. Conexion a la base.
+    2. Subir app.
 
