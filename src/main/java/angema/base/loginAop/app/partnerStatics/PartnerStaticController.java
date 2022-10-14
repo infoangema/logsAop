@@ -36,6 +36,7 @@ public class PartnerStaticController {
         return IOUtils.toByteArray(in);
     }
 
+    // TODO: 13/10/2022 :definir imagen background y implementar funcionalidad en front.
     @GetMapping(value="/bg-image/{cuit_socio}",produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public  byte[] getBackGroundImage(@PathVariable String cuit_socio) throws IOException {
@@ -73,6 +74,14 @@ public class PartnerStaticController {
 //        httpHeaders.setContentType("application/x-font-"+tipo);
 //        return new ResponseEntity<String>("{\"test\": \"Hello with ResponseEntity\"}", httpHeaders, HttpStatus.OK);
 //    }
+
+    @GetMapping(value="/products/{cuit_socio}/{id_producto}",produces = MediaType.IMAGE_PNG_VALUE)
+    @ResponseBody
+    public  byte[] getProductImage(@PathVariable String cuit_socio,@PathVariable String id_producto) throws IOException {
+        InputStream in = PartnerStaticController.class.getResourceAsStream("/static/"+cuit_socio+"/productos/img_"+id_producto+".jfif");
+        return IOUtils.toByteArray(in);
+    }
+
 
     @GetMapping(value="/catalogos/productos/{cuit_socio}")
     @ResponseBody
