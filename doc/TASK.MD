@@ -36,4 +36,4 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 8- FEAT: Deploy Heroku.
     1. Conexion a la base.
     2. Subir app.
-
+9- FEAT: Agregar funcionalidad de redirect por socio
