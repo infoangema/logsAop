@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-@RequestMapping("/statics")
+@RequestMapping("/partners/statics")
 @RestController
 public class PartnerStaticController {
     public static final String cuitCarre = "30687310434";
