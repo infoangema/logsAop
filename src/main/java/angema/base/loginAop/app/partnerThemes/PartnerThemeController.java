@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 
 @RestController
-@RequestMapping("/themes")
+@RequestMapping("/partners/themes")
 public class PartnerThemeController {
     public static final String cuitCarre = "30687310434";
     public static final String cuitMusimundo = "30697265895";
