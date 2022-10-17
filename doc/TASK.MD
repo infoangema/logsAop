@@ -27,8 +27,10 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
     1. Conectar base con PartnerThemeController.
     2. Modelado de datos. 
 4- FEAT: getCarouselImage y getBackGroundImage.
-5- FEAT: Catalogo de productos.
-6- FEAT: Recurso nuevo para imagenes de productos. (Analisis)
+5- FEAT: Productos
+    1. Catalogo de productos.
+    2. Recurso nuevo para imagenes de productos.
+    3. Detalle Productos (En proceso)
 7- FEAT: Conexion a Heroku.
     1. Crear properties.
     2. Encriptar pass.
