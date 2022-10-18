@@ -8,3 +8,9 @@
   console.log(res);
   });
   }
+
+Comando Heroku
+1. heroku apps
+2heroku pg:killall --app java-dinamic-landing-page
+1. heroku logs --tail --app java-dinamic-landing-page
+2. 
