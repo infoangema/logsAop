@@ -1,15 +1,18 @@
 package angema.base.loginAop.app.partnerThemes;
 
-import com.google.gson.JsonObject;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.logging.Logger;
 
 
 @RestController
-@RequestMapping("/partners/themes")
+@RequestMapping("/themes")
 public class PartnerThemeController {
     public static final String cuitCarre = "30687310434";
     public static final String cuitMusimundo = "30697265895";
@@ -18,43 +21,69 @@ public class PartnerThemeController {
     @Autowired
     private PartnerThemeService partnerThemeService;
 
-    @GetMapping("/cuit/{cuit_socio}")
-    public String getTematica(@PathVariable String cuit_socio) {
-        JsonObject json = new JsonObject();
-        // put some value pairs into the JSON object .
-        if(cuit_socio.equals(cuitCarre)){
-            json.addProperty("color_primary", "#0093d3");
-            json.addProperty("color_secondary", "#dad6d6");
-            json.addProperty("font_primary_url", "Helvetica Neue,Helvetica,Arial,sans-serif");
-            json.addProperty("logo_url", "http://localhost:8080/api/v.0/partners/statics/logo/"+cuit_socio);
-            json.addProperty("carousel_image_1", "http://localhost:8080/api/v.0/partners/statics/carousel/1/"+cuit_socio);
-            json.addProperty("carousel_image_2", "http://localhost:8080/api/v.0/partners/statics/carousel/2/"+cuit_socio);
-            json.addProperty("carousel_image_3", "http://localhost:8080/api/v.0/partners/statics/carousel/3/"+cuit_socio);
-            json.addProperty("carousel_image_4", "http://localhost:8080/api/v.0/partners/statics/carousel/4/"+cuit_socio);
-        }
-        else{
-            json.addProperty("color_primary", "#e30613");
-            json.addProperty("color_secondary", "#e30613");
-            json.addProperty("font_primary_url", "Custom,Roboto,Helvetica Neue,sans-serif");
-            json.addProperty("logo_url", "http://localhost:8080/api/v.0/partners/statics/logo/"+cuit_socio);
-            json.addProperty("carousel_image_1", "http://localhost:8080/api/v.0/partners/statics/carousel/1/"+cuit_socio);
-            json.addProperty("carousel_image_2", "http://localhost:8080/api/v.0/partners/statics/carousel/2/"+cuit_socio);
-            json.addProperty("carousel_image_3", "http://localhost:8080/api/v.0/partners/statics/carousel/3/"+cuit_socio);
-            json.addProperty("carousel_image_4", "http://localhost:8080/api/v.0/partners/statics/carousel/4/"+cuit_socio);
-        }
-        String resultado=json.toString();
-        return resultado;
-    }
-    @GetMapping("/cuit_socio/{cuit_socio}")
-    public List<PartnerTheme> getThemesByPartner(@PathVariable String cuit_socio) {
+    @GetMapping("/getThemeBycuit/{cuitSocio}")
+    public PartnerTheme getThemeBycuit(@PathVariable String cuitSocio) {
     List<PartnerTheme>tematica=null;
             try{
-                tematica=partnerThemeService.getThemesByPartner(cuit_socio);
+                tematica=partnerThemeService.getThemesByPartner(cuitSocio);
             }catch(Exception e){
                 logger.info("Exception PartnerThemeController getTematicaBySocio: " + e.getMessage());
             }
-     return tematica;
+     return tematica.get(0);
     }
+
+    @GetMapping(value="/getLogoByCuit/{cuitSocio}",produces = MediaType.IMAGE_PNG_VALUE)
+    @ResponseBody
+    public  byte[] getLogo(@PathVariable String cuitSocio) throws IOException {
+        InputStream in = PartnerThemeController.class.getResourceAsStream("/static/"+cuitSocio+"/images/logo-"+cuitSocio+".png");
+        return IOUtils.toByteArray(in);
+    }
+
+    @GetMapping(value="/getCarouselImageByCuit/{cuitSocio}/{numero}",produces = MediaType.IMAGE_PNG_VALUE)
+    @ResponseBody
+    public  byte[] getCarouselImageByCuit(@PathVariable String cuitSocio,@PathVariable String numero) throws IOException {
+        InputStream in = PartnerThemeController.class.getResourceAsStream("/static/"+cuitSocio+"/images/carousel_image_"+numero+".jpg");
+        return IOUtils.toByteArray(in);
+    }
+
+    // TODO: 13/10/2022 :definir imagen background y implementar funcionalidad en front.
+    @GetMapping(value="/getBackGroundImageByCuit/{cuitSocio}",produces = MediaType.IMAGE_PNG_VALUE)
+    @ResponseBody
+    public  byte[] getBackGroundImageByCuit(@PathVariable String cuitSocio) throws IOException {
+        InputStream in = PartnerThemeController.class.getResourceAsStream("/static/images/bg-image-"+cuitSocio+".jpg");
+        return IOUtils.toByteArray(in);
+    }
+
+
+    @GetMapping(value="/getFontByCuit/{cuitSocio}/primary/type/font_primary.ttf",produces = "application/x-font-ttf")
+    @ResponseBody
+    public  byte[] getFontByCuit(@PathVariable String cuitSocio) throws IOException {
+        InputStream in=null;
+        if (cuitSocio.equals(cuitCarre))
+            in = PartnerThemeController.class.getResourceAsStream("/static/fonts/font-"+cuitSocio+"/font_primary_"+cuitSocio+".ttf");
+        else
+            in = PartnerThemeController.class.getResourceAsStream("/static/fonts/font-"+cuitSocio+"/static/RobotoSlab-Regular.ttf");
+
+        return IOUtils.toByteArray(in);
+
+
+    }
+
+    //    @GetMapping(value="/font/cuit/{cuitSocio}/primary/type/{tipo}/font_primary.ttf",produces = "application/x-font-ttf")
+//    @ResponseBody
+//    public  byte[] getFontByCuitAndType(@PathVariable String cuitSocio,@PathVariable String tipo) throws IOException {
+//        InputStream in=null;
+//        if (cuitSocio.equals(cuitCarre))
+//            in = EstaticoController.class.getResourceAsStream("/static/fonts/font-"+cuitSocio+"/font_primary_"+cuitSocio+".ttf");
+//        else
+//            in = EstaticoController.class.getResourceAsStream("/static/fonts/font-"+cuitSocio+"/static/RobotoSlab-Regular.ttf");
+//
+//        //  return IOUtils.toByteArray(in);
+//
+//        final HttpHeaders httpHeaders= new HttpHeaders();
+//        httpHeaders.setContentType("application/x-font-"+tipo);
+//        return new ResponseEntity<String>("{\"test\": \"Hello with ResponseEntity\"}", httpHeaders, HttpStatus.OK);
+//    }
 }
 
 

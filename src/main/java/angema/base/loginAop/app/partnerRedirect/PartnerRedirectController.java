@@ -22,14 +22,16 @@ public class PartnerRedirectController {
     @Value("${partners.redirect}")
     private String  PARTNER_REDIRECT;
 
-    @GetMapping("/{socio}")
-    public void getRedirectByPartnerName(@PathVariable String socio, HttpServletResponse response) throws IOException {
-        Cookie cookie = new Cookie("cuit_socio", "30697265895");
-        cookie.setMaxAge(60 * 60);
+    @GetMapping("/{parnertName}")
+    public void getRedirectByPartnerName(@PathVariable String parnertName, HttpServletResponse response) throws IOException {
+
+        if (PartnersNames.containsKey(parnertName)){
+            // todo crear campo nombre en base themes, buscar cuit y setaer en cookie.
+            Cookie cookie = new Cookie("cuit_socio", "30697265895");
+            cookie.setMaxAge(60 * 60);
 //        cookie.setSecure(true);
 //        cookie.setHttpOnly(true);
-        cookie.setPath("/");
-        if (PartnersNames.containsKey(socio)){
+            cookie.setPath("/");
             response.addCookie(cookie);
             response.sendRedirect(PARTNER_REDIRECT);
         }

@@ -1,10 +1,10 @@
-package angema.base.loginAop.app.productDetail;
+package angema.base.loginAop.app.product;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class ProductDetail {
+public class Product {
     private Integer id;
     private String idProducto;
     private String cuitSocio;

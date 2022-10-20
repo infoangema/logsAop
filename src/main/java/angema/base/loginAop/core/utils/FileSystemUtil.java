@@ -1,6 +1,5 @@
 package angema.base.loginAop.core.utils;
 
-import angema.base.loginAop.app.partnerStatics.PartnerStaticController;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
