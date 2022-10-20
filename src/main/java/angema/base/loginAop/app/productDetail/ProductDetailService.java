@@ -15,6 +15,12 @@ public class ProductDetailService {
         detalleProducto=productDetailsDao.getDetailProductByPartner(cuit_socio,id_producto);
         return detalleProducto;
     }
+
+    public List<ProductDetail> getDetailProductByPartnerSection1(String cuit_socio,String id_producto) throws Exception {
+        List<ProductDetail>detalleProducto=null;
+        detalleProducto=productDetailsDao.getDetailProductByPartner(cuit_socio,id_producto);
+        return detalleProducto;
+    }
 }
 
 

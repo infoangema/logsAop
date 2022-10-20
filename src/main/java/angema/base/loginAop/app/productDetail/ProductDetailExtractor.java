@@ -13,9 +13,17 @@ public class ProductDetailExtractor implements RowMapper<ProductDetail> {
         ProductDetail.setId(Integer.valueOf(rs.getInt("id")));
         ProductDetail.setIdProducto(String.valueOf(rs.getString("id_producto")));
         ProductDetail.setCuitSocio(String.valueOf(rs.getString("cuit_socio")));
-        ProductDetail.setDescripcion(String.valueOf(rs.getString("descripcion")));
-        ProductDetail.setTitulo(String.valueOf(rs.getString("titulo")));
-        ProductDetail.setPrecioBase(String.valueOf(rs.getString("precio_base")));
+        ProductDetail.setSeccionCeroDescripcion(String.valueOf(rs.getString("seccion_cero_descripcion")));
+        ProductDetail.setSeccionUnoDescripcionDos(String.valueOf(rs.getString("seccion_uno_descripcion_dos")));
+        ProductDetail.setSeccionUnoDescripcion(String.valueOf(rs.getString("seccion_uno_descripcion")));
+        ProductDetail.setSeccionCeroTitulo(String.valueOf(rs.getString("seccion_cero_titulo")));
+        ProductDetail.setSeccionCeroPrecioBase(String.valueOf(rs.getString("seccion_cero_precio_base")));
+        ProductDetail.setSeccionUnoItems(String.valueOf(rs.getString("seccion_uno_items")));
+        ProductDetail.setSeccionDosTitulo(String.valueOf(rs.getString("seccion_dos_titulo")));
+        ProductDetail.setSeccionDosDescripcion(String.valueOf(rs.getString("seccion_dos_descripcion")));
+        ProductDetail.setSeccionDosSubtitulo(String.valueOf(rs.getString("seccion_dos_subtitulo")));
+        ProductDetail.setSeccionDosItems(String.valueOf(rs.getString("seccion_dos_items")));
+
         return ProductDetail;
 
 

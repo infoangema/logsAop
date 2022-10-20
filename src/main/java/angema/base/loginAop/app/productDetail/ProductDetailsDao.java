@@ -16,7 +16,7 @@ public class ProductDetailsDao {
 
     public List<ProductDetail> getDetailProductByPartner(String cuit_socio,String id_producto) throws Exception{
         List<ProductDetail> detalleProducto=null;
-        detalleProducto= jdbcTemplate.query("SELECT * FROM product_detail where cuit_socio=? AND id_producto=?", new Object[] { cuit_socio,id_producto }, new ProductDetailExtractor());
+        detalleProducto= jdbcTemplate.query("SELECT * from product_detail where cuit_socio=? AND id_producto=?", new Object[] { cuit_socio,id_producto }, new ProductDetailExtractor());
         return detalleProducto;
     }
 }
