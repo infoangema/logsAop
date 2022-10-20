@@ -18,4 +18,12 @@ public class PartnerThemeDao {
         tematica= jdbcTemplate.query("SELECT * FROM partner_themes where cuit_socio=?", new Object[] { cuit_socio }, new PartnerThemeExtractor());
         return tematica;
     }
+
+    public String getCuitSocioByPartnerName(String partnerName) throws Exception{
+        String cuit_socio="";
+        cuit_socio= jdbcTemplate.queryForObject("SELECT cuit_socio FROM partner_themes where nombre=?", new Object[] { partnerName },String.class);
+        return cuit_socio;
+    }
+
+
 }

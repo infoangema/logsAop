@@ -14,4 +14,10 @@ public class PartnerThemeService {
         tematica=partnerThemeDao.getThemesByPartner(cuit_socio);
         return tematica;
     }
+
+    public String getCuitSocioByPartnerName(String partnerName) throws Exception {
+        String cuit_socio="";
+        cuit_socio=partnerThemeDao.getCuitSocioByPartnerName(partnerName);
+        return cuit_socio;
+    }
 }
