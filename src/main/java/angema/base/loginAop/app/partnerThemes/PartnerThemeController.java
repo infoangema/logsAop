@@ -55,6 +55,22 @@ public class PartnerThemeController {
     }
 
 
+    @GetMapping(value="/getCoberturaByCuitAndProductId/{cuitSocio}/{id_producto}",produces = MediaType.APPLICATION_PDF_VALUE)
+    @ResponseBody
+    public  byte[] getCoberturaByCuitAndProductId(@PathVariable String cuitSocio,@PathVariable String id_producto) throws IOException {
+        InputStream in = PartnerThemeController.class.getResourceAsStream("/static/"+cuitSocio+"/productos/coberturaProduct/"+id_producto+".pdf");
+        return IOUtils.toByteArray(in);
+    }
+    @GetMapping(value="/getCondicionesByCuitAndProductId/{cuitSocio}/{id_producto}",produces = MediaType.APPLICATION_PDF_VALUE)
+    @ResponseBody
+    public  byte[] getCondicionesByCuitAndProductId(@PathVariable String cuitSocio,@PathVariable String id_producto) throws IOException {
+        InputStream in = PartnerThemeController.class.getResourceAsStream("/static/"+cuitSocio+"/productos/basesYCondicionesProduct/"+id_producto+".pdf");
+        return IOUtils.toByteArray(in);
+    }
+
+
+
+
     @GetMapping(value="/getFontByCuit/{cuitSocio}/primary/type/font_primary.ttf",produces = "application/x-font-ttf")
     @ResponseBody
     public  byte[] getFontByCuit(@PathVariable String cuitSocio) throws IOException {
