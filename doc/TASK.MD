@@ -31,6 +31,7 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
     1. Catalogo de productos.
     2. Recurso nuevo para imagenes de productos.
     3. Detalle Productos (En proceso)
+    4. pdf coberturas y condiciones de productos
 7- FEAT: Conexion a Heroku.
     1. Crear properties.
     2. Encriptar pass.
