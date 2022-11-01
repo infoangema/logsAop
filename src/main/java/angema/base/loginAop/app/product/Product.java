@@ -19,6 +19,7 @@ public class Product {
     private String seccionDosDescripcion;
     private String seccionDosSubtitulo;
     private String seccionDosItems;
+    private String productImage;
 
 
 }

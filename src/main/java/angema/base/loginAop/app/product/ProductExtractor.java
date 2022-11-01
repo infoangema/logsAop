@@ -23,7 +23,7 @@ public class ProductExtractor implements RowMapper<Product> {
         Product.setSeccionDosDescripcion(String.valueOf(rs.getString("seccion_dos_descripcion")));
         Product.setSeccionDosSubtitulo(String.valueOf(rs.getString("seccion_dos_subtitulo")));
         Product.setSeccionDosItems(String.valueOf(rs.getString("seccion_dos_items")));
-
+        Product.setProductImage(String.valueOf(rs.getString("product_image")));
         return Product;
 
 
