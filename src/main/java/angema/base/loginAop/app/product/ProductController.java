@@ -40,6 +40,14 @@ public class ProductController {
         return IOUtils.toByteArray(in);
     }
 
+    @GetMapping(value="/getImagedefaultBycuitSocio/{cuitSocio}",produces = MediaType.IMAGE_PNG_VALUE)
+    @ResponseBody
+    public  byte[] getImagedefaultBycuitSocio(@PathVariable String cuitSocio) throws IOException {
+        InputStream in = ProductController.class.getResourceAsStream("/static/"+cuitSocio+"/productos/"+"default.jpg");
+        return IOUtils.toByteArray(in);
+    }
+
+
 
     @GetMapping(value="/getAllProductsByCuit/{cuitSocio}")
     @ResponseBody
