@@ -1,6 +1,6 @@
 package angema.base.loginAop.core.exceptions;
 
-import angema.base.loginAop.core.auth.AuthException;
+//import angema.base.loginAop.core.auth.AuthException;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.utils.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +18,16 @@ public class GlobalExceptionHandler {
     @Autowired
     private DateUtil dateUtil;
 
-    @ExceptionHandler(AuthException.class)
-    public ResponseEntity<?> authException(AuthException ex, WebRequest request) {
-        GlobalResponse response = new GlobalResponse();
-        response.status = HttpStatus.UNAUTHORIZED;
-        response.path = request.getDescription(false);
-        response.timestamp = dateUtil.getDateString();
-        response.body = null;
-        response.error = ex.getMessage();
-        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
-    }
+//    @ExceptionHandler(AuthException.class)
+//    public ResponseEntity<?> authException(AuthException ex, WebRequest request) {
+//        GlobalResponse response = new GlobalResponse();
+//        response.status = HttpStatus.UNAUTHORIZED;
+//        response.path = request.getDescription(false);
+//        response.timestamp = dateUtil.getDateString();
+//        response.body = null;
+//        response.error = ex.getMessage();
+//        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+//    }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
