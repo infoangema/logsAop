@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/landing")
+@RequestMapping("/site")
 public class PartnerRedirectController {
 
     @Autowired
