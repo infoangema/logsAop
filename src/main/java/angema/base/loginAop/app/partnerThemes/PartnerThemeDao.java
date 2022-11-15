@@ -26,4 +26,27 @@ public class PartnerThemeDao {
     }
 
 
+    public PartnerTheme getThemeAndColorAndCarouselBycuit(String cuit_socio) throws Exception{
+        PartnerTheme tematica=null;
+        tematica= jdbcTemplate.queryForObject("select * from partner_themes \n"+
+                "where cuit_socio=?", new Object[] { cuit_socio }, new PartnerThemeExtractor());
+        return tematica;
+    }
+
+
+    public List<PartnerColor> obtenerListaPartnerColor(int id) throws Exception {
+        List<PartnerColor> colorList = null;
+        colorList = jdbcTemplate.query("select * from partner_color where partner_themes_id=?", new Object[] {id}, new PartnerColorExtractor());
+        return colorList;
+    }
+
+    public List<PartnerCarousel> obtenerListaPartnerCarousel(int id) throws Exception {
+        List<PartnerCarousel> carouselList = null;
+        carouselList = jdbcTemplate.query("select * from partner_carousel \n"+
+                "where partner_themes_id=?", new Object[] { id}, new PartnerCarouselExtractor());
+        return carouselList;
+    }
+
+
+
 }

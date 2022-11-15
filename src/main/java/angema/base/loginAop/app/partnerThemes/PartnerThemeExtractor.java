@@ -11,15 +11,9 @@ public class PartnerThemeExtractor  implements RowMapper<PartnerTheme> {
 
         PartnerTheme partnerTheme = new PartnerTheme();
         partnerTheme.setId(Integer.valueOf(rs.getInt("id")));
+        partnerTheme.setNombre(String.valueOf(rs.getString("nombre")));
         partnerTheme.setCuitSocio(String.valueOf(rs.getString("cuit_socio")));
-        partnerTheme.setColorPrimary(String.valueOf(rs.getString("color_primary")));
-        partnerTheme.setColorSecundary(String.valueOf(rs.getString("color_secundary")));
-        partnerTheme.setColorTertiary(String.valueOf(rs.getString("color_tertiary")));
         partnerTheme.setLogoUrl(String.valueOf(rs.getString("logo_url")));
-        partnerTheme.setCarouselImage1(String.valueOf(rs.getString("carousel_image_1")));
-        partnerTheme.setCarouselImage2(String.valueOf(rs.getString("carousel_image_2")));
-        partnerTheme.setCarouselImage3(String.valueOf(rs.getString("carousel_image_3")));
-        partnerTheme.setCarouselImage4(String.valueOf(rs.getString("carousel_image_4")));
         partnerTheme.setBgImageUrl(String.valueOf(rs.getString("bg_image_url")));
         partnerTheme.setPopUpShow(Boolean.valueOf(rs.getBoolean("pop_up_title")));
         partnerTheme.setPopUpTitle(String.valueOf(rs.getString("pop_up_title")));

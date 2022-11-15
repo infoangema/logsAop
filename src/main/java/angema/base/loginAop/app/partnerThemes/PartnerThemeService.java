@@ -20,4 +20,30 @@ public class PartnerThemeService {
         cuit_socio=partnerThemeDao.getCuitSocioByPartnerName(partnerName);
         return cuit_socio;
     }
+
+    public PartnerTheme getThemeAndColorAndCarouselBycuit(String cuit_socio) throws Exception {
+        PartnerTheme tematica=null;
+
+        tematica=partnerThemeDao.getThemeAndColorAndCarouselBycuit(cuit_socio);
+
+        //Lista colores
+        List<PartnerColor> colorList = partnerThemeDao.obtenerListaPartnerColor(tematica.getId());
+        tematica.setColorList(colorList);
+
+        //Lista carrousel
+        List<PartnerCarousel> carouselList = partnerThemeDao.obtenerListaPartnerCarousel(tematica.getId());
+        tematica.setCarouselList(carouselList);
+        //Object partnerTheme by cuit socio
+        return tematica;
+    }
+
+//    private List<PartnerColor> getPartnerColor(int id) throws Exception {
+//        List<PartnerColor> partnerColorList = partnerThemeDao.obtenerListaPartnerColor(id);
+//        return partnerColorList;
+//    }
+//    private List<PartnerCarousel> getPartnerCarousel(int  id) throws Exception {
+//        List<PartnerCarousel> partnerCarouselList = partnerThemeDao.obtenerListaPartnerCarousel(id);
+//        return partnerCarouselList;
+//    }
+
 }

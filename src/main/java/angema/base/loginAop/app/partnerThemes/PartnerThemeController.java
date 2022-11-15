@@ -32,6 +32,18 @@ public class PartnerThemeController {
      return tematica.get(0);
     }
 
+    @GetMapping("/getThemeAndColorAndCarouselBycuit/{cuitSocio}")
+    public PartnerTheme getThemeAndColorAndCarouselBycuit(@PathVariable String cuitSocio) {
+        PartnerTheme tematica=null;
+        try{
+            tematica=partnerThemeService.getThemeAndColorAndCarouselBycuit(cuitSocio);
+        }catch(Exception e){
+            logger.info("Exception PartnerThemeController getTematicaBySocio: " + e.getMessage());
+        }
+        return tematica;
+    }
+
+
     @GetMapping(value="/getLogoByCuit/{cuitSocio}",produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public  byte[] getLogo(@PathVariable String cuitSocio) throws IOException {
