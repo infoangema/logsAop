@@ -34,3 +34,4 @@ build/
 /.mvn/
 /src/main/java/angema/base/loginAop/request/
 /appmap.yml
+/src/main/resources/application-localServerDB.properties
