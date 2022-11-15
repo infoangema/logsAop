@@ -21,18 +21,18 @@ public class PartnerThemeController {
     @Autowired
     private PartnerThemeService partnerThemeService;
 
-    @GetMapping("/getThemeBycuit/{cuitSocio}")
-    public PartnerTheme getThemeBycuit(@PathVariable String cuitSocio) {
-    List<PartnerTheme>tematica=null;
-            try{
-                tematica=partnerThemeService.getThemesByPartner(cuitSocio);
-            }catch(Exception e){
-                logger.info("Exception PartnerThemeController getTematicaBySocio: " + e.getMessage());
-            }
-     return tematica.get(0);
-    }
+//    @GetMapping("/getThemeBycuit/{cuitSocio}")
+//    public PartnerTheme getThemeBycuit(@PathVariable String cuitSocio) {
+//    List<PartnerTheme>tematica=null;
+//            try{
+//                tematica=partnerThemeService.getThemesByPartner(cuitSocio);
+//            }catch(Exception e){
+//                logger.info("Exception PartnerThemeController getTematicaBySocio: " + e.getMessage());
+//            }
+//     return tematica.get(0);
+//    }
 
-    @GetMapping("/getThemeAndColorAndCarouselBycuit/{cuitSocio}")
+    @GetMapping("/getThemeBycuit/{cuitSocio}")
     public PartnerTheme getThemeAndColorAndCarouselBycuit(@PathVariable String cuitSocio) {
         PartnerTheme tematica=null;
         try{
