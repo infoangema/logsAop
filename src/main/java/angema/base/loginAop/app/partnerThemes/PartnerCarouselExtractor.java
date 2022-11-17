@@ -11,7 +11,7 @@ public class PartnerCarouselExtractor implements RowMapper<PartnerCarousel> {
 
         PartnerCarousel partnerCarousel = new PartnerCarousel();
         partnerCarousel.setId(Integer.valueOf(rs.getInt("id")));
-        partnerCarousel.setNombreCarousel(String.valueOf(rs.getString("nombre_carousel")));
+        partnerCarousel.setNombre(String.valueOf(rs.getString("nombre")));
         partnerCarousel.setUrl(String.valueOf(rs.getString("url")));
         partnerCarousel.setEstado(Boolean.valueOf(rs.getBoolean("estado")));
         partnerCarousel.setCreatedAt(String.valueOf(rs.getString("created_at")));

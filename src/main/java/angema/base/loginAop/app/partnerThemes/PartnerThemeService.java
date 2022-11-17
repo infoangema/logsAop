@@ -28,7 +28,7 @@ public class PartnerThemeService {
 
         //Lista colores
         List<PartnerColor> colorList = partnerThemeDao.obtenerListaPartnerColor(tematica.getId());
-        tematica.setColorList(colorList);
+        tematica.setColors(colorList.get(0));
 
         //Lista carrousel
         List<PartnerCarousel> carouselList = partnerThemeDao.obtenerListaPartnerCarousel(tematica.getId());

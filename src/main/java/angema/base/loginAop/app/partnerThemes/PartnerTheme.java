@@ -26,8 +26,7 @@ public class PartnerTheme {
 @Transient
     private List<PartnerCarousel> carouselList;
     @Transient
-
-    private List<PartnerColor> colorList;
+    private PartnerColor colors;
 
 
 

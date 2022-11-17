@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class PartnerCarousel {
     @Id
     private int id;
-    private String nombreCarousel;
+    private String nombre;
     private String url;
     private boolean estado;
     private String createdAt;
