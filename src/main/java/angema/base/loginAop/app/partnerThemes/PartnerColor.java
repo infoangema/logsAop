@@ -20,5 +20,9 @@ public class PartnerColor {
     private String rgbaSecondaryDark;
     private String rgbaSecondaryLight;
     private String hexaSecondary;
+    private String rgbaTertiary;
+    private String rgbaTertiaryDark;
+    private String rgbaTertiaryLight;
+    private String hexaTertiary;
     private int partnerThemesId;
 }
