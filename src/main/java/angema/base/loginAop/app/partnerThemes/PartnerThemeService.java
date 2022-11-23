@@ -17,7 +17,7 @@ public class PartnerThemeService {
 
     public String getCuitSocioByPartnerName(String partnerName) throws Exception {
         String cuit_socio="";
-        cuit_socio=partnerThemeDao.getCuitSocioByPartnerName(partnerName);
+        cuit_socio=partnerThemeDao.getCuitSocioByPartnerName(partnerName.toUpperCase());
         return cuit_socio;
     }
 

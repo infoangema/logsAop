@@ -1,0 +1,2410 @@
+{
+  "body": [
+    {
+      "id_producto": 938,
+      "codigo_producto": "CAR082",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Tecnología Protegida",
+      "planes": [
+        {
+          "codigo_plan": "D",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "891",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "4",
+                  "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "58100"
+                },
+                {
+                  "codigo_riesgo": "5",
+                  "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "58100"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "B",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "629",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "5",
+                  "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "41700"
+                },
+                {
+                  "codigo_riesgo": "4",
+                  "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "41700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "C",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "766",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "4",
+                  "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "50300"
+                },
+                {
+                  "codigo_riesgo": "5",
+                  "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "50300"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "E",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "1069",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "4",
+                  "descipcion_riesgo": "Daño de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "69700"
+                },
+                {
+                  "codigo_riesgo": "5",
+                  "descipcion_riesgo": "Robo de Pequeños Electrónicos           ",
+                  "suma_asegurada_riesgo": "69700"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 3,
+          "descripcion_medio_pago": "DINERS"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1107,
+      "codigo_producto": "CAR048",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Salud",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-44",
+              "precio": "668.64",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "305",
+                  "descipcion_riesgo": "Renta Diaria Hosp (Alt A)",
+                  "suma_asegurada_riesgo": "619920"
+                },
+                {
+                  "codigo_riesgo": "301",
+                  "descipcion_riesgo": "Cancer",
+                  "suma_asegurada_riesgo": "326760"
+                }
+              ]
+            },
+            {
+              "codigo_etario": "4",
+              "descripcion_rango_etario": "55-64",
+              "precio": "1644.72",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "305",
+                  "descipcion_riesgo": "Renta Diaria Hosp (Alt A)",
+                  "suma_asegurada_riesgo": "619920"
+                },
+                {
+                  "codigo_riesgo": "301",
+                  "descipcion_riesgo": "Cancer",
+                  "suma_asegurada_riesgo": "326760"
+                }
+              ]
+            },
+            {
+              "codigo_etario": "3",
+              "descripcion_rango_etario": "45-54",
+              "precio": "1159.2",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "305",
+                  "descipcion_riesgo": "Renta Diaria Hosp (Alt A)",
+                  "suma_asegurada_riesgo": "619920"
+                },
+                {
+                  "codigo_riesgo": "301",
+                  "descipcion_riesgo": "Cancer",
+                  "suma_asegurada_riesgo": "326760"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 937,
+      "codigo_producto": "CAR081",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Bolso Protegido",
+      "planes": [
+        {
+          "codigo_plan": "F",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-79",
+              "precio": "941",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "907",
+                  "descipcion_riesgo": "Robo de llaves y cerradura",
+                  "suma_asegurada_riesgo": "15960"
+                },
+                {
+                  "codigo_riesgo": "227",
+                  "descipcion_riesgo": "Muerte por Accidente Ind",
+                  "suma_asegurada_riesgo": "246960"
+                },
+                {
+                  "codigo_riesgo": "904",
+                  "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                  "suma_asegurada_riesgo": "99960"
+                },
+                {
+                  "codigo_riesgo": "905",
+                  "descipcion_riesgo": "Robo de los documentos",
+                  "suma_asegurada_riesgo": "15960"
+                },
+                {
+                  "codigo_riesgo": "980",
+                  "descipcion_riesgo": "Cargo Fraudulento",
+                  "suma_asegurada_riesgo": "39480"
+                },
+                {
+                  "codigo_riesgo": "981",
+                  "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                  "suma_asegurada_riesgo": "39480"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "E",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-79",
+              "precio": "755",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "907",
+                  "descipcion_riesgo": "Robo de llaves y cerradura",
+                  "suma_asegurada_riesgo": "12840"
+                },
+                {
+                  "codigo_riesgo": "981",
+                  "descipcion_riesgo": "Robo en cajero automáticos por protección integral.",
+                  "suma_asegurada_riesgo": "31680"
+                },
+                {
+                  "codigo_riesgo": "227",
+                  "descipcion_riesgo": "Muerte por Accidente Ind",
+                  "suma_asegurada_riesgo": "196896"
+                },
+                {
+                  "codigo_riesgo": "905",
+                  "descipcion_riesgo": "Robo de los documentos",
+                  "suma_asegurada_riesgo": "12840"
+                },
+                {
+                  "codigo_riesgo": "980",
+                  "descipcion_riesgo": "Cargo Fraudulento",
+                  "suma_asegurada_riesgo": "31680"
+                },
+                {
+                  "codigo_riesgo": "904",
+                  "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                  "suma_asegurada_riesgo": "80040"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 1,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 3,
+          "descripcion_medio_pago": "DINERS"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 21,
+          "descripcion_medio_pago": "CREDENCIAL"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 961,
+      "codigo_producto": "CAR084",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Protección Total",
+      "planes": [
+        {
+          "codigo_plan": "D",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-79",
+              "precio": "840",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "904",
+                  "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                  "suma_asegurada_riesgo": "38520"
+                },
+                {
+                  "codigo_riesgo": "902",
+                  "descipcion_riesgo": "Cobertura de daño accidental\r\n",
+                  "suma_asegurada_riesgo": "235680"
+                },
+                {
+                  "codigo_riesgo": "901",
+                  "descipcion_riesgo": "Cobertura de robo\r\n",
+                  "suma_asegurada_riesgo": "235680"
+                },
+                {
+                  "codigo_riesgo": "906",
+                  "descipcion_riesgo": "Robo de la tarjeta",
+                  "suma_asegurada_riesgo": "25440"
+                },
+                {
+                  "codigo_riesgo": "905",
+                  "descipcion_riesgo": "Robo de los documentos",
+                  "suma_asegurada_riesgo": "25440"
+                },
+                {
+                  "codigo_riesgo": "907",
+                  "descipcion_riesgo": "Robo de llaves y cerradura",
+                  "suma_asegurada_riesgo": "25440"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "C",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-79",
+              "precio": "586",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "904",
+                  "descipcion_riesgo": "Robo de Cartera, Mochila, Riñonera, Billetera y su",
+                  "suma_asegurada_riesgo": "29400"
+                },
+                {
+                  "codigo_riesgo": "907",
+                  "descipcion_riesgo": "Robo de llaves y cerradura",
+                  "suma_asegurada_riesgo": "19680"
+                },
+                {
+                  "codigo_riesgo": "902",
+                  "descipcion_riesgo": "Cobertura de daño accidental\r\n",
+                  "suma_asegurada_riesgo": "165240"
+                },
+                {
+                  "codigo_riesgo": "901",
+                  "descipcion_riesgo": "Cobertura de robo\r\n",
+                  "suma_asegurada_riesgo": "165240"
+                },
+                {
+                  "codigo_riesgo": "905",
+                  "descipcion_riesgo": "Robo de los documentos",
+                  "suma_asegurada_riesgo": "19680"
+                },
+                {
+                  "codigo_riesgo": "906",
+                  "descipcion_riesgo": "Robo de la tarjeta",
+                  "suma_asegurada_riesgo": "19680"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 3,
+          "descripcion_medio_pago": "DINERS"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 465,
+      "codigo_producto": "CAR014",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Accidentes Personales ",
+      "planes": [
+        {
+          "codigo_plan": "D",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-79",
+              "precio": "1155.84",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "201",
+                  "descipcion_riesgo": "Muerte por Accidente",
+                  "suma_asegurada_riesgo": "3726576"
+                },
+                {
+                  "codigo_riesgo": "202",
+                  "descipcion_riesgo": "Muerte Accidente de Transito",
+                  "suma_asegurada_riesgo": "1945440"
+                },
+                {
+                  "codigo_riesgo": "222",
+                  "descipcion_riesgo": "Cuidados prologandos por accidente (No retroactiva",
+                  "suma_asegurada_riesgo": "385056"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "B",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-79",
+              "precio": "986.16",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "222",
+                  "descipcion_riesgo": "Cuidados prologandos por accidente (No retroactiva",
+                  "suma_asegurada_riesgo": "324576"
+                },
+                {
+                  "codigo_riesgo": "201",
+                  "descipcion_riesgo": "Muerte por Accidente",
+                  "suma_asegurada_riesgo": "3240384"
+                },
+                {
+                  "codigo_riesgo": "202",
+                  "descipcion_riesgo": "Muerte Accidente de Transito",
+                  "suma_asegurada_riesgo": "1621704"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "C",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-79",
+              "precio": "756",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "222",
+                  "descipcion_riesgo": "Cuidados prologandos por accidente (No retroactiva",
+                  "suma_asegurada_riesgo": "274176"
+                },
+                {
+                  "codigo_riesgo": "201",
+                  "descipcion_riesgo": "Muerte por Accidente",
+                  "suma_asegurada_riesgo": "2430624"
+                },
+                {
+                  "codigo_riesgo": "202",
+                  "descipcion_riesgo": "Muerte Accidente de Transito",
+                  "suma_asegurada_riesgo": "1218000"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 1,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 3,
+          "descripcion_medio_pago": "DINERS"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1102,
+      "codigo_producto": "CAR095",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Ecosistema Empleabilidad",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-64",
+              "precio": "1160",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "20",
+                  "descipcion_riesgo": "Desempleo por generales                 ",
+                  "suma_asegurada_riesgo": "68040"
+                },
+                {
+                  "codigo_riesgo": "970",
+                  "descipcion_riesgo": "INVALIDEZ TOTAL Y TEMPORAL",
+                  "suma_asegurada_riesgo": "78360"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 1,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1110,
+      "codigo_producto": "CAR051",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Vida Temporal",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "3",
+              "descripcion_rango_etario": "35-50",
+              "precio": "996.24",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "401",
+                  "descipcion_riesgo": "Fallecimiento",
+                  "suma_asegurada_riesgo": "682920"
+                },
+                {
+                  "codigo_riesgo": "202",
+                  "descipcion_riesgo": "Muerte Accidente de Transito",
+                  "suma_asegurada_riesgo": "682920"
+                }
+              ]
+            },
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-34",
+              "precio": "685.44",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "401",
+                  "descipcion_riesgo": "Fallecimiento",
+                  "suma_asegurada_riesgo": "682920"
+                },
+                {
+                  "codigo_riesgo": "202",
+                  "descipcion_riesgo": "Muerte Accidente de Transito",
+                  "suma_asegurada_riesgo": "682920"
+                }
+              ]
+            },
+            {
+              "codigo_etario": "4",
+              "descripcion_rango_etario": "51-65",
+              "precio": "1396.08",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "401",
+                  "descipcion_riesgo": "Fallecimiento",
+                  "suma_asegurada_riesgo": "682920"
+                },
+                {
+                  "codigo_riesgo": "202",
+                  "descipcion_riesgo": "Muerte Accidente de Transito",
+                  "suma_asegurada_riesgo": "682920"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 1,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1108,
+      "codigo_producto": "CAR049",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Salud en Mujeres ",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-44",
+              "precio": "589.68",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "301",
+                  "descipcion_riesgo": "Cancer",
+                  "suma_asegurada_riesgo": "489048"
+                }
+              ]
+            },
+            {
+              "codigo_etario": "4",
+              "descripcion_rango_etario": "55-64",
+              "precio": "1478.4",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "301",
+                  "descipcion_riesgo": "Cancer",
+                  "suma_asegurada_riesgo": "489048"
+                }
+              ]
+            },
+            {
+              "codigo_etario": "3",
+              "descripcion_rango_etario": "45-54",
+              "precio": "996.24",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "301",
+                  "descipcion_riesgo": "Cancer",
+                  "suma_asegurada_riesgo": "489048"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1109,
+      "codigo_producto": "CAR050",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Protección Mayor",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "55-79",
+              "precio": "601.44",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "401",
+                  "descipcion_riesgo": "Fallecimiento",
+                  "suma_asegurada_riesgo": "100800"
+                },
+                {
+                  "codigo_riesgo": "222",
+                  "descipcion_riesgo": "Cuidados prologandos por accidente (No retroactiva",
+                  "suma_asegurada_riesgo": "324576"
+                },
+                {
+                  "codigo_riesgo": "201",
+                  "descipcion_riesgo": "Muerte por Accidente",
+                  "suma_asegurada_riesgo": "196896"
+                },
+                {
+                  "codigo_riesgo": "202",
+                  "descipcion_riesgo": "Muerte Accidente de Transito",
+                  "suma_asegurada_riesgo": "100800"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1077,
+      "codigo_producto": "CAR093",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Hogar",
+      "planes": [
+        {
+          "codigo_plan": "D",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "1669",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "11",
+                  "descipcion_riesgo": "Remoción de Escombros                   ",
+                  "suma_asegurada_riesgo": "162610"
+                },
+                {
+                  "codigo_riesgo": "951",
+                  "descipcion_riesgo": "Incendio de Edificio a Primer Riesgo",
+                  "suma_asegurada_riesgo": "3226210"
+                },
+                {
+                  "codigo_riesgo": "26",
+                  "descipcion_riesgo": "Vivienda vacacional                     ",
+                  "suma_asegurada_riesgo": "2814970"
+                },
+                {
+                  "codigo_riesgo": "810",
+                  "descipcion_riesgo": "Accidentes Personales",
+                  "suma_asegurada_riesgo": "1109865"
+                },
+                {
+                  "codigo_riesgo": "12",
+                  "descipcion_riesgo": "Gastos de Alojamiento                   ",
+                  "suma_asegurada_riesgo": "162610"
+                },
+                {
+                  "codigo_riesgo": "953",
+                  "descipcion_riesgo": "Incendio de Contenido",
+                  "suma_asegurada_riesgo": "968760"
+                },
+                {
+                  "codigo_riesgo": "10",
+                  "descipcion_riesgo": "Robo en Republica Argentina y P. L.     ",
+                  "suma_asegurada_riesgo": "12650"
+                },
+                {
+                  "codigo_riesgo": "13",
+                  "descipcion_riesgo": "Gastos de Limpieza                      ",
+                  "suma_asegurada_riesgo": "50140"
+                },
+                {
+                  "codigo_riesgo": "28",
+                  "descipcion_riesgo": "Granizo                                 ",
+                  "suma_asegurada_riesgo": "3226210"
+                },
+                {
+                  "codigo_riesgo": "8",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Contenido  ",
+                  "suma_asegurada_riesgo": "194580"
+                },
+                {
+                  "codigo_riesgo": "15",
+                  "descipcion_riesgo": "Robo Hurto contenido general            ",
+                  "suma_asegurada_riesgo": "123510"
+                },
+                {
+                  "codigo_riesgo": "29",
+                  "descipcion_riesgo": "Huracán, Ciclón, Vendaval, Tornado      ",
+                  "suma_asegurada_riesgo": "3226210"
+                },
+                {
+                  "codigo_riesgo": "25",
+                  "descipcion_riesgo": "Robo efectivo                           ",
+                  "suma_asegurada_riesgo": "3335"
+                },
+                {
+                  "codigo_riesgo": "6",
+                  "descipcion_riesgo": "Alimentos en Freezer                    ",
+                  "suma_asegurada_riesgo": "11040"
+                },
+                {
+                  "codigo_riesgo": "7",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Edificio   ",
+                  "suma_asegurada_riesgo": "323495"
+                },
+                {
+                  "codigo_riesgo": "16",
+                  "descipcion_riesgo": "Todo riesgo electrodoméstico            ",
+                  "suma_asegurada_riesgo": "121785"
+                },
+                {
+                  "codigo_riesgo": "18",
+                  "descipcion_riesgo": "AP Personal Domestico                   ",
+                  "suma_asegurada_riesgo": "1109865"
+                },
+                {
+                  "codigo_riesgo": "9",
+                  "descipcion_riesgo": "Daños Esteticos por Robo                ",
+                  "suma_asegurada_riesgo": "12650"
+                },
+                {
+                  "codigo_riesgo": "17",
+                  "descipcion_riesgo": "Cristales                               ",
+                  "suma_asegurada_riesgo": "17480"
+                },
+                {
+                  "codigo_riesgo": "19",
+                  "descipcion_riesgo": "Responsabilidad Civil",
+                  "suma_asegurada_riesgo": "1109865"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "B",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "805",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "7",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Edificio   ",
+                  "suma_asegurada_riesgo": "162610"
+                },
+                {
+                  "codigo_riesgo": "29",
+                  "descipcion_riesgo": "Huracán, Ciclón, Vendaval, Tornado      ",
+                  "suma_asegurada_riesgo": "1614140"
+                },
+                {
+                  "codigo_riesgo": "951",
+                  "descipcion_riesgo": "Incendio de Edificio a Primer Riesgo",
+                  "suma_asegurada_riesgo": "1614140"
+                },
+                {
+                  "codigo_riesgo": "10",
+                  "descipcion_riesgo": "Robo en Republica Argentina y P. L.     ",
+                  "suma_asegurada_riesgo": "6785"
+                },
+                {
+                  "codigo_riesgo": "19",
+                  "descipcion_riesgo": "Responsabilidad Civil",
+                  "suma_asegurada_riesgo": "555450"
+                },
+                {
+                  "codigo_riesgo": "810",
+                  "descipcion_riesgo": "Accidentes Personales",
+                  "suma_asegurada_riesgo": "555450"
+                },
+                {
+                  "codigo_riesgo": "13",
+                  "descipcion_riesgo": "Gastos de Limpieza                      ",
+                  "suma_asegurada_riesgo": "25875"
+                },
+                {
+                  "codigo_riesgo": "17",
+                  "descipcion_riesgo": "Cristales                               ",
+                  "suma_asegurada_riesgo": "9660"
+                },
+                {
+                  "codigo_riesgo": "12",
+                  "descipcion_riesgo": "Gastos de Alojamiento                   ",
+                  "suma_asegurada_riesgo": "81800"
+                },
+                {
+                  "codigo_riesgo": "28",
+                  "descipcion_riesgo": "Granizo                                 ",
+                  "suma_asegurada_riesgo": "1614140"
+                },
+                {
+                  "codigo_riesgo": "8",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Contenido  ",
+                  "suma_asegurada_riesgo": "97865"
+                },
+                {
+                  "codigo_riesgo": "6",
+                  "descipcion_riesgo": "Alimentos en Freezer                    ",
+                  "suma_asegurada_riesgo": "6210"
+                },
+                {
+                  "codigo_riesgo": "9",
+                  "descipcion_riesgo": "Daños Esteticos por Robo                ",
+                  "suma_asegurada_riesgo": "6785"
+                },
+                {
+                  "codigo_riesgo": "15",
+                  "descipcion_riesgo": "Robo Hurto contenido general            ",
+                  "suma_asegurada_riesgo": "62790"
+                },
+                {
+                  "codigo_riesgo": "16",
+                  "descipcion_riesgo": "Todo riesgo electrodoméstico            ",
+                  "suma_asegurada_riesgo": "61180"
+                },
+                {
+                  "codigo_riesgo": "25",
+                  "descipcion_riesgo": "Robo efectivo                           ",
+                  "suma_asegurada_riesgo": "2645"
+                },
+                {
+                  "codigo_riesgo": "11",
+                  "descipcion_riesgo": "Remoción de Escombros                   ",
+                  "suma_asegurada_riesgo": "81800"
+                },
+                {
+                  "codigo_riesgo": "18",
+                  "descipcion_riesgo": "AP Personal Domestico                   ",
+                  "suma_asegurada_riesgo": "555450"
+                },
+                {
+                  "codigo_riesgo": "953",
+                  "descipcion_riesgo": "Incendio de Contenido",
+                  "suma_asegurada_riesgo": "485300"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "F",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "2635",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "10",
+                  "descipcion_riesgo": "Robo en Republica Argentina y P. L.     ",
+                  "suma_asegurada_riesgo": "20700"
+                },
+                {
+                  "codigo_riesgo": "11",
+                  "descipcion_riesgo": "Remoción de Escombros                   ",
+                  "suma_asegurada_riesgo": "257715"
+                },
+                {
+                  "codigo_riesgo": "15",
+                  "descipcion_riesgo": "Robo Hurto contenido general            ",
+                  "suma_asegurada_riesgo": "195960"
+                },
+                {
+                  "codigo_riesgo": "810",
+                  "descipcion_riesgo": "Accidentes Personales",
+                  "suma_asegurada_riesgo": "1757890"
+                },
+                {
+                  "codigo_riesgo": "9",
+                  "descipcion_riesgo": "Daños Esteticos por Robo                ",
+                  "suma_asegurada_riesgo": "20700"
+                },
+                {
+                  "codigo_riesgo": "17",
+                  "descipcion_riesgo": "Cristales                               ",
+                  "suma_asegurada_riesgo": "27600"
+                },
+                {
+                  "codigo_riesgo": "19",
+                  "descipcion_riesgo": "Responsabilidad Civil",
+                  "suma_asegurada_riesgo": "1757890"
+                },
+                {
+                  "codigo_riesgo": "25",
+                  "descipcion_riesgo": "Robo efectivo                           ",
+                  "suma_asegurada_riesgo": "5635"
+                },
+                {
+                  "codigo_riesgo": "6",
+                  "descipcion_riesgo": "Alimentos en Freezer                    ",
+                  "suma_asegurada_riesgo": "15755"
+                },
+                {
+                  "codigo_riesgo": "12",
+                  "descipcion_riesgo": "Gastos de Alojamiento                   ",
+                  "suma_asegurada_riesgo": "257715"
+                },
+                {
+                  "codigo_riesgo": "16",
+                  "descipcion_riesgo": "Todo riesgo electrodoméstico            ",
+                  "suma_asegurada_riesgo": "192740"
+                },
+                {
+                  "codigo_riesgo": "8",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Contenido  ",
+                  "suma_asegurada_riesgo": "308085"
+                },
+                {
+                  "codigo_riesgo": "13",
+                  "descipcion_riesgo": "Gastos de Limpieza                      ",
+                  "suma_asegurada_riesgo": "79695"
+                },
+                {
+                  "codigo_riesgo": "18",
+                  "descipcion_riesgo": "AP Personal Domestico                   ",
+                  "suma_asegurada_riesgo": "1757890"
+                },
+                {
+                  "codigo_riesgo": "29",
+                  "descipcion_riesgo": "Huracán, Ciclón, Vendaval, Tornado      ",
+                  "suma_asegurada_riesgo": "5110255"
+                },
+                {
+                  "codigo_riesgo": "28",
+                  "descipcion_riesgo": "Granizo                                 ",
+                  "suma_asegurada_riesgo": "5110255"
+                },
+                {
+                  "codigo_riesgo": "26",
+                  "descipcion_riesgo": "Vivienda vacacional                     ",
+                  "suma_asegurada_riesgo": "4455215"
+                },
+                {
+                  "codigo_riesgo": "953",
+                  "descipcion_riesgo": "Incendio de Contenido",
+                  "suma_asegurada_riesgo": "1534675"
+                },
+                {
+                  "codigo_riesgo": "7",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Edificio   ",
+                  "suma_asegurada_riesgo": "512785"
+                },
+                {
+                  "codigo_riesgo": "951",
+                  "descipcion_riesgo": "Incendio de Edificio a Primer Riesgo",
+                  "suma_asegurada_riesgo": "5110255"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "C",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "1134",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "15",
+                  "descipcion_riesgo": "Robo Hurto contenido general            ",
+                  "suma_asegurada_riesgo": "86825"
+                },
+                {
+                  "codigo_riesgo": "16",
+                  "descipcion_riesgo": "Todo riesgo electrodoméstico            ",
+                  "suma_asegurada_riesgo": "85445"
+                },
+                {
+                  "codigo_riesgo": "25",
+                  "descipcion_riesgo": "Robo efectivo                           ",
+                  "suma_asegurada_riesgo": "3220"
+                },
+                {
+                  "codigo_riesgo": "810",
+                  "descipcion_riesgo": "Accidentes Personales",
+                  "suma_asegurada_riesgo": "777630"
+                },
+                {
+                  "codigo_riesgo": "951",
+                  "descipcion_riesgo": "Incendio de Edificio a Primer Riesgo",
+                  "suma_asegurada_riesgo": "2259290"
+                },
+                {
+                  "codigo_riesgo": "8",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Contenido  ",
+                  "suma_asegurada_riesgo": "136505"
+                },
+                {
+                  "codigo_riesgo": "10",
+                  "descipcion_riesgo": "Robo en Republica Argentina y P. L.     ",
+                  "suma_asegurada_riesgo": "10120"
+                },
+                {
+                  "codigo_riesgo": "17",
+                  "descipcion_riesgo": "Cristales                               ",
+                  "suma_asegurada_riesgo": "13340"
+                },
+                {
+                  "codigo_riesgo": "953",
+                  "descipcion_riesgo": "Incendio de Contenido",
+                  "suma_asegurada_riesgo": "678845"
+                },
+                {
+                  "codigo_riesgo": "9",
+                  "descipcion_riesgo": "Daños Esteticos por Robo                ",
+                  "suma_asegurada_riesgo": "10120"
+                },
+                {
+                  "codigo_riesgo": "19",
+                  "descipcion_riesgo": "Responsabilidad Civil",
+                  "suma_asegurada_riesgo": "777630"
+                },
+                {
+                  "codigo_riesgo": "11",
+                  "descipcion_riesgo": "Remoción de Escombros                   ",
+                  "suma_asegurada_riesgo": "114310"
+                },
+                {
+                  "codigo_riesgo": "12",
+                  "descipcion_riesgo": "Gastos de Alojamiento                   ",
+                  "suma_asegurada_riesgo": "114310"
+                },
+                {
+                  "codigo_riesgo": "7",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Edificio   ",
+                  "suma_asegurada_riesgo": "226780"
+                },
+                {
+                  "codigo_riesgo": "13",
+                  "descipcion_riesgo": "Gastos de Limpieza                      ",
+                  "suma_asegurada_riesgo": "35535"
+                },
+                {
+                  "codigo_riesgo": "18",
+                  "descipcion_riesgo": "AP Personal Domestico                   ",
+                  "suma_asegurada_riesgo": "777630"
+                },
+                {
+                  "codigo_riesgo": "28",
+                  "descipcion_riesgo": "Granizo                                 ",
+                  "suma_asegurada_riesgo": "2259290"
+                },
+                {
+                  "codigo_riesgo": "29",
+                  "descipcion_riesgo": "Huracán, Ciclón, Vendaval, Tornado      ",
+                  "suma_asegurada_riesgo": "2259290"
+                },
+                {
+                  "codigo_riesgo": "6",
+                  "descipcion_riesgo": "Alimentos en Freezer                    ",
+                  "suma_asegurada_riesgo": "8165"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "E",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "2197",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "12",
+                  "descipcion_riesgo": "Gastos de Alojamiento                   ",
+                  "suma_asegurada_riesgo": "214820"
+                },
+                {
+                  "codigo_riesgo": "13",
+                  "descipcion_riesgo": "Gastos de Limpieza                      ",
+                  "suma_asegurada_riesgo": "66470"
+                },
+                {
+                  "codigo_riesgo": "953",
+                  "descipcion_riesgo": "Incendio de Contenido",
+                  "suma_asegurada_riesgo": "1278915"
+                },
+                {
+                  "codigo_riesgo": "28",
+                  "descipcion_riesgo": "Granizo                                 ",
+                  "suma_asegurada_riesgo": "4258565"
+                },
+                {
+                  "codigo_riesgo": "10",
+                  "descipcion_riesgo": "Robo en Republica Argentina y P. L.     ",
+                  "suma_asegurada_riesgo": "17250"
+                },
+                {
+                  "codigo_riesgo": "18",
+                  "descipcion_riesgo": "AP Personal Domestico                   ",
+                  "suma_asegurada_riesgo": "1464870"
+                },
+                {
+                  "codigo_riesgo": "29",
+                  "descipcion_riesgo": "Huracán, Ciclón, Vendaval, Tornado      ",
+                  "suma_asegurada_riesgo": "4258565"
+                },
+                {
+                  "codigo_riesgo": "6",
+                  "descipcion_riesgo": "Alimentos en Freezer                    ",
+                  "suma_asegurada_riesgo": "14835"
+                },
+                {
+                  "codigo_riesgo": "7",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Edificio   ",
+                  "suma_asegurada_riesgo": "427340"
+                },
+                {
+                  "codigo_riesgo": "17",
+                  "descipcion_riesgo": "Cristales                               ",
+                  "suma_asegurada_riesgo": "23000"
+                },
+                {
+                  "codigo_riesgo": "19",
+                  "descipcion_riesgo": "Responsabilidad Civil",
+                  "suma_asegurada_riesgo": "1464870"
+                },
+                {
+                  "codigo_riesgo": "9",
+                  "descipcion_riesgo": "Daños Esteticos por Robo                ",
+                  "suma_asegurada_riesgo": "17250"
+                },
+                {
+                  "codigo_riesgo": "11",
+                  "descipcion_riesgo": "Remoción de Escombros                   ",
+                  "suma_asegurada_riesgo": "214820"
+                },
+                {
+                  "codigo_riesgo": "810",
+                  "descipcion_riesgo": "Accidentes Personales",
+                  "suma_asegurada_riesgo": "1464870"
+                },
+                {
+                  "codigo_riesgo": "15",
+                  "descipcion_riesgo": "Robo Hurto contenido general            ",
+                  "suma_asegurada_riesgo": "163300"
+                },
+                {
+                  "codigo_riesgo": "25",
+                  "descipcion_riesgo": "Robo efectivo                           ",
+                  "suma_asegurada_riesgo": "4715"
+                },
+                {
+                  "codigo_riesgo": "8",
+                  "descipcion_riesgo": "Daños Esteticos por Incendio Contenido  ",
+                  "suma_asegurada_riesgo": "256680"
+                },
+                {
+                  "codigo_riesgo": "16",
+                  "descipcion_riesgo": "Todo riesgo electrodoméstico            ",
+                  "suma_asegurada_riesgo": "160655"
+                },
+                {
+                  "codigo_riesgo": "26",
+                  "descipcion_riesgo": "Vivienda vacacional                     ",
+                  "suma_asegurada_riesgo": "3717145"
+                },
+                {
+                  "codigo_riesgo": "951",
+                  "descipcion_riesgo": "Incendio de Edificio a Primer Riesgo",
+                  "suma_asegurada_riesgo": "4258565"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        }
+      ]
+    },
+    {
+      "id_producto": 1014,
+      "codigo_producto": "CAR090",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 1,
+      "producto_descripcion": "Consumo Garantizado",
+      "planes": [
+        {
+          "codigo_plan": "D",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-64",
+              "precio": "591",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "20",
+                  "descipcion_riesgo": "Desempleo por generales                 ",
+                  "suma_asegurada_riesgo": "67080"
+                },
+                {
+                  "codigo_riesgo": "970",
+                  "descipcion_riesgo": "INVALIDEZ TOTAL Y TEMPORAL",
+                  "suma_asegurada_riesgo": "67080"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "C",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-64",
+              "precio": "591",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "20",
+                  "descipcion_riesgo": "Desempleo por generales                 ",
+                  "suma_asegurada_riesgo": "67080"
+                },
+                {
+                  "codigo_riesgo": "970",
+                  "descipcion_riesgo": "INVALIDEZ TOTAL Y TEMPORAL",
+                  "suma_asegurada_riesgo": "67080"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "codigo_plan": "E",
+          "id_plan": "0",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-64",
+              "precio": "718",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "970",
+                  "descipcion_riesgo": "INVALIDEZ TOTAL Y TEMPORAL",
+                  "suma_asegurada_riesgo": "81600"
+                },
+                {
+                  "codigo_riesgo": "20",
+                  "descipcion_riesgo": "Desempleo por generales                 ",
+                  "suma_asegurada_riesgo": "81600"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 1,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 3,
+          "descripcion_medio_pago": "DINERS"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 45,
+          "descripcion_medio_pago": "TARJETA AURA ACEPTADOS"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1095,
+      "codigo_producto": "ACAR28",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Salud Full Familiar APPS",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "792",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "C371",
+                  "descipcion_riesgo": "Telemedicina",
+                  "suma_asegurada_riesgo": "4 eventos por mes"
+                },
+                {
+                  "codigo_riesgo": "C3710",
+                  "descipcion_riesgo": "Servicio de Enfermería",
+                  "suma_asegurada_riesgo": "31262"
+                },
+                {
+                  "codigo_riesgo": "C3711",
+                  "descipcion_riesgo": "Acompañante Nocturno en caso de internación",
+                  "suma_asegurada_riesgo": "31262"
+                },
+                {
+                  "codigo_riesgo": "C3712",
+                  "descipcion_riesgo": "Taxi o Remis para el traslados",
+                  "suma_asegurada_riesgo": "17052"
+                },
+                {
+                  "codigo_riesgo": "C3713",
+                  "descipcion_riesgo": "Recordatorio de toma de Medicamentos",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3714",
+                  "descipcion_riesgo": "Coordinación de servicio de enfermería",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3715",
+                  "descipcion_riesgo": "Información de centros de salud especializados",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3716",
+                  "descipcion_riesgo": "Información de farmacia con delivery",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C372",
+                  "descipcion_riesgo": "Código Rojo",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C373",
+                  "descipcion_riesgo": "Código Amarillo",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C374",
+                  "descipcion_riesgo": "Medico a Domicilio",
+                  "suma_asegurada_riesgo": "8 eventos por año"
+                },
+                {
+                  "codigo_riesgo": "C375",
+                  "descipcion_riesgo": "Asistencia Odontológica - Urgencias",
+                  "suma_asegurada_riesgo": "10150"
+                },
+                {
+                  "codigo_riesgo": "C376",
+                  "descipcion_riesgo": "Chequeo Medico ( Análisis Primarios de Sangre ;  Análisis Primarios de Orina ; Radiografía de Tórax;  Electrocardiograma Revisión Médica Completa in situ.",
+                  "suma_asegurada_riesgo": "22330"
+                },
+                {
+                  "codigo_riesgo": "C377",
+                  "descipcion_riesgo": "Kinesiología",
+                  "suma_asegurada_riesgo": "28420"
+                },
+                {
+                  "codigo_riesgo": "C378",
+                  "descipcion_riesgo": "Descuento en Farmacias",
+                  "suma_asegurada_riesgo": "24360"
+                },
+                {
+                  "codigo_riesgo": "C379",
+                  "descipcion_riesgo": "Ortopedias y Ópticas",
+                  "suma_asegurada_riesgo": "8526"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1092,
+      "codigo_producto": "ACAR25",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Hogar Premium APPS",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "589",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "C341",
+                  "descipcion_riesgo": "Servicios de Plomería - Asistencia destinada a la reparación de rotura de cañerías a la vista, llaves u otras instalaciones fijas de agua de la vivienda beneficiada.",
+                  "suma_asegurada_riesgo": "15225"
+                },
+                {
+                  "codigo_riesgo": "C342",
+                  "descipcion_riesgo": "Servicios de Cerrajería - Asistencia destinada a la apertura y/o reparación y el correcto funcionamiento de la cerradura. En caso de pérdida, extravío o robo de llaves o inutilización de cerraduras por otra causa accidental y que haga imposible el acceso a la vivienda por no existir otras soluciones alternativas. También incluye la apertura de todas las puertas y cambio de cerraduras internas del domicilio. Reparación de la cerradura y reposición de llaves.",
+                  "suma_asegurada_riesgo": "15225"
+                },
+                {
+                  "codigo_riesgo": "C343",
+                  "descipcion_riesgo": "Servicios de Electricidad - Restablecimiento del servicio de energía eléctrica por causa de un corte total o en alguna de sus dependencias, producida como consecuencia de una falla o avería de las instalaciones eléctricas de la misma. Siempre y cuando el estado de la estructura lo permita.También incluye la Revisión e instalación eléctrica, instalación de extractores en cocina y baños. Cambios de enchufes, teclas de encendido y apagado.Instalación de lámparas, apliques, plafones, bombillas, tubos y luminarias led.",
+                  "suma_asegurada_riesgo": "15225"
+                },
+                {
+                  "codigo_riesgo": "C344",
+                  "descipcion_riesgo": "Servicios de Vidriería - Cobertura de vidrios y espejos, en caso de rotura o rajadura. La cobertura aplica a piezas vítreas en posición vertical, instalados en cualquier lugar del domicilio.",
+                  "suma_asegurada_riesgo": "15225"
+                },
+                {
+                  "codigo_riesgo": "C345",
+                  "descipcion_riesgo": "Servicios de Gas - En caso de fuga de gas en la vivienda declarada se enviará a un técnico especializado para que haga una verificación y elimine la fuga.",
+                  "suma_asegurada_riesgo": "15225"
+                },
+                {
+                  "codigo_riesgo": "C346",
+                  "descipcion_riesgo": "Servicios de Mantenimiento - Incluye visita y presupuesto de pinturería, albañilería. También incluye el control de plagas hasta el tope detallado.",
+                  "suma_asegurada_riesgo": "5075"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1073,
+      "codigo_producto": "ACAR16",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Salud Full Familiar - TMK",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "546"
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 27,
+          "descripcion_medio_pago": "CABAL"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1093,
+      "codigo_producto": "ACAR26",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Mascotas Low APPS",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "508",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "C351",
+                  "descipcion_riesgo": "Phono Med Veterinario - En caso que la mascota lo necesite podrás realizar una consulta telefónica con un veterinario al 0800-333-0957",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3510",
+                  "descipcion_riesgo": "Gastos de traslados por urgencias - En caso de que la mascota requiera un traslado de urgencia, se coordinara el mismo y/o sufragara los gastos según el tope establecido.",
+                  "suma_asegurada_riesgo": "4060"
+                },
+                {
+                  "codigo_riesgo": "C3511",
+                  "descipcion_riesgo": "Aseo de Mascotas por hospitalización del beneficiario - En caso de internación del dueño de la mascota (beneficiario), se cubrirán los gastos de aseo de la mascota, según tope establecido.",
+                  "suma_asegurada_riesgo": "3045"
+                },
+                {
+                  "codigo_riesgo": "C3512",
+                  "descipcion_riesgo": "Cremación - Como consecuencia del fallecimiento de la mascota, se coordinará y cubrirá los costos de cremación",
+                  "suma_asegurada_riesgo": "-"
+                },
+                {
+                  "codigo_riesgo": "C352",
+                  "descipcion_riesgo": "Atención Veterinaria (Urgencia y Programada) - En caso que la mascota lo necesite podrás realizar  una consulta con un veterinario, previamente contactándote al 0800-333-0957",
+                  "suma_asegurada_riesgo": "4060"
+                },
+                {
+                  "codigo_riesgo": "C353",
+                  "descipcion_riesgo": "Cirugía en caso de accidente - En caso de necesitar una intervención quirúrgica la mascota, a causa de un Accidente, se cubrirá el costo de la intervención  hasta el Monto límite por evento.",
+                  "suma_asegurada_riesgo": "4060"
+                },
+                {
+                  "codigo_riesgo": "C354",
+                  "descipcion_riesgo": "Internación Post Cirugía - En caso de hospitalización por cirugía que requiera internación de 5 (cinco) días o más, seafrontara el gasto del mismo según los topes establecidos.",
+                  "suma_asegurada_riesgo": "10150"
+                },
+                {
+                  "codigo_riesgo": "C355",
+                  "descipcion_riesgo": "Estudios a causa de accidente - En caso que la mascota lo necesite podrás realizar una consulta telefónica con un veterinario al 0800-333-0957",
+                  "suma_asegurada_riesgo": "8120"
+                },
+                {
+                  "codigo_riesgo": "C356",
+                  "descipcion_riesgo": "Ecocardiograma - Incluye un Ecocardiograma hasta la suma establecida.",
+                  "suma_asegurada_riesgo": "4060"
+                },
+                {
+                  "codigo_riesgo": "C357",
+                  "descipcion_riesgo": "Vacunas el primer año según calendario - Se gestionará y cubrirá el costo de las vacunas del primer año de la mascota y su aplicación en un centro veterinario autorizado.",
+                  "suma_asegurada_riesgo": "6069"
+                },
+                {
+                  "codigo_riesgo": "C358",
+                  "descipcion_riesgo": "Castración - En caso de que la mascota requiera castración, se sufragara los gastos de la misma según topes establecidos.",
+                  "suma_asegurada_riesgo": "5075"
+                },
+                {
+                  "codigo_riesgo": "C359",
+                  "descipcion_riesgo": "Consulta Plan Nutricional - En caso de que la mascota requiera una consulta nutricional, se brindara asesoramiento y/o sufragara los gastos según topes establecidos.",
+                  "suma_asegurada_riesgo": "4060"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1075,
+      "codigo_producto": "ACAR18",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Salud Low Familiar - TMK",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "350"
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 27,
+          "descripcion_medio_pago": "CABAL"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1096,
+      "codigo_producto": "ACAR29",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Salud Full Individual APPS",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "467",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "C381",
+                  "descipcion_riesgo": "Telemedicina",
+                  "suma_asegurada_riesgo": "2 eventos por mes"
+                },
+                {
+                  "codigo_riesgo": "C3810",
+                  "descipcion_riesgo": "Servicio de Enfermeria",
+                  "suma_asegurada_riesgo": "15631"
+                },
+                {
+                  "codigo_riesgo": "C3811",
+                  "descipcion_riesgo": "Acompañante Nocturno en caso de internacion",
+                  "suma_asegurada_riesgo": "15631"
+                },
+                {
+                  "codigo_riesgo": "C3812",
+                  "descipcion_riesgo": "Taxi o Remis para el traslados",
+                  "suma_asegurada_riesgo": "8526"
+                },
+                {
+                  "codigo_riesgo": "C3813",
+                  "descipcion_riesgo": "Recordatorio de toma de Medicamentos",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3814",
+                  "descipcion_riesgo": "Coordinacion de servicio de enfermeria",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3815",
+                  "descipcion_riesgo": "Informacion de centros de salud especializados",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3816",
+                  "descipcion_riesgo": "Informacion de farmacia con delivery",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C382",
+                  "descipcion_riesgo": "Codigo Rojo",
+                  "suma_asegurada_riesgo": "Sin limite"
+                },
+                {
+                  "codigo_riesgo": "C383",
+                  "descipcion_riesgo": "Codigo Amarillo",
+                  "suma_asegurada_riesgo": "Sin limite"
+                },
+                {
+                  "codigo_riesgo": "C384",
+                  "descipcion_riesgo": "Medico a Domicilio",
+                  "suma_asegurada_riesgo": "4 eventos anuales"
+                },
+                {
+                  "codigo_riesgo": "C385",
+                  "descipcion_riesgo": "Asistencia Odontologica - Urgencias",
+                  "suma_asegurada_riesgo": "5075"
+                },
+                {
+                  "codigo_riesgo": "C386",
+                  "descipcion_riesgo": "Chequeo Medico ( Análisis Primarios de Sangre ;  Análisis Primarios de Orina ; Radiografía de Tórax;  ElectrocardiogramaRevisión Médica Completa in situ.",
+                  "suma_asegurada_riesgo": "11165"
+                },
+                {
+                  "codigo_riesgo": "C387",
+                  "descipcion_riesgo": "Kinesiologia",
+                  "suma_asegurada_riesgo": "14210"
+                },
+                {
+                  "codigo_riesgo": "C388",
+                  "descipcion_riesgo": "Descuento en Farmacias",
+                  "suma_asegurada_riesgo": "12180"
+                },
+                {
+                  "codigo_riesgo": "C389",
+                  "descipcion_riesgo": "Ortopedias y Opticas",
+                  "suma_asegurada_riesgo": "4263"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1074,
+      "codigo_producto": "ACAR17",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Salud Full Individual - TMK",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "322"
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 27,
+          "descripcion_medio_pago": "CABAL"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1094,
+      "codigo_producto": "ACAR27",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Mascotas Premium APPS",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "812",
+              "riesgos": [
+                {
+                  "codigo_riesgo": "C361",
+                  "descipcion_riesgo": "Phono Med Veterinario - En caso que la mascota lo necesite podrás realizar una consulta telefónica con un veterinario al 0800-333-0957",
+                  "suma_asegurada_riesgo": "Sin Limite"
+                },
+                {
+                  "codigo_riesgo": "C3610",
+                  "descipcion_riesgo": "Gastos de traslados por urgencias - En caso de que la mascota requiera un traslado de urgencia, se coordinara el mismo y/o sufragara los gastos según el tope establecido.",
+                  "suma_asegurada_riesgo": "4060"
+                },
+                {
+                  "codigo_riesgo": "C3611",
+                  "descipcion_riesgo": "Aseo de Mascotas por hospitalización del beneficiario - En caso de internación del dueño de la mascota (beneficiario), se cubrirán los gastos de aseo de la mascota, según tope establecido.",
+                  "suma_asegurada_riesgo": "3045"
+                },
+                {
+                  "codigo_riesgo": "C3612",
+                  "descipcion_riesgo": "Cremación - Como consecuencia del fallecimiento de la mascota, se coordinará y cubrirá los costos de cremación",
+                  "suma_asegurada_riesgo": "-"
+                },
+                {
+                  "codigo_riesgo": "C362",
+                  "descipcion_riesgo": "Atención Veterinaria (Urgencia y Programada) - En caso que la mascota lo necesite podrás realizar  una consulta con un veterinario, previamente contactándote al 0800-333-0957",
+                  "suma_asegurada_riesgo": "8120"
+                },
+                {
+                  "codigo_riesgo": "C363",
+                  "descipcion_riesgo": "Cirugía en caso de accidente - En caso de necesitar una intervención quirúrgica la mascota, a causa de un Accidente, se cubrirá el costo de la intervención  hasta el Monto límite por evento.",
+                  "suma_asegurada_riesgo": "4060"
+                },
+                {
+                  "codigo_riesgo": "C364",
+                  "descipcion_riesgo": "Internación Post Cirugía - En caso de hospitalización por cirugía que requiera internación de 5 (cinco) días o más, seafrontara el gasto del mismo según los topes establecidos.",
+                  "suma_asegurada_riesgo": "10150"
+                },
+                {
+                  "codigo_riesgo": "C365",
+                  "descipcion_riesgo": "Radiografía Y Ecografía en caso de accidente - En caso que la mascota necesite realizarse estudios/análisis  a consecuencia de un accidente, pondremos a disposición un centro veterinario autorizado hasta la suma establecida. Incluye radiografía y ecografía.",
+                  "suma_asegurada_riesgo": "8120"
+                },
+                {
+                  "codigo_riesgo": "C366",
+                  "descipcion_riesgo": "Ecocardiograma - Incluye un Ecocardiograma hasta la suma establecida.",
+                  "suma_asegurada_riesgo": "4060"
+                },
+                {
+                  "codigo_riesgo": "C367",
+                  "descipcion_riesgo": "Vacunas el primer año según calendario - Se gestionará y cubrirá el costo de las vacunas del primer año de la mascota y su aplicación en un centro veterinario autorizado.",
+                  "suma_asegurada_riesgo": "6090"
+                },
+                {
+                  "codigo_riesgo": "C368",
+                  "descipcion_riesgo": "Castración - En caso de que la mascota requiera castración, se sufragara los gastos de la misma según topes establecidos.",
+                  "suma_asegurada_riesgo": "5075"
+                },
+                {
+                  "codigo_riesgo": "C369",
+                  "descipcion_riesgo": "Consulta Plan Nutricional - En caso de que la mascota requiera una consulta nutricional, se brindara asesoramiento y/o sufragara los gastos según topes establecidos.",
+                  "suma_asegurada_riesgo": "4060"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    },
+    {
+      "id_producto": 1076,
+      "codigo_producto": "ACAR19",
+      "ramo": 0,
+      "destino_alta": "G",
+      "id_negocio": 2,
+      "producto_descripcion": "Salud Low Individual - TMK",
+      "planes": [
+        {
+          "codigo_plan": "A",
+          "rangos": [
+            {
+              "codigo_etario": "2",
+              "descripcion_rango_etario": "18-99",
+              "precio": "210"
+            }
+          ]
+        }
+      ],
+      "valida_titular": 0,
+      "valida_beneficiario": 0,
+      "valida_adicional": 0,
+      "medios_pago": [
+        {
+          "id_medio_pago": 27,
+          "descripcion_medio_pago": "CABAL"
+        },
+        {
+          "id_medio_pago": 118,
+          "descripcion_medio_pago": "VISA ELECTRON"
+        },
+        {
+          "id_medio_pago": 6,
+          "descripcion_medio_pago": "VISA"
+        },
+        {
+          "id_medio_pago": 5,
+          "descripcion_medio_pago": "MASTERCARD"
+        },
+        {
+          "id_medio_pago": 28,
+          "descripcion_medio_pago": "NARANJA"
+        },
+        {
+          "id_medio_pago": 120,
+          "descripcion_medio_pago": "PRISMA MASTERCARD"
+        },
+        {
+          "id_medio_pago": 1,
+          "descripcion_medio_pago": "AMERICAN EXPRESS"
+        },
+        {
+          "id_medio_pago": 75,
+          "descripcion_medio_pago": "CARREFOUR ACEPTADOS"
+        }
+      ]
+    }
+  ]
+}
