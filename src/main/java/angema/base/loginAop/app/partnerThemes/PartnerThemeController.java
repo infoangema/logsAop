@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.logging.Logger;
 
 
@@ -84,13 +83,20 @@ public class PartnerThemeController {
 
     @GetMapping(value = "/getFontByCuit/{cuitSocio}/primary/type/font_primary.ttf", produces = "application/x-font-ttf")
     @ResponseBody
-    public byte[] getFontByCuit(@PathVariable String cuitSocio) throws IOException {
+    public byte[] getFontPrimaryByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = null;
         in = PartnerThemeController.class.getResourceAsStream("/static/" + cuitSocio + "/fonts/font_primary_" + cuitSocio + ".ttf");
         return IOUtils.toByteArray(in);
-
-
     }
+
+    @GetMapping(value = "/getFontByCuit/{cuitSocio}/secondary/type/font_primary.ttf", produces = "application/x-font-ttf")
+    @ResponseBody
+    public byte[] getFontSecondaryByCuit(@PathVariable String cuitSocio) throws IOException {
+        InputStream in = null;
+        in = PartnerThemeController.class.getResourceAsStream("/static/" + cuitSocio + "/fonts/font_secondary_" + cuitSocio + ".ttf");
+        return IOUtils.toByteArray(in);
+    }
+
     @GetMapping(value = "/getFontByCuit/{cuitSocio}/primary/type/font_primary.css", produces = "test/css")
     @ResponseBody
     public byte[] getFontCssByCuit(@PathVariable String cuitSocio) throws IOException {
