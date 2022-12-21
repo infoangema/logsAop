@@ -1,2 +1,5 @@
 ###
 GET http://localhost:8080/landing/productos/obtener-productos-por-cuit/{{cuitSocio}}
+
+###
+GET http://localhost:8080/landing/productos/obtener-detalle-producto-por-id/{{productoId}}/{{cuitSocio}}

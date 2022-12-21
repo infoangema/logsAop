@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.Map;
 
 @RestController
@@ -18,7 +17,7 @@ import java.util.Map;
 public class PartnerRedirectController {
 
     @Autowired
-    private final  Map<String,String> PartnersNames =null;
+    private final  Map<String,String> PartnersNames;
 
     @Value("${partners.redirect}")
     private String  PARTNER_REDIRECT;
@@ -26,15 +25,19 @@ public class PartnerRedirectController {
     @Autowired
     private PartnerThemeService partnerThemeService;
 
+    public PartnerRedirectController(Map<String, String> partnersNames) {
+        PartnersNames = partnersNames;
+    }
+
     @GetMapping("/{partnerName}")
-    public void getRedirectByPartnerName(@PathVariable String partnerName, HttpServletResponse response) throws IOException {
+    public void getRedirectByPartnerName(@PathVariable String partnerName, HttpServletResponse response) {
         String cuit_socio="";
         if (PartnersNames.containsKey(partnerName)){
             // todo crear campo nombre en base themes, buscar cuit y setaer en cookie.
             try {
                 cuit_socio=partnerThemeService.getCuitSocioByPartnerName(partnerName);
                 Cookie cookie = new Cookie("cuit_socio", cuit_socio);
-                cookie.setMaxAge(60 * 60);
+                cookie.setMaxAge(60 * 60000);
 //              cookie.setSecure(true);
 //              cookie.setHttpOnly(true);
                 cookie.setPath("/");
@@ -43,9 +46,6 @@ public class PartnerRedirectController {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
         }
-
-
     }
 }

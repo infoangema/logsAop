@@ -1,15 +1,15 @@
 package angema.base.loginAop.app.partnerThemes;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity(name = "partner_themes")
 public class PartnerTheme {
     @Id

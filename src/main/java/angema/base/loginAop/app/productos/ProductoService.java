@@ -9,7 +9,7 @@ public class ProductoService {
     @Autowired
     private ProductoRepository productoRepository;
 
-    public ProductoEntity obtenerDetalleProductoPorCuit(String cuitSocio, String productoId) {
+    public Producto obtenerDetalleProductoPorCuit(String cuitSocio, String productoId) {
         try {
             return productoRepository.findByCuitSocioAndIdProducto(cuitSocio, productoId);
         } catch (Exception e) {

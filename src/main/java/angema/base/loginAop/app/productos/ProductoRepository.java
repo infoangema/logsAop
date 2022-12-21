@@ -4,7 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductoRepository extends CrudRepository<ProductoEntity, Integer> {
+public interface ProductoRepository extends CrudRepository<Producto, Integer> {
 
-    ProductoEntity findByCuitSocioAndIdProducto(String cuitSocio, String productoId);
+//    @Query(value = "select * from detalle_producto where cuit_socio = ?1 and id_producto = ?2", nativeQuery = true)
+    Producto findByCuitSocioAndIdProducto(String cuitSocio, String productoId);
 }
