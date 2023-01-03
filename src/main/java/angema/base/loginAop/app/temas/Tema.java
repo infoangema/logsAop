@@ -1,8 +1,6 @@
 package angema.base.loginAop.app.temas;
 
-import angema.base.loginAop.app.temas.entities.Color;
-import angema.base.loginAop.app.temas.entities.Carrusel;
-import angema.base.loginAop.app.temas.entities.NavbarTema;
+import angema.base.loginAop.app.temas.entities.*;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,7 +24,10 @@ public class Tema {
     Color color;
 
     @Transient
-    NavbarTema navbarTema;
+    Navbar navbar;
+
+    @Transient
+    Boton boton;
 
     @Transient
     List<Carrusel> imagenesCarrusel;

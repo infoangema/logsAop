@@ -1,5 +1,6 @@
 package angema.base.loginAop.app.temas;
 
+import angema.base.loginAop.app.temas.enums.ViewportSize;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
 import org.apache.commons.io.IOUtils;
@@ -46,8 +47,11 @@ public class TemaController {
 
     @GetMapping(value = "/obtener-imagen-carrusel/cuit/{cuitSocio}/numero-imagen/{numero}", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
-    public byte[] getCarouselImageByCuit(@PathVariable String cuitSocio, @PathVariable String numero) throws IOException {
-        InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/carousel_image_" + numero + ".jpg");
+    public byte[] getCarouselImageByCuit(@PathVariable String cuitSocio, @PathVariable String numero, @RequestParam(required = false) String size) throws IOException {
+        ViewportSize viewportSize = temaService.getMatchingViewportSize(size);
+        String sizeInPixels = viewportSize.getSize();
+        InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/carrusel/img_" + numero + "_size_"+ sizeInPixels + ".jpg");
+        assert in != null;
         return IOUtils.toByteArray(in);
     }
 

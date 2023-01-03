@@ -1,4 +1,5 @@
 package angema.base.loginAop.app.productos;
+import angema.base.loginAop.app.productos.entities.Detalle;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
 import angema.base.loginAop.core.utils.FileSystemUtil;
@@ -38,21 +39,34 @@ public class ProductoController {
         }
     }
 
-    @GetMapping("/obtener-detalle-producto/id-producto/{productoId}/cuit-socio/{cuitSocio}")
-    public GlobalResponse<?> obtenerDetalleProductoPorId(@PathVariable String cuitSocio, @PathVariable String productoId,  WebRequest request) {
+    @GetMapping("/obtener-producto/id-producto/{productoId}/cuit-socio/{cuitSocio}")
+    public GlobalResponse<?> obtenerProductoPorId_y_CuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId,  WebRequest request) {
         try{
-            Producto prd = productoService.obtenerDetalleProductoPorCuit(cuitSocio,productoId);
+            Producto prd = productoService.buscarProductoPorId_y_CuitSocio(cuitSocio,productoId);
             return globalResponseService.responseOk(prd, request );
         }catch(Exception e){
             throw new ProductoException("Error al intentar obtner detalles del producto -> " + productoId + ": " + e.getMessage());
         }
     }
 
-    @GetMapping(value="/obtener-imagen/id-producto/{productoId}/cuit/{cuitSocio}/numero-imagen/{numeroImagen}",produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping("/obtener-detalle-producto/id-producto/{productoId}/cuit-socio/{cuitSocio}")
+    public GlobalResponse<?> obtenerDetallesProductoPorId_y_CuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId,  WebRequest request) {
+        try{
+            Detalle detalle = productoService.buscarDetalleProductoPorId_y_CuitSocio(cuitSocio,productoId);
+            return globalResponseService.responseOk(detalle, request );
+        }catch(Exception e){
+            throw new ProductoException("Error al intentar obtner detalles del producto -> " + productoId + ": " + e.getMessage());
+        }
+    }
+
+    @GetMapping(value="/obtener-imagen/id-producto/{productoId}/cuit/{cuitSocio}/numero-imagen/{numeroImagen}",produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
-    public  byte[] obtenerImagenPorIdProducto(@PathVariable String cuitSocio,@PathVariable String productoId, @PathVariable String numeroImagen) throws IOException {
+    public  byte[] obtenerImagenPorIdProducto(@PathVariable String cuitSocio,@PathVariable String productoId, @PathVariable String numeroImagen, @RequestParam(defaultValue = "jpg", required = false) String tipo) throws IOException {
         try {
-            InputStream in = ProductoController.class.getResourceAsStream("/static/"+cuitSocio+"/productos/id_producto_"+productoId+"_img_"+ numeroImagen + ".jpg");
+            InputStream in = ProductoController.class.getResourceAsStream("/static/"+cuitSocio+"/images/productos/" + productoId+"/img_"+ numeroImagen+ "." + tipo);
+            if (in == null){
+                in = ProductoController.class.getResourceAsStream("/static/imagen_no_disponible.jpg");
+            }
             assert in != null;
             return IOUtils.toByteArray(in);
         } catch (IOException e) {

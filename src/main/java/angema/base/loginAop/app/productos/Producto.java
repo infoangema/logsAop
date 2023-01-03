@@ -1,12 +1,15 @@
 package angema.base.loginAop.app.productos;
 
+import angema.base.loginAop.app.productos.entities.Cobertura;
 import com.sun.istack.NotNull;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @ToString
-@Entity(name = "DETALLE_PRODUCTO")
+@Entity(name = "PRODUCTOS")
 @Table(uniqueConstraints={@UniqueConstraint(columnNames = {"idProducto" , "cuitSocio"})})
 public class Producto {
     @Id
@@ -21,4 +24,7 @@ public class Producto {
     public String precioBase;
     public String urlImagen1;
     public String urlImagen2;
+    public String urlImagenPrecio;
+    @Transient
+    public List<Cobertura> coberturas = new ArrayList<>();
 }

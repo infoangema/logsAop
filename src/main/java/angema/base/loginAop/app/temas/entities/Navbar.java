@@ -12,17 +12,15 @@ import javax.persistence.Id;
 @ToString
 @Getter
 @Setter
-@Entity(name="COLORES")
-public class Color {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+@Entity(name="BARRA_NAVEGACION")
+public class Navbar {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     String cuitSocio;
-    String primarioRgba;
-    String primarioRgbaLight;
-    String secundarioRgba;
-    String secundarioRgbaLight;
-    String terciarioRgba;
-    String terciarioRgbaLight;
+    String colorPrimarioRgba;
+    String colorPrimarioRgbaLight;
+    String colorSecundarioRgba;
+    String colorSecundarioRgbaLight;
+    String urlLogo;
 }

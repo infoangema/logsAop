@@ -12,18 +12,16 @@ import javax.persistence.Id;
 @ToString
 @Getter
 @Setter
-@Entity(name="NAVBAR_TEMA")
-public class NavbarTema {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Entity(name="BOTONES")
+public class Boton {
     @Id
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     String cuitSocio;
-    String colorPrimario;
-    String colorPrimarioRgba;
-    String colorPrimarioRgbaLight;
-    String colorSecundario;
-    String colorSecundarioRgba;
-    String colorSecundarioRgbaLight;
-    String urlLogo;
+    String primarioRgba;
+    String primarioRgbaLight;
+    String secundarioRgba;
+    String secundarioRgbaLight;
+    String fondoRgba;
+    String fondoRgbaLight;
 }
