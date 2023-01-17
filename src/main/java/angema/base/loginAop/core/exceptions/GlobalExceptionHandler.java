@@ -1,7 +1,8 @@
 package angema.base.loginAop.core.exceptions;
 
 //import angema.base.loginAop.core.auth.AuthException;
-import angema.base.loginAop.app.productos.ProductoException;
+import angema.base.loginAop.app.productos.producto.ProductoException;
+import angema.base.loginAop.app.redirect.RedirectException;
 import angema.base.loginAop.app.temas.TemaException;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
@@ -35,26 +36,32 @@ public class GlobalExceptionHandler {
 //        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
 //    }
 
+    @ExceptionHandler(RedirectException.class)
+    public ResponseEntity<?> productoException(RedirectException ex, WebRequest request) {
+        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(ProductoException.class)
     public ResponseEntity<?> productoException(ProductoException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.responseError(ex.getMessage(), HttpStatus.BAD_REQUEST, request );
+        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler(TemaException.class)
     public ResponseEntity<?> temaException(TemaException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.responseError(ex.getMessage(), HttpStatus.BAD_REQUEST, request );
+        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.responseError(ex.getMessage(), HttpStatus.NOT_FOUND, request);
+        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request);
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> globleExcpetionHandler(Exception ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.responseError(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR, request );
+        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         if(ex.getMessage() != null && ex.getMessage().contains("Access is denied")){
             response.status = HttpStatus.FORBIDDEN;
             return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);

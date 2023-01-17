@@ -1,12 +1,11 @@
-package angema.base.loginAop.app.productos;
+package angema.base.loginAop.app.productos.producto;
 
-import angema.base.loginAop.app.productos.entities.Detalle;
-import angema.base.loginAop.app.productos.repository.CoberturaRepository;
-import angema.base.loginAop.app.productos.repository.DetalleRepository;
-import angema.base.loginAop.app.productos.repository.ItemDetalleRepository;
+import angema.base.loginAop.app.productos.detalles.Detalle;
+import angema.base.loginAop.app.productos.coberturas.CoberturaRepository;
+import angema.base.loginAop.app.productos.detalles.DetalleRepository;
+import angema.base.loginAop.app.productos.items.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class ProductoService {
@@ -18,7 +17,7 @@ public class ProductoService {
     @Autowired
     private DetalleRepository detalleRepository;
     @Autowired
-    private ItemDetalleRepository itemDetalleRepository;
+    private ItemRepository itemRepository;
 
     public Producto buscarProductoPorId_y_CuitSocio(String cuitSocio, String productoId) {
         try {
@@ -32,8 +31,8 @@ public class ProductoService {
 
     public Detalle buscarDetalleProductoPorId_y_CuitSocio(String cuitSocio, String productoId) {
         try {
-            Detalle detalle =  detalleRepository.findByCuitSocioAndIdProducto(cuitSocio, productoId);
-            detalle.items = itemDetalleRepository.findByCuitSocioAndIdProductoOrderByPrioridad(cuitSocio, productoId);
+            Detalle detalle = detalleRepository.findByCuitSocioAndIdProducto(cuitSocio, productoId).get();
+            detalle.items = itemRepository.findByCuitSocioAndIdProductoOrderByPrioridad(cuitSocio, productoId);
             return detalle;
         } catch (Exception e) {
             throw new ProductoException(e.getMessage());

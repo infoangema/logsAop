@@ -1,5 +1,6 @@
 package angema.base.loginAop.app.temas;
 
+import angema.base.loginAop.app.temas.dtos.TemaDto;
 import angema.base.loginAop.app.temas.enums.ViewportSize;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
@@ -25,13 +26,41 @@ public class TemaController {
 
     @GetMapping("/obtener-temas/cuit/{cuitSocio}")
     @ResponseBody
-    public GlobalResponse<?> obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
+    public GlobalResponse<Tema> obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
         try {
-            Tema temasSocio =  temaService.obtenerTemas(cuitSocio);
-            if (temasSocio == null){
-                return globalResponseService.responseWithHttpStatus(temasSocio, HttpStatus.NO_CONTENT, request);
+            Tema temasSocio = temaService.findTemas(cuitSocio);
+            if (temasSocio == null) {
+                return (GlobalResponse<Tema>) globalResponseService.responseWithHttpStatus(temasSocio, HttpStatus.NO_CONTENT, request);
             }
-            return globalResponseService.responseOk(temasSocio, request);
+            return (GlobalResponse<Tema>) globalResponseService.responseOk(temasSocio, request);
+        } catch (Exception e) {
+            throw new TemaException("Error al intentar obtener tema para el cuit " + cuitSocio);
+        }
+    }
+
+    @PostMapping("/agregar-tema/cuit/{cuitSocio}")
+    @ResponseBody
+    public GlobalResponse<String> agregarTema(@PathVariable String cuitSocio, @RequestBody TemaDto nuevoTema, WebRequest request) {
+        try {
+            boolean seGuardoOk = temaService.saveOrUpdateTema(cuitSocio, nuevoTema, false);
+            if (seGuardoOk) {
+                return (GlobalResponse<String>) globalResponseService.responseWithHttpStatus("Nuevo tema agregado correctamente.", HttpStatus.NO_CONTENT, request);
+            }
+            return (GlobalResponse<String>) globalResponseService.badRequestResponse("Error al intentar guardar el nuevo tema.", request);
+        } catch (Exception e) {
+            throw new TemaException("Error al intentar obtener tema para el cuit " + cuitSocio);
+        }
+    }
+
+    @PutMapping("/modificar-tema/cuit/{cuitSocio}")
+    @ResponseBody
+    public GlobalResponse<String> modificarTema(@PathVariable String cuitSocio, @RequestBody TemaDto tema, WebRequest request) {
+        try {
+            boolean seGuardoOk = temaService.saveOrUpdateTema(cuitSocio, tema, true);
+            if (seGuardoOk) {
+                return (GlobalResponse<String>) globalResponseService.responseWithHttpStatus("Nuevo tema agregado correctamente.", HttpStatus.NO_CONTENT, request);
+            }
+            return (GlobalResponse<String>) globalResponseService.badRequestResponse("Error al intentar guardar el nuevo tema.", request);
         } catch (Exception e) {
             throw new TemaException("Error al intentar obtener tema para el cuit " + cuitSocio);
         }
@@ -50,7 +79,7 @@ public class TemaController {
     public byte[] getCarouselImageByCuit(@PathVariable String cuitSocio, @PathVariable String numero, @RequestParam(required = false) String size) throws IOException {
         ViewportSize viewportSize = temaService.getMatchingViewportSize(size);
         String sizeInPixels = viewportSize.getSize();
-        InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/carrusel/img_" + numero + "_size_"+ sizeInPixels + ".jpg");
+        InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/carrusel/img_" + numero + "_size_" + sizeInPixels + ".jpg");
         assert in != null;
         return IOUtils.toByteArray(in);
     }

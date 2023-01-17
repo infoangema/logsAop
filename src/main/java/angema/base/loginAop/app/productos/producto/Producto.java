@@ -1,6 +1,6 @@
-package angema.base.loginAop.app.productos;
+package angema.base.loginAop.app.productos.producto;
 
-import angema.base.loginAop.app.productos.entities.Cobertura;
+import angema.base.loginAop.app.productos.coberturas.Cobertura;
 import com.sun.istack.NotNull;
 import lombok.ToString;
 

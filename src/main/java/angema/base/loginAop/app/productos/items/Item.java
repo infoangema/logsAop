@@ -1,4 +1,4 @@
-package angema.base.loginAop.app.productos.entities;
+package angema.base.loginAop.app.productos.items;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;
@@ -13,8 +13,8 @@ import javax.persistence.Id;
 @ToString
 @Getter
 @Setter
-@Entity(name="COBERTURAS")
-public class Cobertura {
+@Entity(name="ITEMS_DETALLE_PRODUCTO")
+public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
@@ -23,6 +23,5 @@ public class Cobertura {
     @NotNull
     public String cuitSocio;
     public String descripcion;
-    public String urlIcono;
     public int prioridad;
 }

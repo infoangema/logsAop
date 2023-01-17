@@ -1,4 +1,4 @@
-package angema.base.loginAop.app.productos;
+package angema.base.loginAop.app.productos.producto;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

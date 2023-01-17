@@ -32,7 +32,7 @@ public class GlobalResponseService {
         return response;
     }
 
-    public GlobalResponse<?> responseError(String errorStr, HttpStatus httpStatus, WebRequest request) {
+    public GlobalResponse<?> badRequestResponse(String errorStr, WebRequest request) {
         GlobalResponse<Object> response = new GlobalResponse<>();
         response.body = null;
         response.status = HttpStatus.BAD_REQUEST;

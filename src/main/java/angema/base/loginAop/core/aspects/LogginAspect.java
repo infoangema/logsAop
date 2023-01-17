@@ -37,7 +37,7 @@ class LoggingAspect {
      * Pointcut that matches all Spring beans in the application's main packages.
      */
     @Pointcut("within(angema.base.loginAop.app.partnerThemes..*)" +
-            " || within(angema.base.loginAop.app.partnerRedirect..*)" +
+            " || within(angema.base.loginAop.app.redirect..*)" +
             " || within(angema.base.loginAop.app.product..*)"
     )
     public void applicationPackagePointcut() {

@@ -4,32 +4,36 @@ import angema.base.loginAop.app.temas.entities.*;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @ToString
 @Getter
 @Setter
 @Entity(name = "TEMAS")
-public class Tema {
+public class Tema implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String cuitSocio;
-    String nombre;
-    String urlLogo;
-    String urlImagenFondo;
-    String urlTipografia;
+    public Integer id;
+    @Column(unique = true, name = "cuit_socio")
+    public String cuitSocio;
+    @Column(unique = true)
+    public String nombre;
+    public String urlLogo;
+    public String urlImagenFondo;
+    public String urlTipografia;
 
     @Transient
-    Color color;
+    Color color = new Color();
 
     @Transient
-    Navbar navbar;
+    Navbar navbar = new Navbar();
 
     @Transient
-    Boton boton;
+    Boton boton = new Boton();
 
     @Transient
-    List<Carrusel> imagenesCarrusel;
+    List<Carrusel> imagenesCarrusel = new ArrayList<>();
 
 }

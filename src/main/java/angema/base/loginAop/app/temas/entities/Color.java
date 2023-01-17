@@ -4,25 +4,24 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @ToString
 @Getter
 @Setter
 @Entity(name="COLORES")
-public class Color {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Color implements Serializable {
 
     @Id
-    Integer id;
-    String cuitSocio;
-    String primarioRgba;
-    String primarioRgbaLight;
-    String secundarioRgba;
-    String secundarioRgbaLight;
-    String terciarioRgba;
-    String terciarioRgbaLight;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer id;
+    @Column(unique = true)
+    public String cuitSocio;
+    public String primarioRgba;
+    public String primarioRgbaLight;
+    public String secundarioRgba;
+    public String secundarioRgbaLight;
+    public String terciarioRgba;
+    public String terciarioRgbaLight;
 }

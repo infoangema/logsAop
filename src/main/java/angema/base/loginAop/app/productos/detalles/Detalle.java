@@ -1,5 +1,6 @@
-package angema.base.loginAop.app.productos.entities;
+package angema.base.loginAop.app.productos.detalles;
 
+import angema.base.loginAop.app.productos.items.Item;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,5 +25,5 @@ public class Detalle {
     public String descripcion;
     public String subTitulo;
     @Transient
-    public List<ItemDetalle> items;
+    public List<Item> items;
 }

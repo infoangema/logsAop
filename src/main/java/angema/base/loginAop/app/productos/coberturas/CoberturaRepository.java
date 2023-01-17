@@ -1,6 +1,5 @@
-package angema.base.loginAop.app.productos.repository;
+package angema.base.loginAop.app.productos.coberturas;
 
-import angema.base.loginAop.app.productos.entities.Cobertura;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

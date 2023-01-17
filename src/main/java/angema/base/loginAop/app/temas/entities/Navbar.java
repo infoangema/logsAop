@@ -4,23 +4,22 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @ToString
 @Getter
 @Setter
 @Entity(name="BARRA_NAVEGACION")
-public class Navbar {
+public class Navbar implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String cuitSocio;
-    String colorPrimarioRgba;
-    String colorPrimarioRgbaLight;
-    String colorSecundarioRgba;
-    String colorSecundarioRgbaLight;
-    String urlLogo;
+    public Integer id;
+    @Column(unique = true)
+    public String cuitSocio;
+    public String colorPrimarioRgba;
+    public String colorPrimarioRgbaLight;
+    public String colorSecundarioRgba;
+    public String colorSecundarioRgbaLight;
+    public String urlLogo;
 }

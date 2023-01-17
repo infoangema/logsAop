@@ -4,16 +4,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity(name = "CARRUSEL")
-public class Carrusel {
+public class Carrusel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
@@ -23,4 +21,6 @@ public class Carrusel {
     public boolean estado;
     public String createdAt;
     public String updatedAt;
+    @Column(unique = true)
+    public Integer prioridad;
 }

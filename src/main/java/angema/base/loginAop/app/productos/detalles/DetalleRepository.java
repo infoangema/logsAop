@@ -1,10 +1,11 @@
-package angema.base.loginAop.app.productos.repository;
+package angema.base.loginAop.app.productos.detalles;
 
-import angema.base.loginAop.app.productos.entities.Detalle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface DetalleRepository extends JpaRepository<Detalle, Integer> {
-    Detalle findByCuitSocioAndIdProducto(String cuitSocio, String idProducto);
+    Optional<Detalle> findByCuitSocioAndIdProducto(String cuitSocio, String idProducto);
 }
