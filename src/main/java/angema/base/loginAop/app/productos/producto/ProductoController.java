@@ -31,15 +31,6 @@ public class ProductoController {
     public String getAllProductsByCuit(@PathVariable String cuitSocio, WebRequest request) {
         String res = fileSystemUtil.getFile("/static/"+cuitSocio+"/productos/productos.json");
         return res;
-//        try {
-//            if (cuitSocio == null || cuitSocio.equals("")) {
-//                throw new ProductoException("El cuit no puede estar vacio");
-//            }
-//            String res = fileSystemUtil.getFile("/static/" + cuitSocio + "/productos/productos.json");
-//            return globalResponseService.responseOk(res, request);
-//        } catch (Exception e) {
-//            throw new ProductoException(e.getMessage());
-//        }
     }
 
     /**

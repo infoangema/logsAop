@@ -26,7 +26,7 @@ public class BarraNavegacionController {
         try {
             barraNavegacionService.addBarraNavegacions(barraNavegacion);
             return globalResponseService.responseOk(BARRA_NAVEGACION_MSG_OK_CREATE, request);
-        } catch (BarraNavegacionException e) {
+        } catch (Exception e) {
             String errMsg = getErrorMessage(BARRA_NAVEGACION_MSG_ERROR_CREATE, e.getMessage());
             throw new BarraNavegacionException(errMsg);
         }

@@ -2,8 +2,10 @@ package angema.base.loginAop.core.exceptions;
 
 //import angema.base.loginAop.core.auth.AuthException;
 import angema.base.loginAop.app.descargas.DescargaException;
+import angema.base.loginAop.app.productos.busquedas.BusquedaException;
 import angema.base.loginAop.app.productos.producto.ProductoException;
 import angema.base.loginAop.app.redirect.RedirectException;
+import angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacionException;
 import angema.base.loginAop.app.temas.tema.TemaException;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
@@ -36,6 +38,18 @@ public class GlobalExceptionHandler {
 //        response.error = ex.getMessage();
 //        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
 //    }
+
+    @ExceptionHandler(BusquedaException.class)
+    public ResponseEntity<?> busquedaException(BusquedaException ex, WebRequest request) {
+        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(BarraNavegacionException.class)
+    public ResponseEntity<?> busquedaException(BarraNavegacionException ex, WebRequest request) {
+        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
 
     @ExceptionHandler(DescargaException.class)
     public ResponseEntity<?> descargaException(DescargaException ex, WebRequest request) {
