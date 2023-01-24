@@ -26,18 +26,20 @@ public class ProductoController {
     @Autowired
     private GlobalResponseService globalResponseService;
 
-    @GetMapping(value = "/obtener-productos-por-cuit/{cuitSocio}")
+    @GetMapping(value = "/obtener-productos-por-cuit/{cuitSocio}/productos")
     @ResponseBody
-    public GlobalResponse<?> getAllProductsByCuit(@PathVariable String cuitSocio, WebRequest request) {
-        try {
-            if (cuitSocio == null || cuitSocio.equals("")) {
-                throw new ProductoException("El cuit no puede estar vacio");
-            }
-            String res = fileSystemUtil.getFile("/static/" + cuitSocio + "/productos/productos.json");
-            return globalResponseService.responseOk(res, request);
-        } catch (Exception e) {
-            throw new ProductoException(e.getMessage());
-        }
+    public String getAllProductsByCuit(@PathVariable String cuitSocio, WebRequest request) {
+        String res = fileSystemUtil.getFile("/static/"+cuitSocio+"/productos/productos.json");
+        return res;
+//        try {
+//            if (cuitSocio == null || cuitSocio.equals("")) {
+//                throw new ProductoException("El cuit no puede estar vacio");
+//            }
+//            String res = fileSystemUtil.getFile("/static/" + cuitSocio + "/productos/productos.json");
+//            return globalResponseService.responseOk(res, request);
+//        } catch (Exception e) {
+//            throw new ProductoException(e.getMessage());
+//        }
     }
 
     /**
@@ -47,7 +49,7 @@ public class ProductoController {
      * @return GlobalResponse<Producto>
      * @Detail Obtiene datos del producto para poder completar cards en front.
      */
-    @GetMapping("/obtener-producto/id-producto/{productoId}/cuit-socio/{cuitSocio}")
+    @GetMapping("/obtener-producto/id/{productoId}/cuit-socio/{cuitSocio}/detalle-{id}")
     public GlobalResponse<?> obtenerProductoPorId_y_CuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
         try {
             Producto prd = productoService.buscarProductoPorId_y_CuitSocio(cuitSocio, productoId);

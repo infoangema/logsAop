@@ -1,6 +1,6 @@
 package angema.base.loginAop.app.redirect;
 
-import angema.base.loginAop.app.temas.TemaRepository;
+import angema.base.loginAop.app.temas.tema.TemaRepository;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +27,6 @@ public class RedirectController {
 
     @Autowired
     private TemaRepository temaRepository;
-
-    @Autowired
-    private GlobalResponseService globalResponseService;
 
     public RedirectController(Map<String, String> partnersNames) {
         PartnersNames = partnersNames;
