@@ -52,7 +52,7 @@ public class CoberturaController {
             throw new CoberturaException("Error al intentar modificar las coberturas: " + e.getMessage());
         }
     }
-
+// todo prueba
     @PatchMapping("/modificar-coberturas")
     public GlobalResponse<?> updateCoberturaByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
