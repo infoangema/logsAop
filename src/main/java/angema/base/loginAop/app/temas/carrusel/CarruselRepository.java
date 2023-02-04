@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface CarruselRepository extends JpaRepository<Carrusel, Integer> {
-    List<Carrusel> findByCuitSocio(String cuitSocio);
+    List<Carrusel> findByCuitSocioAndActiveIsTrueOrderByPrioridad(String cuitSocio);
 }

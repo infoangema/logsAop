@@ -73,15 +73,6 @@ public class TemaController {
         return IOUtils.toByteArray(in);
     }
 
-    @GetMapping(value = "/obtener-imagen-carrusel/cuit/{cuitSocio}/numero-imagen/{numero}", produces = MediaType.IMAGE_PNG_VALUE)
-    @ResponseBody
-    public byte[] getCarouselImageByCuit(@PathVariable String cuitSocio, @PathVariable String numero, @RequestParam(required = false) String size) throws IOException {
-        ViewportSize viewportSize = temaService.getMatchingViewportSize(size);
-        String sizeInPixels = viewportSize.getSize();
-        InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/carrusel/img_" + numero + "_size_" + sizeInPixels + ".jpg");
-        assert in != null;
-        return IOUtils.toByteArray(in);
-    }
 
     // TODO: 13/10/2022 :definir imagen background y implementar funcionalidad en front.
     @GetMapping(value = "/obtener-imagen-fondo/cuit/{cuitSocio}", produces = MediaType.IMAGE_PNG_VALUE)
