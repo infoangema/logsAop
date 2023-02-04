@@ -1,6 +1,5 @@
 package angema.base.loginAop.app.productos.producto;
 
-import angema.base.loginAop.app.productos.detalles.Detalle;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
 import angema.base.loginAop.core.utils.FileSystemUtil;
@@ -15,7 +14,7 @@ import java.io.InputStream;
 import java.net.ProtocolException;
 
 @RestController
-@RequestMapping("/productos")
+@RequestMapping("/productos/producto")
 public class ProductoController {
     @Autowired
     private ProductoService productoService;
@@ -40,21 +39,11 @@ public class ProductoController {
      * @return GlobalResponse<Producto>
      * @Detail Obtiene datos del producto para poder completar cards en front.
      */
-    @GetMapping("/obtener-producto/id/{productoId}/cuit-socio/{cuitSocio}/detalle-{id}")
-    public GlobalResponse<?> obtenerProductoPorId_y_CuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
+    @GetMapping("/obtener-producto/id/{productoId}/cuit-socio/{cuitSocio}/producto-{id}")
+    public GlobalResponse<?> getProductoByIdAndCuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
         try {
             Producto prd = productoService.buscarProductoPorId_y_CuitSocio(cuitSocio, productoId);
             return globalResponseService.responseOk(prd, request);
-        } catch (Exception e) {
-            throw new ProductoException("Error al intentar obtner detalles del producto -> " + productoId + ": " + e.getMessage());
-        }
-    }
-
-    @GetMapping("/obtener-detalle-producto/id-producto/{productoId}/cuit-socio/{cuitSocio}")
-    public GlobalResponse<?> obtenerDetallesProductoPorId_y_CuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
-        try {
-            Detalle detalle = productoService.buscarDetalleProductoPorId_y_CuitSocio(cuitSocio, productoId);
-            return globalResponseService.responseOk(detalle, request);
         } catch (Exception e) {
             throw new ProductoException("Error al intentar obtner detalles del producto -> " + productoId + ": " + e.getMessage());
         }
