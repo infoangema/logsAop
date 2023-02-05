@@ -31,12 +31,5 @@ public class Tema implements Serializable {
     Color color = new Color();
 
     @Transient
-    BarraNavegacion barraNavegacion = new BarraNavegacion();
-
-    @Transient
     Boton boton = new Boton();
-
-    @Transient
-    List<Carrusel> imagenesCarrusel = new ArrayList<>();
-
 }

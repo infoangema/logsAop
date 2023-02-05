@@ -24,6 +24,4 @@ public class Detalle {
     public String titulo;
     public String descripcion;
     public String subTitulo;
-    @Transient
-    public List<Item> items;
 }

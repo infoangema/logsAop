@@ -23,7 +23,7 @@ public class TemaController {
     @Autowired
     private GlobalResponseService globalResponseService;
 
-    @GetMapping("/obtener-temas/cuit/{cuitSocio}/tema-socio")
+    @GetMapping("/obtener-temas/cuit-socio/{cuitSocio}/tema-socio")
     @ResponseBody
     public GlobalResponse<Tema> obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
         try {
@@ -37,7 +37,7 @@ public class TemaController {
         }
     }
 
-    @PostMapping("/agregar-tema/cuit/{cuitSocio}")
+    @PostMapping("/agregar-tema/cuit-socio/{cuitSocio}")
     @ResponseBody
     public GlobalResponse<String> agregarTema(@PathVariable String cuitSocio, @RequestBody TemaDto nuevoTema, WebRequest request) {
         try {
@@ -51,7 +51,7 @@ public class TemaController {
         }
     }
 
-    @PutMapping("/modificar-tema/cuit/{cuitSocio}")
+    @PutMapping("/modificar-tema")
     @ResponseBody
     public GlobalResponse<String> modificarTema(@PathVariable String cuitSocio, @RequestBody TemaDto tema, WebRequest request) {
         try {
@@ -66,22 +66,13 @@ public class TemaController {
     }
 
 
-    @GetMapping(value = "/obtener-logo/cuit/{cuitSocio}/logo", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/obtener-logo/cuit-socio/{cuitSocio}/logo", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public byte[] getLogo(@PathVariable String cuitSocio) throws IOException {
         InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/logo-" + cuitSocio + ".png");
         return IOUtils.toByteArray(in);
     }
 
-    @GetMapping(value = "/obtener-imagen-carrusel/cuit/{cuitSocio}/numero-imagen/{numero}", produces = MediaType.IMAGE_PNG_VALUE)
-    @ResponseBody
-    public byte[] getCarouselImageByCuit(@PathVariable String cuitSocio, @PathVariable String numero, @RequestParam(required = false) String size) throws IOException {
-        ViewportSize viewportSize = temaService.getMatchingViewportSize(size);
-        String sizeInPixels = viewportSize.getSize();
-        InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/carrusel/img_" + numero + "_size_" + sizeInPixels + ".jpg");
-        assert in != null;
-        return IOUtils.toByteArray(in);
-    }
 
     // TODO: 13/10/2022 :definir imagen background y implementar funcionalidad en front.
     @GetMapping(value = "/obtener-imagen-fondo/cuit/{cuitSocio}", produces = MediaType.IMAGE_PNG_VALUE)

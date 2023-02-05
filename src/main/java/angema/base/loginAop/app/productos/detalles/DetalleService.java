@@ -21,7 +21,6 @@ public class DetalleService {
     public Detalle getDetalleByCuitSocioAndIdProducto(String cuitSocio, String productoId) {
         try {
             Detalle detalle = detalleRepository.findByCuitSocioAndIdProducto(cuitSocio, productoId).get();
-            detalle.items = itemRepository.findByCuitSocioAndIdProductoOrderByPrioridad(cuitSocio, productoId);
             return detalle;
         } catch (Exception e) {
             throw new ProductoException(e.getMessage());

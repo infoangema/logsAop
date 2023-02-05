@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/detalles")
+@RequestMapping("/detalles/detalle")
 public class DetalleController {
     @Autowired
     private DetalleService detalleService;

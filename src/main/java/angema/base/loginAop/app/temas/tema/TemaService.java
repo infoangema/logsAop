@@ -8,7 +8,6 @@ import angema.base.loginAop.app.temas.carrusel.Carrusel;
 import angema.base.loginAop.app.temas.carrusel.CarruselRepository;
 import angema.base.loginAop.app.temas.color.Color;
 import angema.base.loginAop.app.temas.color.ColorRepository;
-import angema.base.loginAop.app.temas.carrusel.ImagenCarruselDto;
 import angema.base.loginAop.app.temas.enums.ViewportSize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,10 +20,7 @@ public class TemaService {
     private TemaRepository temaRepository;
     @Autowired
     private ColorRepository colorRepository;
-    @Autowired
-    private CarruselRepository carruselRepository;
-    @Autowired
-    private BarraNavegacionRepository barraNavegacionRepository;
+
     @Autowired
     private BotonRepository botonRepository;
 
@@ -32,28 +28,12 @@ public class TemaService {
     public Tema findTemas(String cuitSocio) {
         Tema temaSocio;
         Color color = colorRepository.findByCuitSocio(cuitSocio);
-        BarraNavegacion barraNavegacion = barraNavegacionRepository.findByCuitSocio(cuitSocio);
         Boton boton = botonRepository.findByCuitSocio(cuitSocio);
-        List<Carrusel> imagenes = carruselRepository.findByCuitSocio(cuitSocio);
 
         temaSocio = temaRepository.findByCuitSocio(cuitSocio);
         temaSocio.color = color;
-        temaSocio.barraNavegacion = barraNavegacion;
         temaSocio.boton = boton;
-        temaSocio.imagenesCarrusel = imagenes;
         return temaSocio;
-    }
-
-    public ViewportSize getMatchingViewportSize(String size) {
-        int sizeInPixels = Integer.parseInt(size);
-
-        for (ViewportSize viewportSize : ViewportSize.values()) {
-            int viewportSizeInPixels = Integer.parseInt(viewportSize.getSize());
-            if (sizeInPixels <= viewportSizeInPixels) {
-                return viewportSize;
-            }
-        }
-        return ViewportSize.XXS;
     }
 
     public boolean saveOrUpdateTema(String cuit, TemaDto nuevoTema, boolean modificar) {
@@ -61,7 +41,6 @@ public class TemaService {
         try {
             if(modificar) {
                 tema.id = temaRepository.findByCuitSocio(cuit).id;
-                tema.barraNavegacion.id = barraNavegacionRepository.findByCuitSocio(cuit).id;
                 tema.color.id = colorRepository.findByCuitSocio(cuit).id;
                 tema.boton.id = botonRepository.findByCuitSocio(cuit).id;
             }
@@ -88,27 +67,9 @@ public class TemaService {
             tema.boton.fondoRgba = nuevoTema.boton.fondoRgba;
             tema.boton.fondoRgbaLight = nuevoTema.boton.fondoRgbaLight;
 
-            tema.barraNavegacion.cuitSocio = cuit;
-            tema.barraNavegacion.colorPrimarioRgba = nuevoTema.navbar.colorPrimarioRgba;
-            tema.barraNavegacion.colorPrimarioRgbaLight = nuevoTema.navbar.colorPrimarioRgbaLight;
-            tema.barraNavegacion.colorSecundarioRgba = nuevoTema.navbar.colorSecundarioRgba;
-            tema.barraNavegacion.colorSecundarioRgbaLight = nuevoTema.navbar.colorSecundarioRgbaLight;
-            tema.barraNavegacion.urlLogo = nuevoTema.navbar.urlLogo;
-
-            for (ImagenCarruselDto img : nuevoTema.imagenesCarrusel) {
-                Carrusel carrusel = new Carrusel();
-                carrusel.cuitSocio = cuit;
-                carrusel.nombre = nuevoTema.nombre;
-                carrusel.url = img.url;
-                carrusel.estado = img.estado;
-                tema.imagenesCarrusel.add(carrusel);
-            }
-
             temaRepository.save(tema);
             colorRepository.save(tema.color);
             botonRepository.save(tema.boton);
-            barraNavegacionRepository.save(tema.barraNavegacion);
-            carruselRepository.saveAll(tema.imagenesCarrusel);
             return true;
         } catch (Exception e) {
             return false;
