@@ -1,11 +1,15 @@
 package angema.base.loginAop.app.productos.producto;
 
 import com.sun.istack.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
 
 @ToString
+@Getter
+@Setter
 @Entity(name = "PRODUCTOS")
 @Table(uniqueConstraints={@UniqueConstraint(columnNames = {"idProducto" , "cuitSocio"})})
 public class Producto {
