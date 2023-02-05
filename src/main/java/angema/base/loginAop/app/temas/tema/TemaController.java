@@ -23,7 +23,7 @@ public class TemaController {
     @Autowired
     private GlobalResponseService globalResponseService;
 
-    @GetMapping("/obtener-temas/cuit/{cuitSocio}/tema-socio")
+    @GetMapping("/obtener-temas/cuit-socio/{cuitSocio}/tema-socio")
     @ResponseBody
     public GlobalResponse<Tema> obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
         try {
@@ -37,7 +37,7 @@ public class TemaController {
         }
     }
 
-    @PostMapping("/agregar-tema/cuit/{cuitSocio}")
+    @PostMapping("/agregar-tema/cuit-socio/{cuitSocio}")
     @ResponseBody
     public GlobalResponse<String> agregarTema(@PathVariable String cuitSocio, @RequestBody TemaDto nuevoTema, WebRequest request) {
         try {
@@ -51,7 +51,7 @@ public class TemaController {
         }
     }
 
-    @PutMapping("/modificar-tema/cuit/{cuitSocio}")
+    @PutMapping("/modificar-tema")
     @ResponseBody
     public GlobalResponse<String> modificarTema(@PathVariable String cuitSocio, @RequestBody TemaDto tema, WebRequest request) {
         try {

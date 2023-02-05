@@ -8,6 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TemaDto {
+    public Integer id;
+
     public String cuitSocio;
     public String nombre;
     public String urlLogo;
