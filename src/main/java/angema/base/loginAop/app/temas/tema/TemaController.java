@@ -66,7 +66,7 @@ public class TemaController {
     }
 
 
-    @GetMapping(value = "/obtener-logo/cuit/{cuitSocio}/logo", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/obtener-logo/cuit-socio/{cuitSocio}/logo", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public byte[] getLogo(@PathVariable String cuitSocio) throws IOException {
         InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/logo-" + cuitSocio + ".png");
