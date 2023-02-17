@@ -32,13 +32,14 @@ public class DetalleController {
     }
 
     @PostMapping("/guardar-detalles")
-    public GlobalResponse<?> addDetalles(@RequestBody List<Detalle> detalles, WebRequest request) {
+    public GlobalResponse<?> addDetalles(@RequestBody List<Detalle> detalles, WebRequest request)  {
         try {
             detalleService.addDetalles(detalles);
             return globalResponseService.responseOk("Detalles agregados correctamente", request);
         } catch (Exception e) {
             throw new CoberturaException("Error al intentar guardar los detalles: " + e.getMessage());
         }
+
     }
 
     @PutMapping("/modificar-detalles")
