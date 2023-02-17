@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -24,15 +25,16 @@ public class BusquedaController {
     @Autowired
     private GlobalResponseService globalResponseService;
 
+    @GetMapping("/buscar-parametros")
+    public List<String> buscarParametros(@RequestParam String params) {
+        List<String> parametros = Arrays.asList(params.trim().split(","));
+        return busquedaService.findParams(parametros);
+    }
+
     @PostMapping("/guardar-busquedas-producto")
     public GlobalResponse<?> createBusquedas(@RequestBody List<Busqueda> busquedas, WebRequest request) {
-        try {
-            busquedaService.addBusquedas(busquedas);
-            return globalResponseService.responseOk(BUSQUEDA_MSG_OK_CREATE, request);
-        } catch (Exception e) {
-            String errMsg = getErrorMessage(BUSQUEDA_MSG_ERROR_CREATE);
-            throw new BarraNavegacionException(errMsg);
-        }
+        busquedaService.addBusquedas(busquedas);
+        return globalResponseService.responseOk(BUSQUEDA_MSG_OK_CREATE, request);
     }
 
     @GetMapping("/obtener-busquedas-producto/cuit-socio/{cuitSocio}/id-producto/{idProducto}")
@@ -74,6 +76,7 @@ public class BusquedaController {
             throw new BusquedaException(errMsg);
         }
     }
+
     @DeleteMapping("/eliminar-busqueda/id-busqueda/{idBusqueda}")
     public GlobalResponse<?> deleteBusqueda(@PathVariable Integer idBusqueda, WebRequest request) {
         try {
