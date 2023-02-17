@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static angema.base.loginAop.app.productos.busquedas.BusquedaErrorMsj.BUSQUEDA_MSG_ERROR_CREATE;
+import static angema.base.loginAop.core.utils.ErrorUtils.getErrorMessage;
 
 @Service
 public class BusquedaService {
@@ -31,7 +33,8 @@ public class BusquedaService {
         try {
             busquedaRepository.saveAll(busquedas);
         } catch (Exception e) {
-            throw new DetalleException(e.getMessage());
+            String errMsg = getErrorMessage(BUSQUEDA_MSG_ERROR_CREATE);
+            throw new BarraNavegacionException(errMsg);
         }
     }
 
@@ -86,5 +89,14 @@ public class BusquedaService {
             throw new BusquedaException("elemento no encontrado");
         }
         busquedaRepository.delete(busquedaOpt.get());
+    }
+
+    public List<String> findParams(List<String> parametros) {
+        Set<String> idProductosUnicos = new HashSet<>();
+        for (String parametro : parametros) {
+            List<Busqueda> busquedas = busquedaRepository.findAllDistinctByDescripcionIn(parametro);
+            idProductosUnicos.addAll(busquedas.stream().map(busqueda -> busqueda.idProducto).collect(Collectors.toList()));
+        }
+        return new ArrayList<>(idProductosUnicos);
     }
 }

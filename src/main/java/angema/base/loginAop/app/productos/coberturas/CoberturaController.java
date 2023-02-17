@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/coberturas")
+@RequestMapping("/productos/coberturas")
 public class CoberturaController {
     @Autowired
     private CoberturaService coberturaService;
