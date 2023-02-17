@@ -1,7 +1,8 @@
 package angema.base.loginAop.app.productos.productos;
 
-import org.json.JSONObject;
-import org.json.JSONObject;
+import angema.base.loginAop.app.productos.producto.Producto;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,10 @@ import org.junit.jupiter.api.Assertions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -26,7 +31,8 @@ public class ProductoTest {
 
     @Autowired
     private MockMvc mockMvc;
-
+    @Autowired
+    private ObjectMapper objectMapper;
     @Test
     public void testGetAllProductsByCuit() throws Exception {
         String cuitSocio = "30687310434";
@@ -89,7 +95,7 @@ public class ProductoTest {
 
 
 
-    @Test
+   /* @Test
     public void createProducto() throws Exception {
         JSONObject usuario = new JSONObject();
         usuario.put("id_producto", "1077");
@@ -104,8 +110,24 @@ public class ProductoTest {
                         .content(usuario.toString().getBytes()))
                 .andExpect(status().isOk())
                 .andReturn();
-    }
+    }*/
+    @Test
+    public void testCreateProducto() throws Exception {
+    List<Producto> productoList = new ArrayList<>();
+    Producto producto1 = new Producto();
+        producto1.setIdProducto("producto1");
+        producto1.setCuitSocio("30687310434");
+        producto1.setTitulo("Producto 1");
+        producto1.setSlogan("Slogan 1");
+        producto1.setUrlImagen("http://www.imagen1.com");
+        producto1.setUrlImagenPrecio("http://www.imagen-precio1.com");
+        productoList.add(producto1);
 
+        mockMvc.perform(MockMvcRequestBuilders.post("/productos/producto/guardar-productos")
+                .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(productoList)))
+            .andExpect(MockMvcResultMatchers.status().isOk());
+}
 
 
 
