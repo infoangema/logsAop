@@ -26,9 +26,10 @@ public class BusquedaController {
     private GlobalResponseService globalResponseService;
 
     @GetMapping("/buscar-parametros")
-    public List<String> buscarParametros(@RequestParam String params) {
+    public GlobalResponse<?> buscarParametros(@RequestParam String params, WebRequest request) {
         List<String> parametros = Arrays.asList(params.trim().split(","));
-        return busquedaService.findParams(parametros);
+        parametros = busquedaService.findParams(parametros);
+        return globalResponseService.responseOk(parametros, request);
     }
 
     @PostMapping("/guardar-busquedas-producto")
