@@ -1,9 +1,13 @@
 package angema.base.loginAop.app.temas.barraNavegacion;
 
+import angema.base.loginAop.core.exceptions.ExceptionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import javax.validation.ConstraintViolationException;
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
 
 import static angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacionErrorMsj.*;
@@ -15,9 +19,13 @@ public class BarraNavegacionService {
     private BarraNavegacionRepository barraNavegacionRepository;
 
 
-    public void addBarraNavegacions(BarraNavegacion barraNavegacion) {
+    public void addBarraNavegacions(List<BarraNavegacion> barrasNavegacion) {
         try {
-            barraNavegacionRepository.save(barraNavegacion);
+            barraNavegacionRepository.saveAll(barrasNavegacion);
+        } catch ( ConstraintViolationException e) {
+            throw new BarraNavegacionException("Error al intentar guardar la lista de barran de navegacion: " + ExceptionService.getErrorMessage(e));
+        } catch ( DataIntegrityViolationException e) {
+            throw new BarraNavegacionException("Error al intentar guardar la lista de barran de navegacion: " + e.getRootCause().getMessage());
         } catch (Exception e) {
             String errMsg = getErrorMessage(BARRA_NAVEGACION_MSG_ERROR_CREATE, e.getMessage());
             throw new BarraNavegacionException(errMsg);
@@ -86,6 +94,16 @@ public class BarraNavegacionService {
             barraNavegacionRepository.delete(barraNavegacion);
         } catch (Exception e) {
             String errMsg = getErrorMessage(BARRA_NAVEGACION_MSG_ERROR_DELETE, idBarraNavegacion.toString(), e.getMessage());
+            throw new BarraNavegacionException(errMsg);
+        }
+    }
+
+    public List<BarraNavegacion> getAllBarraNavegacion() {
+        try {
+            List<BarraNavegacion> barrasNavegacion = barraNavegacionRepository.findAll();
+            return barrasNavegacion;
+        } catch (Exception e) {
+            String errMsg = getErrorMessage(BARRA_NAVEGACION_MSG_ERROR_CREATE, e.getMessage());
             throw new BarraNavegacionException(errMsg);
         }
     }
