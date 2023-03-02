@@ -1,5 +1,6 @@
 package angema.base.loginAop.app.temas.tema;
 
+import angema.base.loginAop.app.productos.producto.ProductoException;
 import angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacion;
 import angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacionRepository;
 import angema.base.loginAop.app.temas.boton.Boton;
@@ -10,9 +11,13 @@ import angema.base.loginAop.app.temas.color.Color;
 import angema.base.loginAop.app.temas.color.ColorRepository;
 import angema.base.loginAop.app.temas.enums.ViewportSize;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import javax.validation.ConstraintViolationException;
 import java.util.List;
+
+import static angema.base.loginAop.core.exceptions.ExceptionService.getErrorMessage;
 
 @Service
 public class TemaService {
@@ -26,14 +31,22 @@ public class TemaService {
 
 
     public Tema findTemas(String cuitSocio) {
-        Tema temaSocio;
-        Color color = colorRepository.findByCuitSocio(cuitSocio);
-        Boton boton = botonRepository.findByCuitSocio(cuitSocio);
+        try {
+            Tema temaSocio;
+            Color color = colorRepository.findByCuitSocio(cuitSocio);
+            Boton boton = botonRepository.findByCuitSocio(cuitSocio);
 
-        temaSocio = temaRepository.findByCuitSocio(cuitSocio);
-        temaSocio.color = color;
-        temaSocio.boton = boton;
-        return temaSocio;
+            temaSocio = temaRepository.findByCuitSocio(cuitSocio);
+            temaSocio.color = color;
+            temaSocio.boton = boton;
+            return temaSocio;
+        } catch (ConstraintViolationException e) {
+            throw new TemaException("Error al intentar guardar producto: " + getErrorMessage(e));
+        } catch (DataIntegrityViolationException e) {
+            throw new TemaException("Error al intentar guardar producto: " + e.getRootCause().getMessage());
+        } catch (Exception e) {
+            throw new TemaException("Error al intentar guardar producto: " + e.getCause().getMessage());
+        }
     }
 
     public boolean saveOrUpdateTema(String cuit, TemaDto nuevoTema, boolean modificar) {

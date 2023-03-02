@@ -26,15 +26,11 @@ public class TemaController {
     @GetMapping("/obtener-temas/cuit-socio/{cuitSocio}/tema-socio")
     @ResponseBody
     public GlobalResponse obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
-        try {
-            Tema temasSocio = temaService.findTemas(cuitSocio);
-            if (temasSocio == null) {
-                return globalResponseService.responseWithHttpStatus(temasSocio, HttpStatus.NO_CONTENT, request);
-            }
-            return globalResponseService.responseOk(temasSocio, request);
-        } catch (Exception e) {
-            throw new TemaException("Error al intentar obtener tema para el cuit " + cuitSocio);
+        Tema temasSocio = temaService.findTemas(cuitSocio);
+        if (temasSocio == null) {
+            return globalResponseService.responseWithHttpStatus(temasSocio, HttpStatus.NO_CONTENT, request);
         }
+        return globalResponseService.responseOk(temasSocio, request);
     }
 
     @PostMapping("/agregar-tema/cuit-socio/{cuitSocio}")
