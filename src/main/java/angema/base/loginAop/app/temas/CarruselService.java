@@ -1,4 +1,4 @@
-package angema.base.loginAop.app.temas.carrusel;
+package angema.base.loginAop.app.temas;
 
 import angema.base.loginAop.app.temas.enums.ViewportSize;
 import org.springframework.beans.factory.annotation.Autowired;

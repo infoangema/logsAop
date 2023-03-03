@@ -1,15 +1,11 @@
 package angema.base.loginAop.app.temas.tema;
 
-import angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacion;
 import angema.base.loginAop.app.temas.boton.Boton;
-import angema.base.loginAop.app.temas.carrusel.Carrusel;
 import angema.base.loginAop.app.temas.color.Color;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @ToString
 @Getter

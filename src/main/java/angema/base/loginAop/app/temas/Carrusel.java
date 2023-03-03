@@ -1,4 +1,4 @@
-package angema.base.loginAop.app.temas.carrusel;
+package angema.base.loginAop.app.temas;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

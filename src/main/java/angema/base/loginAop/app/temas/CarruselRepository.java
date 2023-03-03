@@ -1,6 +1,5 @@
-package angema.base.loginAop.app.temas.carrusel;
+package angema.base.loginAop.app.temas;
 
-import angema.base.loginAop.app.temas.carrusel.Carrusel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

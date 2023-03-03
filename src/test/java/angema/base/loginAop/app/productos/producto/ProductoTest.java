@@ -1,9 +1,6 @@
-package angema.base.loginAop.app.temas.tema;
+package angema.base.loginAop.app.productos.producto;
 
-import angema.base.loginAop.app.productos.producto.ProductoException;
-import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import org.junit.jupiter.api.Assertions;
-import angema.base.loginAop.app.productos.producto.Producto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -18,9 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.context.request.WebRequest;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

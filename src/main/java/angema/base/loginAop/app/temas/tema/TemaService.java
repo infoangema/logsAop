@@ -1,18 +1,11 @@
 package angema.base.loginAop.app.temas.tema;
 
-import angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacion;
-import angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacionRepository;
 import angema.base.loginAop.app.temas.boton.Boton;
 import angema.base.loginAop.app.temas.boton.BotonRepository;
-import angema.base.loginAop.app.temas.carrusel.Carrusel;
-import angema.base.loginAop.app.temas.carrusel.CarruselRepository;
 import angema.base.loginAop.app.temas.color.Color;
 import angema.base.loginAop.app.temas.color.ColorRepository;
-import angema.base.loginAop.app.temas.enums.ViewportSize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class TemaService {
