@@ -46,7 +46,7 @@ public class RedirectController {
      */
 
     @GetMapping("/{nombre}")
-    public GlobalResponse<?> getRedirectByPartnerName(@PathVariable String nombre, HttpServletResponse response, WebRequest webRequest) {
+    public GlobalResponse getRedirectByPartnerName(@PathVariable String nombre, HttpServletResponse response, WebRequest webRequest) {
         if (!PartnersNames.containsKey(nombre)){
             throw new RedirectException("No existe sitio para el socio solicitado");
         }

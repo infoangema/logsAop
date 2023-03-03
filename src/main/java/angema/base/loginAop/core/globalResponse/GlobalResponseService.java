@@ -12,9 +12,10 @@ public class GlobalResponseService {
     @Autowired
     private DateUtil dateUtil;
 
-    public GlobalResponse<?> responseOk(Object obj, WebRequest request) {
-        GlobalResponse<String> response = new GlobalResponse<>();
+    public GlobalResponse responseOk(Object obj, WebRequest request) {
+        GlobalResponse response = new GlobalResponse<>();
         response.body = obj;
+        response.lenght = null;
         response.status = HttpStatus.OK;
         response.path = request.getDescription(false);
         response.error = null;
@@ -22,7 +23,13 @@ public class GlobalResponseService {
         return response;
     }
 
-    public GlobalResponse<?> responseWithHttpStatus(Object obj, HttpStatus httpStatus, WebRequest request) {
+    public GlobalResponse responseOk(Object obj, WebRequest request, Integer lenght) {
+        GlobalResponse<String> response = (GlobalResponse<String>) responseOk(obj, request);
+        response.lenght = lenght;
+        return response;
+    }
+
+    public GlobalResponse responseWithHttpStatus(Object obj, HttpStatus httpStatus, WebRequest request) {
         GlobalResponse<Object> response = new GlobalResponse<>();
         response.body = obj;
         response.status = httpStatus;
@@ -32,7 +39,7 @@ public class GlobalResponseService {
         return response;
     }
 
-    public GlobalResponse<?> badRequestResponse(String errorStr, WebRequest request) {
+    public GlobalResponse badRequestResponse(String errorStr, WebRequest request) {
         GlobalResponse<Object> response = new GlobalResponse<>();
         response.body = null;
         response.status = HttpStatus.BAD_REQUEST;

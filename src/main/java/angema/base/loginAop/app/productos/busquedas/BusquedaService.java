@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static angema.base.loginAop.app.productos.busquedas.BusquedaErrorMsj.BUSQUEDA_MSG_ERROR_CREATE;
+import static angema.base.loginAop.app.productos.busquedas.BusquedaMsg.BUSQUEDA_MSG_ERROR_CREATE;
 import static angema.base.loginAop.core.utils.ErrorUtils.getErrorMessage;
 
 @Service

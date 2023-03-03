@@ -20,7 +20,7 @@ public class ItemController {
     private GlobalResponseService globalResponseService;
 
     @GetMapping("/obtener-items/cuit-socio/{cuitSocio}/id-producto/{productoId}")
-    public GlobalResponse<?> getItemsByCuitSocioAndIdProducto(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
+    public GlobalResponse getItemsByCuitSocioAndIdProducto(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
         try {
             List<Item> items = itemService.getItemsByCuitSocioAndIdProducto(cuitSocio, productoId);
             return globalResponseService.responseOk(items, request);
@@ -30,7 +30,7 @@ public class ItemController {
     }
 
     @PostMapping("/guardar-items")
-    public GlobalResponse<?> addItems(@RequestBody List<Item> items, WebRequest request) {
+    public GlobalResponse addItems(@RequestBody List<Item> items, WebRequest request) {
         try {
             itemService.addItems(items);
             return globalResponseService.responseOk("Items agregados correctamente", request);
@@ -40,7 +40,7 @@ public class ItemController {
     }
 
     @PutMapping("/modificar-items")
-    public GlobalResponse<?> updateItems(@RequestBody List<Item> items, WebRequest request) {
+    public GlobalResponse updateItems(@RequestBody List<Item> items, WebRequest request) {
         try {
             itemService.updateItems(items);
             return globalResponseService.responseOk("Items modificados correctamente", request);
@@ -50,7 +50,7 @@ public class ItemController {
     }
 
     @PatchMapping("/modificar-item")
-    public GlobalResponse<?> updateItemByParams(@RequestParam Map<String, Object> params, WebRequest request) {
+    public GlobalResponse updateItemByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
             Item item = itemService.getItemFromUpdateParams(params);
             if (item == null) {
@@ -65,7 +65,7 @@ public class ItemController {
         }
     }
     @DeleteMapping("/eliminar-item/id-item/{idItem}")
-    public GlobalResponse<?> deleteItem(@PathVariable Integer idItem, WebRequest request) {
+    public GlobalResponse deleteItem(@PathVariable Integer idItem, WebRequest request) {
         try {
             itemService.deleteItem(idItem);
             return globalResponseService.responseOk("Item eliminada correctamente", request);

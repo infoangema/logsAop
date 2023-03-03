@@ -7,6 +7,7 @@ public class GlobalResponse <T>{
     public String path;
     public String timestamp;
     public Object body;
+    public Integer lenght;
     public String error;
 
 

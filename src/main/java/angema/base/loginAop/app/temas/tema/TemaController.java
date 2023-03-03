@@ -25,27 +25,23 @@ public class TemaController {
 
     @GetMapping("/obtener-temas/cuit-socio/{cuitSocio}/tema-socio")
     @ResponseBody
-    public GlobalResponse<Tema> obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
-        try {
-            Tema temasSocio = temaService.findTemas(cuitSocio);
-            if (temasSocio == null) {
-                return (GlobalResponse<Tema>) globalResponseService.responseWithHttpStatus(temasSocio, HttpStatus.NO_CONTENT, request);
-            }
-            return (GlobalResponse<Tema>) globalResponseService.responseOk(temasSocio, request);
-        } catch (Exception e) {
-            throw new TemaException("Error al intentar obtener tema para el cuit " + cuitSocio);
+    public GlobalResponse obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
+        Tema temasSocio = temaService.findTemas(cuitSocio);
+        if (temasSocio == null) {
+            return globalResponseService.responseWithHttpStatus(temasSocio, HttpStatus.NO_CONTENT, request);
         }
+        return globalResponseService.responseOk(temasSocio, request);
     }
 
     @PostMapping("/agregar-tema/cuit-socio/{cuitSocio}")
     @ResponseBody
-    public GlobalResponse<String> agregarTema(@PathVariable String cuitSocio, @RequestBody TemaDto nuevoTema, WebRequest request) {
+    public GlobalResponse agregarTema(@PathVariable String cuitSocio, @RequestBody TemaDto nuevoTema, WebRequest request) {
         try {
             boolean seGuardoOk = temaService.saveOrUpdateTema(cuitSocio, nuevoTema, false);
             if (seGuardoOk) {
-                return (GlobalResponse<String>) globalResponseService.responseWithHttpStatus("Nuevo tema agregado correctamente.", HttpStatus.NO_CONTENT, request);
+                return globalResponseService.responseWithHttpStatus("Nuevo tema agregado correctamente.", HttpStatus.NO_CONTENT, request);
             }
-            return (GlobalResponse<String>) globalResponseService.badRequestResponse("Error al intentar guardar el nuevo tema.", request);
+            return globalResponseService.badRequestResponse("Error al intentar guardar el nuevo tema.", request);
         } catch (Exception e) {
             throw new TemaException("Error al intentar obtener tema para el cuit " + cuitSocio);
         }
@@ -53,13 +49,13 @@ public class TemaController {
 
     @PutMapping("/modificar-tema")
     @ResponseBody
-    public GlobalResponse<String> modificarTema(@PathVariable String cuitSocio, @RequestBody TemaDto tema, WebRequest request) {
+    public GlobalResponse modificarTema(@PathVariable String cuitSocio, @RequestBody TemaDto tema, WebRequest request) {
         try {
             boolean seGuardoOk = temaService.saveOrUpdateTema(cuitSocio, tema, true);
             if (seGuardoOk) {
-                return (GlobalResponse<String>) globalResponseService.responseWithHttpStatus("Nuevo tema agregado correctamente.", HttpStatus.NO_CONTENT, request);
+                return globalResponseService.responseWithHttpStatus("Nuevo tema agregado correctamente.", HttpStatus.NO_CONTENT, request);
             }
-            return (GlobalResponse<String>) globalResponseService.badRequestResponse("Error al intentar guardar el nuevo tema.", request);
+            return globalResponseService.badRequestResponse("Error al intentar guardar el nuevo tema.", request);
         } catch (Exception e) {
             throw new TemaException("Error al intentar obtener tema para el cuit " + cuitSocio);
         }

@@ -41,48 +41,48 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BusquedaException.class)
     public ResponseEntity<?> busquedaException(BusquedaException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(BarraNavegacionException.class)
     public ResponseEntity<?> busquedaException(BarraNavegacionException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(DescargaException.class)
     public ResponseEntity<?> descargaException(DescargaException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(RedirectException.class)
     public ResponseEntity<?> productoException(RedirectException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ProductoException.class)
     public ResponseEntity<?> productoException(ProductoException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler(TemaException.class)
     public ResponseEntity<?> temaException(TemaException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request);
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request);
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> globleExcpetionHandler(Exception ex, WebRequest request) {
-        GlobalResponse<?> response = globalResponseService.badRequestResponse(ex.getMessage(), request );
+        GlobalResponse response = globalResponseService.badRequestResponse(ex.getMessage(), request );
         if(ex.getMessage() != null && ex.getMessage().contains("Access is denied")){
             response.status = HttpStatus.FORBIDDEN;
             return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);

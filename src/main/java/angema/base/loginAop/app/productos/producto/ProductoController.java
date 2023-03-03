@@ -45,36 +45,36 @@ public class ProductoController {
      * @Detail Obtiene datos del producto para poder completar cards en front.
      */
     @GetMapping("/obtener-producto/id/{productoId}/cuit-socio/{cuitSocio}/producto-{id}")
-    public GlobalResponse<?> getProductoByIdAndCuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) throws ProductoException {
+    public GlobalResponse getProductoByIdAndCuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) throws ProductoException {
         Producto prd = productoService.buscarProductoPorId_y_CuitSocio(cuitSocio, productoId);
         return globalResponseService.responseOk(prd, request);
     }
 
     @PostMapping("/guardar-productos")
-    public GlobalResponse<List<Producto>> createProducto(@Valid @RequestBody List<Producto> productoList, WebRequest request) throws ProductoException {
+    public GlobalResponse createProducto(@Valid @RequestBody List<Producto> productoList, WebRequest request) throws ProductoException {
         productoService.addProducto(productoList);
-        return (GlobalResponse<List<Producto>>) globalResponseService.responseOk("Producto agregado correctamente", request);
+        return  globalResponseService.responseOk("Producto agregado correctamente", request);
     }
 
     // todo: Pasar imagenes de producto a bdd.
     @GetMapping("/obtener-productos/cuit-socio/{cuitSocio}/productos")
-    public GlobalResponse<List<Producto>> readProducto(@PathVariable String cuitSocio, WebRequest request) throws ProductoException {
+    public GlobalResponse readProducto(@PathVariable String cuitSocio, WebRequest request) throws ProductoException {
         List<Producto> producto = productoService.getProducto(cuitSocio);
         if (producto == null || producto.size() == 0) {
-            return (GlobalResponse<List<Producto>>) globalResponseService.responseWithHttpStatus(producto, HttpStatus.NO_CONTENT, request);
+            return  globalResponseService.responseWithHttpStatus(producto, HttpStatus.NO_CONTENT, request);
         }
-        return (GlobalResponse<List<Producto>>) globalResponseService.responseOk(producto, request);
+        return  globalResponseService.responseOk(producto, request);
     }
 
     @PutMapping("/modificar-productos")
-    public GlobalResponse<?> updateCoberturas(@RequestBody List<Producto> productoList, WebRequest request) throws ProductoException {
+    public GlobalResponse updateCoberturas(@RequestBody List<Producto> productoList, WebRequest request) throws ProductoException {
         productoService.updateProducto(productoList);
         return globalResponseService.responseOk("Producto modificado correctamente", request);
     }
 
     // todo prueba
     @PatchMapping("/modificar-producto")
-    public GlobalResponse<?> updateProductoByParams(@RequestParam Map<String, Object> params, WebRequest request) throws ProductoException {
+    public GlobalResponse updateProductoByParams(@RequestParam Map<String, Object> params, WebRequest request) throws ProductoException {
         Producto producto = productoService.getProductoFromUpdateParams(params);
         if (producto == null) {
             throw new ProductoException("Uno o mas parametros de los enviados no son validos.");
@@ -86,7 +86,7 @@ public class ProductoController {
     }
 
     @DeleteMapping("/eliminar-producto/id-producto/{idProducto}")
-    public GlobalResponse<?> deleteProducto(@PathVariable Integer idProducto, WebRequest request) throws ProductoException {
+    public GlobalResponse deleteProducto(@PathVariable Integer idProducto, WebRequest request) throws ProductoException {
         productoService.deleteProducto(idProducto);
         return globalResponseService.responseOk("Producto eliminado correctamente", request);
     }

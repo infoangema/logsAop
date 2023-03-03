@@ -22,7 +22,7 @@ public class DetalleController {
     private GlobalResponseService globalResponseService;
 
     @GetMapping("/obtener-detalle/cuit-socio/{cuitSocio}/id-producto/{productoId}")
-    public GlobalResponse<?> getDetallesByCuitSocioAndIdProducto(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
+    public GlobalResponse getDetallesByCuitSocioAndIdProducto(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
         try {
             Detalle detalle = detalleService.getDetalleByCuitSocioAndIdProducto(cuitSocio, productoId);
             return globalResponseService.responseOk(detalle, request);
@@ -32,7 +32,7 @@ public class DetalleController {
     }
 
     @PostMapping("/guardar-detalles")
-    public GlobalResponse<?> addDetalles(@RequestBody List<Detalle> detalles, WebRequest request) {
+    public GlobalResponse addDetalles(@RequestBody List<Detalle> detalles, WebRequest request) {
         try {
             detalleService.addDetalles(detalles);
             return globalResponseService.responseOk("Detalles agregados correctamente", request);
@@ -42,7 +42,7 @@ public class DetalleController {
     }
 
     @PutMapping("/modificar-detalles")
-    public GlobalResponse<?> updateDetalles(@RequestBody List<Detalle> detalles, WebRequest request) {
+    public GlobalResponse updateDetalles(@RequestBody List<Detalle> detalles, WebRequest request) {
         try {
             detalleService.updateDetalles(detalles);
             return globalResponseService.responseOk("Detalles modificados correctamente", request);
@@ -52,7 +52,7 @@ public class DetalleController {
     }
 
     @PatchMapping("/modificar-detalle")
-    public GlobalResponse<?> updateCoberturaByParams(@RequestParam Map<String, Object> params, WebRequest request) {
+    public GlobalResponse updateCoberturaByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
             Detalle detalle = detalleService.getDetalleFromUpdateParams(params);
             if (detalle == null) {
@@ -67,7 +67,7 @@ public class DetalleController {
         }
     }
     @DeleteMapping("/eliminar-detalle/id-detalle/{idCobertura}")
-    public GlobalResponse<?> deleteCobertura(@PathVariable Integer idCobertura, WebRequest request) {
+    public GlobalResponse deleteCobertura(@PathVariable Integer idCobertura, WebRequest request) {
         try {
             detalleService.deleteDetalle(idCobertura);
             return globalResponseService.responseOk("Cobertura eliminada correctamente", request);

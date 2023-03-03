@@ -23,7 +23,7 @@ public class CoberturaController {
     CoberturaRepository coberturaRepository;
 
     @PostMapping("/guardar-coberturas")
-    public GlobalResponse<?> createCoberturas(@RequestBody List<Cobertura> coberturas, WebRequest request) {
+    public GlobalResponse createCoberturas(@RequestBody List<Cobertura> coberturas, WebRequest request) {
         try {
             coberturaService.addCoberturas(coberturas);
             return globalResponseService.responseOk("Coberturas agregadas correctamente", request);
@@ -33,7 +33,7 @@ public class CoberturaController {
     }
 
     @GetMapping("/obtener-coberturas/cuit-socio/{cuitSocio}/id-producto/{idProducto}")
-    public GlobalResponse<?> readCoberturas(@PathVariable String cuitSocio, @PathVariable String idProducto, WebRequest request) {
+    public GlobalResponse readCoberturas(@PathVariable String cuitSocio, @PathVariable String idProducto, WebRequest request) {
         try {
             List<Cobertura> coberturas = coberturaService.getCoberturas(cuitSocio, idProducto);
             return globalResponseService.responseOk(coberturas, request);
@@ -44,7 +44,7 @@ public class CoberturaController {
 
 
     @PutMapping("/modificar-coberturas")
-    public GlobalResponse<?> updateCoberturas(@RequestBody List<Cobertura> coberturas, WebRequest request) {
+    public GlobalResponse updateCoberturas(@RequestBody List<Cobertura> coberturas, WebRequest request) {
         try {
             coberturaService.updateCoberturas(coberturas);
             return globalResponseService.responseOk("Coberturas modificadas correctamente", request);
@@ -54,7 +54,7 @@ public class CoberturaController {
     }
 // todo prueba
     @PatchMapping("/modificar-coberturas")
-    public GlobalResponse<?> updateCoberturaByParams(@RequestParam Map<String, Object> params, WebRequest request) {
+    public GlobalResponse updateCoberturaByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
             Cobertura cobertura = coberturaService.getCoberturaFromUpdateParams(params);
             if (cobertura == null) {
@@ -69,7 +69,7 @@ public class CoberturaController {
         }
     }
     @DeleteMapping("/eliminar-cobertura/id-cobertura/{idCobertura}")
-    public GlobalResponse<?> deleteCobertura(@PathVariable Integer idCobertura, WebRequest request) {
+    public GlobalResponse deleteCobertura(@PathVariable Integer idCobertura, WebRequest request) {
         try {
             coberturaService.deleteCobertura(idCobertura);
             return globalResponseService.responseOk("Cobertura eliminada correctamente", request);
