@@ -31,7 +31,7 @@ public class CoberturaController {
             summary = COBERTURA_CREATE_SUMMARY,
             description = COBERTURA_CREATE_DESCRIPTION
     )
-    @PostMapping("${COBERTURA_URI_CREATE}")
+    @PostMapping("/${COBERTURA_URI_CREATE}")
     public GlobalResponse createCoberturas(@RequestBody List<Cobertura> coberturas, WebRequest request) {
         try {
             coberturaService.addCoberturas(coberturas);
@@ -46,7 +46,7 @@ public class CoberturaController {
             summary = COBERTURA_READ_SUMMARY,
             description = COBERTURA_READ_DESCRIPTION
     )
-    @GetMapping("${COBERTURA_URI_READ}/cuit-socio/{cuitSocio}/id-producto/{idProducto}")
+    @GetMapping("/${COBERTURA_URI_READ}/cuit-socio/{cuitSocio}/id-producto/{idProducto}")
     public GlobalResponse readCoberturas(@PathVariable String cuitSocio, @PathVariable String idProducto, WebRequest request) {
         try {
             List<Cobertura> coberturas = coberturaService.getCoberturas(cuitSocio, idProducto);

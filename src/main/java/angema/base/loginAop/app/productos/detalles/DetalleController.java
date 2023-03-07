@@ -18,7 +18,7 @@ import static angema.base.loginAop.app.productos.coberturas.CoberturaMsg.COBERTU
 import static angema.base.loginAop.app.productos.detalles.DetalleMsg.*;
 
 @RestController
-@RequestMapping("/detalles/detalle")
+@RequestMapping("/${DETALLE_PATH}")
 public class DetalleController {
     @Autowired
     private DetalleService detalleService;
@@ -29,7 +29,7 @@ public class DetalleController {
             summary = DETALLE_READ_SUMMARY,
             description = DETALLE_READ_DESCRIPTION
     )
-    @GetMapping("/obtener-detalle/cuit-socio/{cuitSocio}/id-producto/{productoId}")
+    @GetMapping("/${DETALLE_URI_FIND_BY_CUIT_AND_IDPROD}/cuit-socio/{cuitSocio}/id-producto/{productoId}")
     public GlobalResponse getDetallesByCuitSocioAndIdProducto(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
         try {
             Detalle detalle = detalleService.getDetalleByCuitSocioAndIdProducto(cuitSocio, productoId);
@@ -42,7 +42,7 @@ public class DetalleController {
             summary = DETALLE_CREATE_SUMMARY,
             description = DETALLE_CREATE_DESCRIPTION
     )
-    @PostMapping("/guardar-detalles")
+    @PostMapping("/${DETALLE_URI_CREATE}")
     public GlobalResponse addDetalles(@RequestBody List<Detalle> detalles, WebRequest request) {
         try {
             detalleService.addDetalles(detalles);
@@ -55,7 +55,7 @@ public class DetalleController {
             summary = DETALLE_UPDATE_SUMMARY,
             description = DETALLE_UPDATE_DESCRIPTION
     )
-    @PutMapping("/modificar-detalles")
+    @PutMapping("/${DETALLE_URI_UPDATE}")
     public GlobalResponse updateDetalles(@RequestBody List<Detalle> detalles, WebRequest request) {
         try {
             detalleService.updateDetalles(detalles);
@@ -68,7 +68,7 @@ public class DetalleController {
             summary = DETALLE_UPDATE_BY_PARAMS_SUMMARY,
             description = DETALLE_UPDATE_BY_PARAMS_DESCRIPTION
     )
-    @PatchMapping("/modificar-detalle")
+    @PatchMapping("/${DETALLE_URI_UPDATE_BY_PARAMS}")
     public GlobalResponse updateCoberturaByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
             Detalle detalle = detalleService.getDetalleFromUpdateParams(params);
@@ -89,7 +89,7 @@ public class DetalleController {
             summary = DETALLE_DELETE_SUMMARY,
             description = DETALLE_DELETE_DESCRIPTION
     )
-    @DeleteMapping("/eliminar-detalle/id-detalle/{idCobertura}")
+    @DeleteMapping("/${DETALLE_URI_DELETE}/id-detalle/{idCobertura}")
     public GlobalResponse deleteCobertura(@PathVariable Integer idCobertura, WebRequest request) {
         try {
             detalleService.deleteDetalle(idCobertura);

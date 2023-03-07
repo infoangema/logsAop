@@ -24,7 +24,7 @@ import static angema.base.loginAop.app.productos.items.ItemMsg.ITEM_READ_SUMMARY
 import static angema.base.loginAop.app.productos.producto.ProductoMsg.*;
 
 @RestController
-@RequestMapping("/productos/producto")
+@RequestMapping("/${PRODUCTO_PATH}")
 public class ProductoController {
     @Autowired
     private ProductoService productoService;
@@ -38,7 +38,7 @@ public class ProductoController {
             summary = PRODUCTO_GET_ALL_SUMMARY,
             description = PRODUCTO_GET_ALL_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-productos-por-cuit/{cuitSocio}/productos")
+    @GetMapping(value = "/${PRODUCTO_URI_FIND_BY_CUIT}/{cuitSocio}/productos")
     @ResponseBody
     public String getAllProductsByCuit(@PathVariable String cuitSocio, WebRequest request) {
         String res = fileSystemUtil.getFile("/static/" + cuitSocio + "/productos/productos.json");
@@ -56,7 +56,7 @@ public class ProductoController {
             summary = PRODUCTO_GET_SUMMARY,
             description = PRODUCTO_GET_DESCRIPTION
     )
-    @GetMapping("/obtener-producto/id/{productoId}/cuit-socio/{cuitSocio}/producto-{id}")
+    @GetMapping("/${PRODUCTO_URI_FIND_BY_CUIT_AND_IDPROD}/id/{productoId}/cuit-socio/{cuitSocio}/producto-{id}")
     public GlobalResponse getProductoByIdAndCuitSocio(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) throws ProductoException {
         Producto prd = productoService.buscarProductoPorId_y_CuitSocio(cuitSocio, productoId);
         return globalResponseService.responseOk(prd, request);
@@ -65,7 +65,7 @@ public class ProductoController {
             summary = PRODUCTO_CREATE_SUMMARY,
             description = PRODUCTO_CREATE_DESCRIPTION
     )
-    @PostMapping("/guardar-productos")
+    @PostMapping("/${PRODUCTO_URI_CREATE}")
     public GlobalResponse createProducto(@Valid @RequestBody List<Producto> productoList, WebRequest request) throws ProductoException {
         productoService.addProducto(productoList);
         return  globalResponseService.responseOk(PRODUCTO_CREATE_CODE_200, request);
@@ -76,7 +76,7 @@ public class ProductoController {
             summary = PRODUCTO_READ_SUMMARY,
             description = PRODUCTO_READ_DESCRIPTION
     )
-    @GetMapping("/obtener-productos/cuit-socio/{cuitSocio}/productos")
+    @GetMapping("/${PRODUCTO_URI_READ_BY_CUIT}/cuit-socio/{cuitSocio}/productos")
     public GlobalResponse readProducto(@PathVariable String cuitSocio, WebRequest request) throws ProductoException {
         List<Producto> producto = productoService.getProducto(cuitSocio);
         if (producto == null || producto.size() == 0) {
@@ -88,7 +88,7 @@ public class ProductoController {
             summary = PRODUCTO_UPDATE_SUMMARY,
             description = PRODUCTO_UPDATE_DESCRIPTION
     )
-    @PutMapping("/modificar-productos")
+    @PutMapping("/${PRODUCTO_URI_UPDATE}")
     public GlobalResponse updateCoberturas(@RequestBody List<Producto> productoList, WebRequest request) throws ProductoException {
         productoService.updateProducto(productoList);
         return globalResponseService.responseOk(PRODUCTO_MSG_OK_UPDATE, request);
@@ -99,7 +99,7 @@ public class ProductoController {
             summary = PRODUCTO_UPDATE_BY_PARAMS_SUMMARY,
             description = PRODUCTO_UPDATE_BY_PARAMS_DESCRIPTION
     )
-    @PatchMapping("/modificar-producto")
+    @PatchMapping("/${PRODUCTO_URI_UPDATE_BY_PARAMS}")
     public GlobalResponse updateProductoByParams(@RequestParam Map<String, Object> params, WebRequest request) throws ProductoException {
         Producto producto = productoService.getProductoFromUpdateParams(params);
         if (producto == null) {
@@ -114,7 +114,7 @@ public class ProductoController {
             summary = PRODUCTO_DELETE_SUMMARY,
             description = PRODUCTO_DELETE_DESCRIPTION
     )
-    @DeleteMapping("/eliminar-producto/id-producto/{idProducto}")
+    @DeleteMapping("/${PRODUCTO_URI_DELETE}/id-producto/{idProducto}")
     public GlobalResponse deleteProducto(@PathVariable Integer idProducto, WebRequest request) throws ProductoException {
         productoService.deleteProducto(idProducto);
         return globalResponseService.responseOk(PRODUCTO_MSG_OK_DELETE, request);
@@ -123,7 +123,7 @@ public class ProductoController {
             summary = PRODUCTO_GET_IMAGEN_SUMMARY,
             description = PRODUCTO_GET_IMAGEN_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-imagen/id-producto/{productoId}/cuit/{cuitSocio}/numero-imagen/{numeroImagen}", produces = MediaType.IMAGE_JPEG_VALUE)
+    @GetMapping(value = "/${PRODUCTO_URI_FIND_IMG_BY_CUIT_AND_IDPROD}/id-producto/{productoId}/cuit/{cuitSocio}/numero-imagen/{numeroImagen}", produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
     public byte[] obtenerImagenPorIdProducto(@PathVariable String cuitSocio, @PathVariable String productoId, @PathVariable String numeroImagen, @RequestParam(defaultValue = "jpg", required = false) String tipo) throws IOException {
         try {
@@ -141,7 +141,7 @@ public class ProductoController {
             summary = PRODUCTO_GET_DEFAULT_IMAGEN_SUMMARY,
             description = PRODUCTO_GET_DEFAULT_IMAGEN_DESCRIPTION
     )
-    @GetMapping(value = "/getImagedefaultBycuitSocio/{cuitSocio}", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/${PRODUCTO_URI_FIND_IMG_DEFAULT_BY_CUIT_AND_IDPROD}/{cuitSocio}", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public byte[] obtenerImagenDefaultPorCuitSocio(@PathVariable String cuitSocio) throws IOException {
         try {

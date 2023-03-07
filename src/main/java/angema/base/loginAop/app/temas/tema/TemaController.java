@@ -19,7 +19,7 @@ import static angema.base.loginAop.app.redirect.RedirectMsg.REDIRECT_GET_SUMMARY
 import static angema.base.loginAop.app.temas.tema.TemaMsg.*;
 
 @RestController
-@RequestMapping("/temas")
+@RequestMapping("/${TEMA_PATH}")
 public class TemaController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class TemaController {
             summary = TEMA_READ_TEMAS_SUMMARY,
             description = TEMA_READ_TEMAS_DESCRIPTION
     )
-    @GetMapping("/obtener-temas/cuit-socio/{cuitSocio}/tema-socio")
+    @GetMapping("/${TEMA_URI_FIND_BY_CUIT}/cuit-socio/{cuitSocio}/tema-socio")
     @ResponseBody
     public GlobalResponse obtenerTemasPorCuit(@PathVariable String cuitSocio, WebRequest request) {
         Tema temasSocio = temaService.findTemas(cuitSocio);
@@ -44,7 +44,7 @@ public class TemaController {
             summary = TEMA_CREATE_SUMMARY,
             description = TEMA_CREATE_DESCRIPTION
     )
-    @PostMapping("/agregar-tema/cuit-socio/{cuitSocio}")
+    @PostMapping("/${TEMA_URI_CREATE}/cuit-socio/{cuitSocio}")
     @ResponseBody
     public GlobalResponse agregarTema(@PathVariable String cuitSocio, @RequestBody TemaDto nuevoTema, WebRequest request) {
         try {
@@ -61,7 +61,7 @@ public class TemaController {
             summary = TEMA_UPDATE_SUMMARY,
             description = TEMA_UPDATE_DESCRIPTION
     )
-    @PutMapping("/modificar-tema")
+    @PutMapping("/${TEMA_URI_UPDATE}")
     @ResponseBody
     public GlobalResponse modificarTema(@PathVariable String cuitSocio, @RequestBody TemaDto tema, WebRequest request) {
         try {
@@ -79,7 +79,7 @@ public class TemaController {
             summary = TEMA_READ_LOGO_SUMMARY,
             description = TEMA_READ_LOGO_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-logo/cuit-socio/{cuitSocio}/logo", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/${TEMA_URI_FIND_LOGO_BY_CUIT}/cuit-socio/{cuitSocio}/logo", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public byte[] getLogo(@PathVariable String cuitSocio) throws IOException {
         InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/images/logo-" + cuitSocio + ".png");
@@ -91,7 +91,7 @@ public class TemaController {
             description = TEMA_READ_BACKGROUND_DESCRIPTION
     )
     // TODO: 13/10/2022 :definir imagen background y implementar funcionalidad en front.
-    @GetMapping(value = "/obtener-imagen-fondo/cuit/{cuitSocio}", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/${TEMA_URI_FIND_BACKGROUND_BY_CUIT}/cuit/{cuitSocio}", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public byte[] getBackGroundImageByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = TemaController.class.getResourceAsStream("/static/images/bg-image-" + cuitSocio + ".jpg");
@@ -102,7 +102,7 @@ public class TemaController {
             summary = TEMA_READ_COBERTURA_SUMMARY,
             description = TEMA_READ_COBERTURA_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-cobertura/cuit/{cuitSocio}/id-producto/{idProducto}", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(value = "/${TEMA_URI_FIND_COBERTURA_BY_CUIT_AND_IDPROD}/cuit/{cuitSocio}/id-producto/{idProducto}", produces = MediaType.APPLICATION_PDF_VALUE)
     @ResponseBody
     public byte[] getCoberturaByCuitAndProductId(@PathVariable String cuitSocio, @PathVariable String idProducto) throws IOException {
         InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/productos/coberturaProduct/" + idProducto + ".pdf");
@@ -112,7 +112,7 @@ public class TemaController {
             summary = TEMA_READ_CONDICIONES_SUMMARY,
             description = TEMA_READ_CONDICIONES_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-condiciones/cuit/{cuitSocio}/id-producto/{idProducto}", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(value = "/${TEMA_URI_FIND_CONDICIONES_BY_CUIT_AND_IDPROD}/cuit/{cuitSocio}/id-producto/{idProducto}", produces = MediaType.APPLICATION_PDF_VALUE)
     @ResponseBody
     public byte[] getCondicionesByCuitAndProductId(@PathVariable String cuitSocio, @PathVariable String idProducto) throws IOException {
         InputStream in = TemaController.class.getResourceAsStream("/static/" + cuitSocio + "/productos/basesYCondicionesProduct/" + idProducto + ".pdf");
@@ -123,7 +123,7 @@ public class TemaController {
             summary = TEMA_FONT_PRIMARY_SUMMARY,
             description = TEMA_FONT_PRIMARY_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-tipografia/cuit/{cuitSocio}/primary/font_primary.ttf", produces = "application/x-font-ttf")
+    @GetMapping(value = "/${TEMA_URI_FIND_FONT_PRIMARY_BY_CUIT}/cuit/{cuitSocio}/primary/font_primary.ttf", produces = "application/x-font-ttf")
     @ResponseBody
     public byte[] getFontPrimaryByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = null;
@@ -134,7 +134,7 @@ public class TemaController {
             summary = TEMA_FONT_SECONDARY_SUMMARY,
             description = TEMA_FONT_SECONDARY_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-tipografia/cuit/{cuitSocio}/secondary/font_primary.ttf", produces = "application/x-font-ttf")
+    @GetMapping(value = "/${TEMA_URI_FIND_FONT_SECONDARY_BY_CUIT}/cuit/{cuitSocio}/secondary/font_primary.ttf", produces = "application/x-font-ttf")
     @ResponseBody
     public byte[] getFontSecondaryByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = null;
@@ -145,7 +145,7 @@ public class TemaController {
             summary = TEMA_FONT_CSS_SUMMARY,
             description = TEMA_FONT_CSS_SUMMARY
     )
-    @GetMapping(value = "/obtener-tipografia/cuit/{cuitSocio}/primary/font_primary.css", produces = "test/css")
+    @GetMapping(value = "/${TEMA_URI_FIND_FONT_CSS_BY_CUIT}/cuit/{cuitSocio}/primary/font_primary.css", produces = "test/css")
     @ResponseBody
     public byte[] getFontCssByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = null;

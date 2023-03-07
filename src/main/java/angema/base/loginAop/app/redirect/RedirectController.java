@@ -21,7 +21,7 @@ import static angema.base.loginAop.app.productos.detalles.DetalleMsg.DETALLE_REA
 import static angema.base.loginAop.app.redirect.RedirectMsg.*;
 
 @RestController
-@RequestMapping("/site/redirect")
+@RequestMapping("${REDIRECT_PATH}")
 public class RedirectController {
 
     @Autowired

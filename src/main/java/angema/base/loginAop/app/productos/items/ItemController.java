@@ -16,7 +16,7 @@ import static angema.base.loginAop.app.productos.detalles.DetalleMsg.DETALLE_REA
 import static angema.base.loginAop.app.productos.items.ItemMsg.*;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("/${ITEMS_PATH}")
 public class ItemController {
     @Autowired
     private ItemService itemService;
@@ -27,7 +27,7 @@ public class ItemController {
             summary = ITEM_READ_SUMMARY,
             description = ITEM_READ_DESCRIPTION
     )
-    @GetMapping("/obtener-items/cuit-socio/{cuitSocio}/id-producto/{productoId}")
+    @GetMapping("/${ITEMS_URI_FIND_BY_CUIT_AND_IDPROD}/cuit-socio/{cuitSocio}/id-producto/{productoId}")
     public GlobalResponse getItemsByCuitSocioAndIdProducto(@PathVariable String cuitSocio, @PathVariable String productoId, WebRequest request) {
         try {
             List<Item> items = itemService.getItemsByCuitSocioAndIdProducto(cuitSocio, productoId);
@@ -40,7 +40,7 @@ public class ItemController {
             summary = ITEM_CREATE_SUMMARY,
             description = ITEM_CREATE_DESCRIPTION
     )
-    @PostMapping("/guardar-items")
+    @PostMapping("/${ITEMS_URI_CREATE}")
     public GlobalResponse addItems(@RequestBody List<Item> items, WebRequest request) {
         try {
             itemService.addItems(items);
@@ -53,7 +53,7 @@ public class ItemController {
             summary = ITEM_UPDATE_SUMMARY,
             description = ITEM_UPDATE_DESCRIPTION
     )
-    @PutMapping("/modificar-items")
+    @PutMapping("/${ITEMS_URI_UPDATE}")
     public GlobalResponse updateItems(@RequestBody List<Item> items, WebRequest request) {
         try {
             itemService.updateItems(items);
@@ -66,7 +66,7 @@ public class ItemController {
             summary = ITEM_UPDATE_BY_PARAMS_SUMMARY,
             description = ITEM_UPDATE_BY_PARAMS_DESCRIPTION
     )
-    @PatchMapping("/modificar-item")
+    @PatchMapping("/${ITEMS_URI_UPDATE_BY_PARAMS}")
     public GlobalResponse updateItemByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
             Item item = itemService.getItemFromUpdateParams(params);
@@ -85,7 +85,7 @@ public class ItemController {
             summary = ITEM_DELETE_SUMMARY,
             description = ITEM_DELETE_DESCRIPTION
     )
-    @DeleteMapping("/eliminar-item/id-item/{idItem}")
+    @DeleteMapping("/${ITEMS_URI_DELETE}/id-item/{idItem}")
     public GlobalResponse deleteItem(@PathVariable Integer idItem, WebRequest request) {
         try {
             itemService.deleteItem(idItem);

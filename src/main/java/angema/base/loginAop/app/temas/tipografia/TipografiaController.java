@@ -15,7 +15,7 @@ import static angema.base.loginAop.app.redirect.RedirectMsg.REDIRECT_GET_SUMMARY
 import static angema.base.loginAop.app.temas.tipografia.TipografiaMsg.*;
 
 @RestController
-@RequestMapping("/temas/tipografias")
+@RequestMapping("/${TIPOGRAFIA_PATH}")
 public class TipografiaController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class TipografiaController {
             summary = TIPOGRAFIA_FONT_PRIMARY_SUMMARY,
             description = TIPOGRAFIA_FONT_PRIMARY_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-tipografia/cuit/{cuitSocio}/primary/font_primary.ttf", produces = "application/x-font-ttf")
+    @GetMapping(value = "/${TIPOGRAFIA_URI_FIND_FONT_PRIMARY_BY_CUIT}/cuit/{cuitSocio}/primary/font_primary.ttf", produces = "application/x-font-ttf")
     @ResponseBody
     public byte[] getFontPrimaryByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = null;
@@ -39,7 +39,7 @@ public class TipografiaController {
             summary = TIPOGRAFIA_FONT_SECONDARY_SUMMARY,
             description = TIPOGRAFIA_FONT_SECONDARY_DESCRIPTION
     )
-    @GetMapping(value = "/obtener-tipografia/cuit/{cuitSocio}/secondary/font_primary.ttf", produces = "application/x-font-ttf")
+    @GetMapping(value = "/${TIPOGRAFIA_URI_FIND_FONT_SECONDARY_BY_CUIT}/cuit/{cuitSocio}/secondary/font_primary.ttf", produces = "application/x-font-ttf")
     @ResponseBody
     public byte[] getFontSecondaryByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = null;
@@ -50,7 +50,7 @@ public class TipografiaController {
             summary = TIPOGRAFIA_FONT_CSS_SUMMARY,
             description = TIPOGRAFIA_FONT_CSS_SUMMARY
     )
-    @GetMapping(value = "/obtener-tipografia/cuit/{cuitSocio}/primary/font_primary.css", produces = "test/css")
+    @GetMapping(value = "/${TIPOGRAFIA_URI_FIND_FONT_CSS_BY_CUIT}/cuit/{cuitSocio}/primary/font_primary.css", produces = "test/css")
     @ResponseBody
     public byte[] getFontCssByCuit(@PathVariable String cuitSocio) throws IOException {
         InputStream in = null;
