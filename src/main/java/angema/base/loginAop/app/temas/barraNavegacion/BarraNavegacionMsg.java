@@ -1,6 +1,6 @@
 package angema.base.loginAop.app.temas.barraNavegacion;
 
-public class BarraNavegacionErrorMsj {
+public class BarraNavegacionMsg {
 
     public static final String CODE_200_CREATE = "Barra de navegacion agregada correctamente.";
     public static final String CODE_200_DELETE = "BarraNavegacion eliminada correctamente";

@@ -30,7 +30,7 @@ public class BusquedaController {
             summary = BUSCAR_PARAMETROS_SUMMARY,
             description = BUSCAR_PARAMETROS_DESCRIPTION
     )
-    @GetMapping("${BUSQUEDA_URI_FIND_LIST_ID}")
+    @GetMapping("/${BUSQUEDA_URI_FIND_LIST_ID}")
     public GlobalResponse findIdsProductosByParams(@RequestParam String params, WebRequest request) {
         List<String> parametros = Arrays.asList(params.trim().split(","));
         parametros = busquedaService.findParams(parametros);
@@ -41,7 +41,7 @@ public class BusquedaController {
             summary = BUSQUEDA_CREATE_SUMMARY,
             description = BUSQUEDA_CREATE_DESCRIPTION
     )
-    @PostMapping("${BUSQUEDA_URI_CREATE}")
+    @PostMapping("/${BUSQUEDA_URI_CREATE}")
     public GlobalResponse create(@RequestBody List<Busqueda> busquedas, WebRequest request) throws BarraNavegacionException {
         busquedaService.addBusquedas(busquedas);
         return globalResponseService.responseOk(BUSQUEDA_CREATE_CODE_200, request);
@@ -51,7 +51,7 @@ public class BusquedaController {
             summary = BUSQUEDA_READ_SUMMARY,
             description = BUSQUEDA_READ_DESCRIPTION
     )
-    @GetMapping("${BUSQUEDA_URI_READ}/cuit-socio/{cuitSocio}/id-producto/{idProducto}")
+    @GetMapping("/${BUSQUEDA_URI_READ}/cuit-socio/{cuitSocio}/id-producto/{idProducto}")
     public GlobalResponse read(@PathVariable String cuitSocio, @PathVariable String idProducto, WebRequest request) {
         try {
             List<Busqueda> busquedas = busquedaService.getBusquedas(cuitSocio, idProducto);
@@ -66,7 +66,7 @@ public class BusquedaController {
             summary = BUSQUEDA_UPDATE_SUMMARY,
             description = BUSQUEDA_UPDATE_DESCRIPTION
     )
-    @PutMapping("${BUSQUEDA_URI_UPDATE}")
+    @PutMapping("/${BUSQUEDA_URI_UPDATE}")
     public GlobalResponse update(@RequestBody List<Busqueda> busquedas, WebRequest request) {
         try {
             busquedaService.updateBusquedas(busquedas);
@@ -81,7 +81,7 @@ public class BusquedaController {
             summary = BUSQUEDA_UPDATE_BY_PARAMS_SUMMARY,
             description = BUSQUEDA_UPDATE_BY_PARAMS_DESCRIPTION
     )
-    @PatchMapping("${BUSQUEDA_URI_UPDATE_BY_PARAMS}")
+    @PatchMapping("/${BUSQUEDA_URI_UPDATE_BY_PARAMS}")
     public GlobalResponse updateByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
             Busqueda busqueda = busquedaService.getBusquedaFromUpdateParams(params);
@@ -102,7 +102,7 @@ public class BusquedaController {
             summary = BUSQUEDA_DELETE_SUMMARY,
             description = BUSQUEDA_DELETE_DESCRIPTION
     )
-    @DeleteMapping("${BUSQUEDA_URI_DELETE}/{idBusqueda}")
+    @DeleteMapping("/${BUSQUEDA_URI_DELETE}/{idBusqueda}")
     public GlobalResponse delete(@PathVariable Integer idBusqueda, WebRequest request) {
         try {
             busquedaService.deleteBusqueda(idBusqueda);

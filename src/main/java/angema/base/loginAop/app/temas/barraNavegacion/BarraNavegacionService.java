@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
-import static angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacionErrorMsj.*;
+import static angema.base.loginAop.app.temas.barraNavegacion.BarraNavegacionMsg.*;
 import static angema.base.loginAop.core.utils.ErrorUtils.getErrorMessage;
 
 @Service

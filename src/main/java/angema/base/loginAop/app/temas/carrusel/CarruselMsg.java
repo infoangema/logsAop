@@ -34,7 +34,10 @@ public class CarruselMsg {
     public static final String CODE_200_CREATE = "Carrusel agregado correctamente";
     public static final String CODE_200_DELETE = "Carrusel eliminado correctamente";
     public static final String CODE_400_DELETE = "Error al intentar eliminar carrusel: ";
+
     public static final String CODE_200_UPDATE = "Carrusel modificado correctamente";
+    public static final String CODE_400_CREATE = "Error al intentar guardar carrusel";
+
     public static final String CODE_400_UPDATE = "Error al intentar modificar carrusel: ";
     public static final String CODE_200_UPDATE_BY_PARAMS = "BarraNavegacion modificada correctamente";
     public static final String BARRA_NAVEGACION_MSG_ERROR_CREATE = "Error al intentar guardar el tema de la barra de navegacion: %s";

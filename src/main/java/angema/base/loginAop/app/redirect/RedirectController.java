@@ -3,6 +3,7 @@ package angema.base.loginAop.app.redirect;
 import angema.base.loginAop.app.temas.tema.TemaRepository;
 import angema.base.loginAop.core.globalResponse.GlobalResponse;
 import angema.base.loginAop.core.globalResponse.GlobalResponseService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,10 @@ import org.springframework.web.context.request.WebRequest;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
+
+import static angema.base.loginAop.app.productos.detalles.DetalleMsg.DETALLE_READ_DESCRIPTION;
+import static angema.base.loginAop.app.productos.detalles.DetalleMsg.DETALLE_READ_SUMMARY;
+import static angema.base.loginAop.app.redirect.RedirectMsg.*;
 
 @RestController
 @RequestMapping("/site/redirect")
@@ -44,16 +49,19 @@ public class RedirectController {
      * @param webRequest
      * @return
      */
-
+    @Operation(
+            summary = REDIRECT_GET_SUMMARY,
+            description = REDIRECT_GET_DESCRIPTION
+    )
     @GetMapping("/{nombre}")
     public GlobalResponse getRedirectByPartnerName(@PathVariable String nombre, HttpServletResponse response, WebRequest webRequest) {
         if (!PartnersNames.containsKey(nombre)){
-            throw new RedirectException("No existe sitio para el socio solicitado");
+            throw new RedirectException(REDIRECT_MSG_ERROR_READ_SOCIO);
         }
         try {
             String cuitSocio=temaRepository.findByNombreLikeIgnoreCase(nombre).cuitSocio;
             if (cuitSocio == null || cuitSocio.length() != 11){
-                throw new RedirectException("Cuit del socio no encontrado ó inválido.");
+                throw new RedirectException(REDIRECT_MSG_ERROR_READ_INVALID_SOCIO);
             }
             Cookie cookie = new Cookie("cuit_socio", cuitSocio);
             cookie.setMaxAge(60 * 60000);

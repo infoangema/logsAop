@@ -35,7 +35,7 @@ public class CarruselController {
             summary = CARRUSEL_FIND_IMG_BY_CUIT_SUMMARY,
             description = CARRUSEL_FIND_IMG_BY_CUIT_DESCRIPTION
     )
-    @GetMapping(value = "${CARRUSEL_URI_FIND_IMG_BY_CUIT}/cuit/{cuitSocio}/numero-imagen/{numero}", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/${CARRUSEL_URI_FIND_IMG_BY_CUIT}/cuit/{cuitSocio}/numero-imagen/{numero}", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseBody
     public byte[] findImageByCuit(@PathVariable String cuitSocio, @PathVariable String numero, @RequestParam(required = false) String size) throws IOException {
         ViewportSize viewportSize = carruselService.getMatchingViewportSize(size);
@@ -55,7 +55,7 @@ public class CarruselController {
             carruselService.addCarrusel(carruselList);
             return globalResponseService.responseOk(CODE_200_CREATE, request);
         } catch (CarruselException e) {
-            throw new CarruselException("Error al intentar guardar carrusel: " + e.getMessage());
+            throw new CarruselException(CODE_400_CREATE + e.getMessage());
         }
     }
 
@@ -81,7 +81,7 @@ public class CarruselController {
             summary = "@RequestBody List<Carrusel>, @Return List<Carrusel>\"" + CODE_200_UPDATE + "\"",
             description = "CRUD UPDATE. Actualiza imagen carrusel."
     )
-    @PutMapping("/modificar-carrusel")
+    @PutMapping("/${CARRUSEL_URI_UPDATE}")
     public GlobalResponse update(@RequestBody List<Carrusel> carruselList, WebRequest request) {
         try {
             carruselService.updateCarrusel(carruselList);
@@ -95,7 +95,7 @@ public class CarruselController {
             summary = "@RequestParam Map<String, Object> params, @Return List<Carrusel>\"" + CODE_200_UPDATE + "\"",
             description = "CRUD UPDATE by params. Actualiza imagen carrusel por query param."
     )
-    @PatchMapping("/modificar-carrusel")
+    @PatchMapping("/${CARRUSEL_URI_UPDATE_BY_PARAMS}")
     public GlobalResponse updateByParams(@RequestParam Map<String, Object> params, WebRequest request) {
         try {
             Carrusel carrusel = carruselService.getCarruselFromUpdateParams(params);
@@ -114,7 +114,7 @@ public class CarruselController {
             summary = "@PathVariable Integer idCarrusel, @Return String: \"" + CODE_200_DELETE + "\"",
             description = "CRUD DELETE. Borra imagen de carrusel por id."
     )
-    @DeleteMapping("/eliminar-carrusel/id-carrusel/{idCarrusel}")
+    @DeleteMapping("/${CARRUSEL_URI_DELETE}/id-carrusel/{idCarrusel}")
     public GlobalResponse delete(@PathVariable Integer idCarrusel, WebRequest request) {
         try {
             carruselService.deleteCarrusel(idCarrusel);
