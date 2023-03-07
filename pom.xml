@@ -106,6 +106,14 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.appland/appmap-agent -->
+        <dependency>
+            <groupId>com.appland</groupId>
+            <artifactId>appmap-agent</artifactId>
+            <version>1.15.7</version>
+            <scope>runtime</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -126,6 +134,20 @@
                 <groupId>com.github.ulisesbocchio</groupId>
                 <artifactId>jasypt-maven-plugin</artifactId>
                 <version>3.0.3</version>
+            </plugin>
+            <!-- the appmap plugin element goes to build/plugins -->
+            <plugin>
+                <groupId>com.appland</groupId>
+                <artifactId>appmap-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-test-classes</phase>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 <!--            <plugin>-->
 <!--                <groupId>com.github.kongchen</groupId>-->

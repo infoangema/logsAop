@@ -1,0 +1,6 @@
+packages:
+  - path: angema.base.loginAop.app
+test_recording:
+  test_commands:
+    - env: {unitest}
+      command: mvn test
