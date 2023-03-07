@@ -106,13 +106,13 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.appland/appmap-agent -->
-        <dependency>
-            <groupId>com.appland</groupId>
-            <artifactId>appmap-agent</artifactId>
-            <version>1.15.7</version>
-            <scope>runtime</scope>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.appland/appmap-agent &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.appland</groupId>-->
+<!--            <artifactId>appmap-agent</artifactId>-->
+<!--            <version>1.15.7</version>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
 
     </dependencies>
 
