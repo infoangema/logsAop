@@ -2,6 +2,7 @@ package angema.base.loginAop.productos;
 
 import angema.base.loginAop.app.productos.producto.Producto;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class ProductoTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn();
         String response = result.getResponse().getContentAsString();
-        // Assert the response as needed
+        Assert.assertTrue(response.contains("codigo_producto"));
     }
 
     @Test

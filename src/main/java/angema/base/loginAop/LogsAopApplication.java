@@ -18,11 +18,6 @@ import java.util.Map;
 @SpringBootApplication
 public class LogsAopApplication {
 
-
-
-
-
-
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();
